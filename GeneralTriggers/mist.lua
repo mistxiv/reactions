@@ -554,9 +554,8 @@ local tbl =
 				clusterRange = 30,
 				conditions = 
 				{
-					7,
 				},
-				endIfUsed = true,
+				endIfUsed = false,
 				fallthrough = false,
 				gVar = "",
 				gVarValue = 1,
@@ -565,6 +564,12 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "end",
+				performance = 
+				{
+					count = 5,
+					maxtick = 0,
+					runtime = 0,
+				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -612,6 +617,12 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "Define functions",
+				performance = 
+				{
+					count = 0,
+					maxtick = 0,
+					runtime = 0,
+				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -635,7 +646,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "local MU = MistUtility\n\ngAssistUseAutoFace = true\ngPotionHP = 0\ngRestHP = 0\ngUseSprint = true\ngSprintDist = 50\ngMountDist = 200\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMU.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
+				actionLua = "local MU = MistUtility\n\ngAssistUseAutoFace = true\ngPotionHP = 0\ngRestHP = 0\ngUseSprint = false\ngSprintDist = 50\ngMountDist = 200\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMU.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -658,6 +669,12 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "Unconditional settings",
+				performance = 
+				{
+					count = 5,
+					maxtick = 0,
+					runtime = 0,
+				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -705,6 +722,12 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "Attended settings",
+				performance = 
+				{
+					count = 0,
+					maxtick = 0,
+					runtime = 0,
+				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -728,7 +751,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "gPulseTime = InInstance() and 50 or 150\n\nlocal MU = MistUtility\n\nlocal do_los = true\nlocal do_interrupt = true\nlocal do_jumps = false\nlocal do_tank_ranged = true\nlocal do_hard_res = not Player.incombat\nlocal do_swift_res = true\nlocal is_mt = MU.is_mt()\n\nlocal game_settings = {\n   [\"BattleEffectSelf\"] = 2,\n   [\"BattleEffectParty\"] = 2,\n   [\"BattleEffectOther\"] = 2,\n   [\"BattleEffectPvPEnemyPc\"] = 2,\n   -- Shadows\n   [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n   [\"ShadowVisibilityTypeSelf_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n   [\"ShadowTextureSizeType_DX11\"] = 0, -- Low - 512p\n   [\"ShadowCascadeCountType_DX11\"] = 0, -- Off\n}\n\ntable.merge(MU.game_settings, game_settings)\n\nMU.gs_set(game_settings)\n\nlocal acr_settings_common = {\n   [\"HighPerformanceMode\"] = false,\n   [\"LoS\"] = do_los,\n   [\"ShowHotbar\"] = false,\n   [\"ShowHealbar\"] = false,\n   [\"ShowHotbarQueue\"] = false,\n   [\"SmartAOE\"] = false,\n   [\"SmartDoT\"] = false,\n   [\"Jumps\"] = do_jumps,\n   [\"SafeJump\"] = do_jumps,\n   [\"NoKeybindsOOC\"] = true,\n   [\"ZeroPingEnabled\"] = false,\n}\n\nlocal acr_settings = {\n   [\"RikuPLD2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"ShieldLob\"] = do_tank_ranged,\n   },\n   [\"RikuWAR2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"Tomahawk\"] = do_tank_ranged,\n   },\n   [\"RikuDRK2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"Unmend\"] = do_tank_ranged,\n   },\n   [\"RikuGNB2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"LightningShot\"] = do_tank_ranged,\n   },\n   [\"RikuWHM2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuSCH2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuAST2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuMNK2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuDRG2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuNIN2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorWeeb2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorRequiem2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n\n   },\n   [\"TensorMagnum2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"RikuDNC2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n      [\"Interrupt\"] = true,\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"TensorRuin2\"] = {\n      [\"JumpOffForceHold\"] = not do_jumps,\n      [\"ResWhenNoTarget\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"RikuRDM2\"] = {\n      [\"Melee\"] = do_jumps,\n      [\"JumpIn\"] = do_jumps,\n      [\"JumpOut\"] = do_jumps,\n      [\"ShowPositionalIndicator\"] = false,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"TensorReaper\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n   local acr_settings_merged = table.merge(acr_settings[acr_name], acr_settings_common)\n   for k, v in pairs(acr_settings_merged) do\n      local s = \"ACR_\" .. acr_name .. \"_\" .. k\n      if (_G[s] ~= nil) then\n         _G[s] = v\n      end\n   end\nend\n\nif TensorCore_UseTTK then\n   TensorCore_UseTTK = false\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.DutyHelper.enabled = true\n   AnyoneCore.Settings.DutyHelper.requirebotenabled = false\n   AnyoneCore.Settings.DutyHelper.ControlDoTs = true\n   AnyoneCore.Settings.DutyHelper.HealingUsage = true\n   AnyoneCore.Settings.DutyHelper.SmartTarget = false\n   AnyoneCore.Settings.DutyHelper.knockback = true\n   AnyoneCore.Settings.DutyHelper.mitigation = true\n   AnyoneCore.Settings.faceAwayEnabled = true\n   AnyoneCore.Settings.PrepullHelper.enabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.enable = true\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
+				actionLua = "gPulseTime = InInstance() and 50 or 150\n\nlocal MU = MistUtility\n\nlocal do_los = true\nlocal do_interrupt = true\nlocal do_jumps = false\nlocal do_tank_ranged = true\nlocal do_hard_res = not Player.incombat\nlocal do_swift_res = true\nlocal is_mt = MU.is_mt()\n\nlocal game_settings = {\n   [\"BattleEffectSelf\"] = 2,\n   [\"BattleEffectParty\"] = 2,\n   [\"BattleEffectOther\"] = 2,\n   [\"BattleEffectPvPEnemyPc\"] = 2,\n   -- Shadows\n   [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n   [\"ShadowVisibilityTypeSelf_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n   [\"ShadowTextureSizeType_DX11\"] = 0, -- Low - 512p\n   [\"ShadowCascadeCountType_DX11\"] = 0, -- Off\n}\n\ntable.merge(MU.game_settings, game_settings)\n\nMU.gs_set(game_settings)\n\nlocal acr_settings_common = {\n   [\"HighPerformanceMode\"] = false,\n   [\"LoS\"] = do_los,\n   [\"ShowHotbar\"] = false,\n   [\"ShowHealbar\"] = false,\n   [\"ShowHotbarQueue\"] = false,\n   [\"SmartAOE\"] = false,\n   [\"SmartDoT\"] = false,\n   [\"Jumps\"] = do_jumps,\n   [\"SafeJump\"] = do_jumps,\n   [\"NoKeybindsOOC\"] = true,\n   [\"ZeroPingEnabled\"] = false,\n}\n\nlocal acr_settings = {\n   [\"RikuPLD2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"ShieldLob\"] = do_tank_ranged,\n   },\n   [\"RikuWAR2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"Tomahawk\"] = do_tank_ranged,\n   },\n   [\"RikuDRK2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"Unmend\"] = do_tank_ranged,\n   },\n   [\"RikuGNB2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"LightningShot\"] = do_tank_ranged,\n   },\n   [\"RikuWHM2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuSCH2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuAST2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuMNK2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuDRG2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuNIN2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorWeeb2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorRequiem2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n\n   },\n   [\"TensorMagnum2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"RikuDNC2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n      [\"Interrupt\"] = true,\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"TensorRuin2\"] = {\n      [\"JumpOffForceHold\"] = not do_jumps,\n      [\"ResWhenNoTarget\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"RikuRDM2\"] = {\n      [\"Melee\"] = do_jumps,\n      [\"JumpIn\"] = do_jumps,\n      [\"JumpOut\"] = do_jumps,\n      [\"ShowPositionalIndicator\"] = false,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"TensorReaper\"] = {\n      [\"PositionalMode\"] = \"None\",\n      [\"SoulSow\"] = Player.incombat,\n   },\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n   local acr_settings_merged = table.merge(acr_settings[acr_name], acr_settings_common)\n   for k, v in pairs(acr_settings_merged) do\n      local s = \"ACR_\" .. acr_name .. \"_\" .. k\n      if (_G[s] ~= nil) then\n         _G[s] = v\n      end\n   end\nend\n\nif TensorCore_UseTTK then\n   TensorCore_UseTTK = false\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.DutyHelper.enabled = true\n   AnyoneCore.Settings.DutyHelper.requirebotenabled = false\n   AnyoneCore.Settings.DutyHelper.ControlDoTs = true\n   AnyoneCore.Settings.DutyHelper.HealingUsage = true\n   AnyoneCore.Settings.DutyHelper.SmartTarget = false\n   AnyoneCore.Settings.DutyHelper.knockback = true\n   AnyoneCore.Settings.DutyHelper.mitigation = true\n   AnyoneCore.Settings.faceAwayEnabled = true\n   AnyoneCore.Settings.PrepullHelper.enabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.enable = true\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -752,6 +775,12 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "Unattended settings",
+				performance = 
+				{
+					count = 5,
+					maxtick = 2,
+					runtime = 2.0000000004075,
+				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -846,6 +875,12 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
+				performance = 
+				{
+					count = 0,
+					maxtick = 0,
+					runtime = 0,
+				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -925,6 +960,12 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
+				performance = 
+				{
+					count = 5,
+					maxtick = 0,
+					runtime = 0,
+				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1004,6 +1045,12 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
+				performance = 
+				{
+					count = 5,
+					maxtick = 0,
+					runtime = 0,
+				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1083,6 +1130,12 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
+				performance = 
+				{
+					count = 5,
+					maxtick = 0,
+					runtime = 0,
+				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1162,6 +1215,12 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
+				performance = 
+				{
+					count = 0,
+					maxtick = 0,
+					runtime = 0,
+				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1241,6 +1300,12 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
+				performance = 
+				{
+					count = 0,
+					maxtick = 0,
+					runtime = 0,
+				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1320,6 +1385,12 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
+				performance = 
+				{
+					count = 0,
+					maxtick = 0,
+					runtime = 0,
+				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1399,6 +1470,12 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
+				performance = 
+				{
+					count = 0,
+					maxtick = 0,
+					runtime = 0,
+				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1408,14 +1485,20 @@ local tbl =
 			},
 		},
 		enabled = true,
-		eventConditionMismatch = true,
-		eventType = 12,
+		eventType = 1,
 		execute = "medicated_spiritbond = false\nfor _, buff in pairs(Player.Buffs) do \n\t\tif buff.id == 49 and buff.stacks == 10452 then \n\t\t\t\tmedicated_spiritbond=true \n\t\tend \nend\nreturn medicated_spiritbond",
 		executeType = 1,
-		lastUse = 18060750,
+		lastUse = 0,
 		luaNeedsWeaveWindow = false,
 		luaReturnsAction = false,
 		name = "Mist - Utility",
+		performance = 
+		{
+			count = 153,
+			isGeneral = true,
+			maxtick = 2,
+			runtime = 2.0000000004075,
+		},
 		randomOffset = 0,
 		randomTimeout = 3,
 		throttleTime = 1000,
@@ -1428,7 +1511,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "bc39dba5-51d0-62a2-9eae-a2bb6614d1da",
+		uuid = "1979115f-ec1c-bd15-bf58-56f73ef1295b",
 	},
 	
 	{
@@ -1511,13 +1594,13 @@ local tbl =
 				clusterRadius = 8,
 				clusterRange = 30,
 				comparator = 1,
-				conditionLua = "if (table.valid(ml_navigation.path) and table.size(ml_navigation.path) > 0) then\n  local myPos = Player.pos\n\t\tlocal gotoPos = ml_navigation.path[#ml_navigation.path]\n  local distance = PDistance3D(myPos.x, myPos.y, myPos.z, gotoPos.x, gotoPos.y, gotoPos.z)\n  d(\"Sprint: \"..distance)\n  return distance > tonumber(gSprintDist) and distance < tonumber(gMountDist)\nend\n    \nreturn false\n",
+				conditionLua = "if (table.valid(ml_navigation.path) and table.size(ml_navigation.path) > 0) then\n  local myPos = Player.pos\n\t\tlocal gotoPos = ml_navigation.path[#ml_navigation.path]\n  local distance = PDistance3D(myPos.x, myPos.y, myPos.z, gotoPos.x, gotoPos.y, gotoPos.z)\n--  d(\"Sprint: \"..distance)\n  return distance > tonumber(gSprintDist) and distance < tonumber(gMountDist)\nend\n    \nreturn false\n",
 				conditionType = 1,
 				conditions = 
 				{
 				},
 				contentid = -1,
-				dequeueIfLuaFalse = false,
+				dequeueIfLuaFalse = true,
 				enmityValue = 0,
 				eventArgOptionType = 1,
 				eventArgType = 1,
@@ -1598,7 +1681,7 @@ local tbl =
 				{
 				},
 				contentid = -1,
-				dequeueIfLuaFalse = false,
+				dequeueIfLuaFalse = true,
 				enmityValue = 0,
 				eventArgOptionType = 1,
 				eventArgType = 1,
@@ -1677,7 +1760,7 @@ local tbl =
 				{
 				},
 				contentid = -1,
-				dequeueIfLuaFalse = false,
+				dequeueIfLuaFalse = true,
 				enmityValue = 0,
 				eventArgOptionType = 1,
 				eventArgType = 1,
@@ -1756,7 +1839,7 @@ local tbl =
 				{
 				},
 				contentid = -1,
-				dequeueIfLuaFalse = false,
+				dequeueIfLuaFalse = true,
 				enmityValue = 0,
 				eventArgOptionType = 1,
 				eventArgType = 1,
@@ -1835,7 +1918,7 @@ local tbl =
 				{
 				},
 				contentid = -1,
-				dequeueIfLuaFalse = false,
+				dequeueIfLuaFalse = true,
 				enmityValue = 0,
 				eventArgOptionType = 1,
 				eventArgType = 1,
@@ -1886,8 +1969,8 @@ local tbl =
 				setFirstMatch = false,
 			},
 		},
-		enabled = false,
-		eventType = 12,
+		enabled = true,
+		eventType = 1,
 		execute = "",
 		executeType = 1,
 		lastUse = 0,
@@ -1906,7 +1989,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "004720f5-9997-92ec-bb42-0acea803e7d8",
+		uuid = "56730577-eb81-b178-8933-a8a14627408c",
 	},
 	
 	{
@@ -4147,7 +4230,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "self.used = true",
+				actionLua = "self.used = true\nreaction.eventConditionMismatch = true",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -4171,64 +4254,6 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "end",
-				performance = 
-				{
-					count = 9,
-					maxtick = 0,
-					runtime = 0,
-				},
-				potType = 1,
-				setTarget = false,
-				showPositionPreview = false,
-				stopCasting = false,
-				stopMoving = false,
-				targetContentID = -1,
-				targetName = "",
-				targetSubType = "Nearest",
-				targetType = "Self",
-				untarget = false,
-				useForWeaving = false,
-				useItem = false,
-				useItemID = 0,
-				useItemName = "",
-				usePot = false,
-				used = false,
-				variableIsHover = false,
-				variableTogglesType = 1,
-			},
-			
-			{
-				aType = 4,
-				actionID = -1,
-				actionLua = "d('spiritbond maybe')",
-				allowInterrupt = false,
-				atomicPriority = false,
-				castAtMouse = false,
-				castPosX = 0,
-				castPosY = 0,
-				castPosZ = 0,
-				clusterMinPercent = false,
-				clusterMinTarget = 1,
-				clusterRadius = 8,
-				clusterRange = 30,
-				conditions = 
-				{
-				},
-				endIfUsed = false,
-				fallthrough = false,
-				gVar = "",
-				gVarValue = 1,
-				ignoreWeaveRules = false,
-				isAreaTarget = false,
-				luaNeedsWeaveWindow = false,
-				luaReturnsAction = false,
-				name = "maybe maybe",
-				performance = 
-				{
-					count = 0,
-					maxtick = 0,
-					runtime = 0,
-				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -4276,12 +4301,6 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "use superior spiritbond potion",
-				performance = 
-				{
-					count = 0,
-					maxtick = 0,
-					runtime = 0,
-				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -4329,12 +4348,6 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "use better crowned pie",
-				performance = 
-				{
-					count = 0,
-					maxtick = 0,
-					runtime = 0,
-				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -4381,12 +4394,6 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "end",
-				performance = 
-				{
-					count = 0,
-					maxtick = 0,
-					runtime = 0,
-				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -4481,12 +4488,6 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
-				performance = 
-				{
-					count = 9,
-					maxtick = 1,
-					runtime = 1.0000000002037,
-				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -4566,12 +4567,6 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
-				performance = 
-				{
-					count = 9,
-					maxtick = 0,
-					runtime = 0,
-				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -4651,12 +4646,6 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
-				performance = 
-				{
-					count = 26,
-					maxtick = 1,
-					runtime = 3.9999999989959,
-				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -4673,12 +4662,6 @@ local tbl =
 		luaNeedsWeaveWindow = false,
 		luaReturnsAction = false,
 		name = "Mist - Spiritbond Potion",
-		performance = 
-		{
-			count = 160,
-			maxtick = 1,
-			runtime = 4.9999999991996,
-		},
 		randomOffset = 0,
 		randomTimeout = 3,
 		throttleTime = 1000,
@@ -4691,7 +4674,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "9077866b-b48d-94bf-890f-cbf6aadd4586",
+		uuid = "c184226d-e294-4d02-ad4f-ba72e72ea80d",
 	},
 }
 
