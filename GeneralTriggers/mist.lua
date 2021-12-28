@@ -149,7 +149,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "local MDT = MistDogTag\nGUI:PushStyleColor(GUI.Col_WindowBg, 0, 0, 0, .6)\nGUI:Begin(\"DogTag\", true, GUI.WindowFlags_NoTitleBar + GUI.WindowFlags_NoScrollbar + GUI.WindowFlags_NoScrollWithMouse +\n   GUI.WindowFlags_NoCollapse + GUI.WindowFlags_AlwaysAutoResize)\n\n-- name --\nif MDT.draw_name_red then\n   GUI:TextColored(1.0, 0.25, 0.25, 1.0, MDT.name_text)\nelse\n   GUI:Text(MDT.name_text)\nend\nif GUI:IsItemHovered() then\n   GUI:SetTooltip(MDT.name_tooltip)\nend\n\n-- map --\nif GUI:IsItemClicked(0) then\n   MDT.privacy = not MDT.privacy\n   MDT.dogtaglastcheck = 0\nelseif GUI:IsItemClicked(1) then\n   GUI:SetClipboardText(GetUUID() .. \"\\n\")\nend\nif MDT.draw_map_red then\n   GUI:TextColored(1.0, 0.25, 0.25, 1.0, MDT.map_text)\nelse\n   GUI:Text(MDT.map_text)\nend\nif GUI:IsItemHovered() then\n   GUI:SetTooltip(MDT.map_tooltip)\nend\n\n-- world --\nGUI:Text(MDT.world_text)\n\nGUI:End()\nGUI:PopStyleColor()\nself.used = true\n",
+				actionLua = "local MDT = MistDogTag\n--GUI:PushStyleColor(GUI.Col_WindowBg, 0, 0, 0, .6)\nGUI:Begin(\"DogTag\", true, GUI.WindowFlags_NoTitleBar + GUI.WindowFlags_NoScrollbar + GUI.WindowFlags_NoScrollWithMouse +\n   GUI.WindowFlags_NoCollapse + GUI.WindowFlags_AlwaysAutoResize)\n\n-- name --\nif MDT.draw_name_red then\n   GUI:TextColored(1.0, 0.25, 0.25, 1.0, MDT.name_text)\nelse\n   GUI:Text(MDT.name_text)\nend\nif GUI:IsItemHovered() then\n   GUI:SetTooltip(MDT.name_tooltip)\nend\n\n-- map --\nif GUI:IsItemClicked(0) then\n   MDT.privacy = not MDT.privacy\n   MDT.dogtaglastcheck = 0\nelseif GUI:IsItemClicked(1) then\n   GUI:SetClipboardText(GetUUID() .. \"\\n\")\nend\nif MDT.draw_map_red then\n   GUI:TextColored(1.0, 0.25, 0.25, 1.0, MDT.map_text)\nelse\n   GUI:Text(MDT.map_text)\nend\nif GUI:IsItemHovered() then\n   GUI:SetTooltip(MDT.map_tooltip)\nend\n\n-- world --\nGUI:Text(MDT.world_text)\n\nGUI:End()\n--GUI:PopStyleColor()\nself.used = true\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -515,7 +515,7 @@ local tbl =
 		eventType = 13,
 		execute = "",
 		executeType = 1,
-		lastUse = 0,
+		lastUse = 3505203,
 		luaNeedsWeaveWindow = false,
 		luaReturnsAction = false,
 		name = "Mist - DogTag",
@@ -531,7 +531,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "24e53aa3-aa31-ed86-b0b7-ea5372700e97",
+		uuid = "156b2ad0-ae92-1704-9ef4-f3cae85711b2",
 	},
 	
 	{
@@ -564,12 +564,6 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "end",
-				performance = 
-				{
-					count = 5,
-					maxtick = 0,
-					runtime = 0,
-				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -617,12 +611,6 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "Define functions",
-				performance = 
-				{
-					count = 0,
-					maxtick = 0,
-					runtime = 0,
-				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -646,7 +634,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "local MU = MistUtility\n\ngAssistUseAutoFace = true\ngPotionHP = 0\ngRestHP = 0\ngUseSprint = false\ngSprintDist = 50\ngMountDist = 200\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMU.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
+				actionLua = "local MU = MistUtility\n\ngAssistUseAutoFace = true\ngPotionHP = 0\ngRestHP = 0\ngUseSprint = false\ngSprintDist = 50\ngMountDist = 200\n\nlocal target = MGetTarget()\nlocal unfriendly_target = false\nif (table.valid(target)) then\n   unfriendly_target = (target.friendly == false)\nend\ngACREnabled = InInstance() or unfriendly_target or Player.incombat\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMU.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -669,12 +657,6 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "Unconditional settings",
-				performance = 
-				{
-					count = 5,
-					maxtick = 0,
-					runtime = 0,
-				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -722,12 +704,6 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "Attended settings",
-				performance = 
-				{
-					count = 0,
-					maxtick = 0,
-					runtime = 0,
-				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -751,7 +727,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "gPulseTime = InInstance() and 50 or 150\n\nlocal MU = MistUtility\n\nlocal do_los = true\nlocal do_interrupt = true\nlocal do_jumps = false\nlocal do_tank_ranged = true\nlocal do_hard_res = not Player.incombat\nlocal do_swift_res = true\nlocal is_mt = MU.is_mt()\n\nlocal game_settings = {\n   [\"BattleEffectSelf\"] = 2,\n   [\"BattleEffectParty\"] = 2,\n   [\"BattleEffectOther\"] = 2,\n   [\"BattleEffectPvPEnemyPc\"] = 2,\n   -- Shadows\n   [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n   [\"ShadowVisibilityTypeSelf_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n   [\"ShadowTextureSizeType_DX11\"] = 0, -- Low - 512p\n   [\"ShadowCascadeCountType_DX11\"] = 0, -- Off\n}\n\ntable.merge(MU.game_settings, game_settings)\n\nMU.gs_set(game_settings)\n\nlocal acr_settings_common = {\n   [\"HighPerformanceMode\"] = false,\n   [\"LoS\"] = do_los,\n   [\"ShowHotbar\"] = false,\n   [\"ShowHealbar\"] = false,\n   [\"ShowHotbarQueue\"] = false,\n   [\"SmartAOE\"] = false,\n   [\"SmartDoT\"] = false,\n   [\"Jumps\"] = do_jumps,\n   [\"SafeJump\"] = do_jumps,\n   [\"NoKeybindsOOC\"] = true,\n   [\"ZeroPingEnabled\"] = false,\n}\n\nlocal acr_settings = {\n   [\"RikuPLD2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"ShieldLob\"] = do_tank_ranged,\n   },\n   [\"RikuWAR2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"Tomahawk\"] = do_tank_ranged,\n   },\n   [\"RikuDRK2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"Unmend\"] = do_tank_ranged,\n   },\n   [\"RikuGNB2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"LightningShot\"] = do_tank_ranged,\n   },\n   [\"RikuWHM2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuSCH2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuAST2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuMNK2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuDRG2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuNIN2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorWeeb2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorRequiem2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n\n   },\n   [\"TensorMagnum2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"RikuDNC2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n      [\"Interrupt\"] = true,\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"TensorRuin2\"] = {\n      [\"JumpOffForceHold\"] = not do_jumps,\n      [\"ResWhenNoTarget\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"RikuRDM2\"] = {\n      [\"Melee\"] = do_jumps,\n      [\"JumpIn\"] = do_jumps,\n      [\"JumpOut\"] = do_jumps,\n      [\"ShowPositionalIndicator\"] = false,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"TensorReaper\"] = {\n      [\"PositionalMode\"] = \"None\",\n      [\"SoulSow\"] = Player.incombat,\n   },\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n   local acr_settings_merged = table.merge(acr_settings[acr_name], acr_settings_common)\n   for k, v in pairs(acr_settings_merged) do\n      local s = \"ACR_\" .. acr_name .. \"_\" .. k\n      if (_G[s] ~= nil) then\n         _G[s] = v\n      end\n   end\nend\n\nif TensorCore_UseTTK then\n   TensorCore_UseTTK = false\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.DutyHelper.enabled = true\n   AnyoneCore.Settings.DutyHelper.requirebotenabled = false\n   AnyoneCore.Settings.DutyHelper.ControlDoTs = true\n   AnyoneCore.Settings.DutyHelper.HealingUsage = true\n   AnyoneCore.Settings.DutyHelper.SmartTarget = false\n   AnyoneCore.Settings.DutyHelper.knockback = true\n   AnyoneCore.Settings.DutyHelper.mitigation = true\n   AnyoneCore.Settings.faceAwayEnabled = true\n   AnyoneCore.Settings.PrepullHelper.enabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.enable = true\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
+				actionLua = "gPulseTime = InInstance() and 50 or 150\n\nlocal MU = MistUtility\n\nlocal do_los = true\nlocal do_interrupt = true\nlocal do_jumps = false\nlocal do_tank_ranged = true\nlocal do_hard_res = not Player.incombat\nlocal do_swift_res = true\nlocal is_mt = MU.is_mt()\n\nlocal game_settings = {\n   [\"BattleEffectSelf\"] = 2,\n   [\"BattleEffectParty\"] = 2,\n   [\"BattleEffectOther\"] = 2,\n   [\"BattleEffectPvPEnemyPc\"] = 2,\n   -- Shadows\n   [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n   [\"ShadowVisibilityTypeSelf_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n   [\"ShadowTextureSizeType_DX11\"] = 0, -- Low - 512p\n   [\"ShadowCascadeCountType_DX11\"] = 0, -- Off\n}\n\ntable.merge(MU.game_settings, game_settings)\n\nMU.gs_set(game_settings)\n\nlocal acr_settings_common = {\n   [\"HighPerformanceMode\"] = false,\n   [\"LoS\"] = do_los,\n   [\"ShowHotbar\"] = false,\n   [\"ShowHealbar\"] = false,\n   [\"ShowHotbarQueue\"] = false,\n   [\"SmartAOE\"] = false,\n   [\"SmartDoT\"] = false,\n   [\"Jumps\"] = do_jumps,\n   [\"SafeJump\"] = do_jumps,\n   [\"NoKeybindsOOC\"] = true,\n   [\"ZeroPingEnabled\"] = false,\n}\n\nlocal acr_settings = {\n   [\"RikuPLD2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"ShieldLob\"] = do_tank_ranged,\n   },\n   [\"RikuWAR2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"Tomahawk\"] = do_tank_ranged,\n   },\n   [\"RikuDRK2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"Unmend\"] = do_tank_ranged,\n   },\n   [\"RikuGNB2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = isMT and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = isMT,\n      [\"LightningShot\"] = do_tank_ranged,\n   },\n   [\"RikuWHM2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuSCH2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuAST2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuMNK2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuDRG2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuNIN2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorWeeb2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorRequiem2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n\n   },\n   [\"TensorMagnum2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"RikuDNC2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n      [\"Interrupt\"] = true,\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"TensorRuin2\"] = {\n      [\"JumpOffForceHold\"] = not do_jumps,\n      [\"ResWhenNoTarget\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"RikuRDM2\"] = {\n      [\"Melee\"] = do_jumps,\n      [\"JumpIn\"] = do_jumps,\n      [\"JumpOut\"] = do_jumps,\n      [\"ShowPositionalIndicator\"] = false,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"TensorReaper\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n   local acr_settings_merged = table.merge(acr_settings[acr_name], acr_settings_common)\n   for k, v in pairs(acr_settings_merged) do\n      local s = \"ACR_\" .. acr_name .. \"_\" .. k\n      if (_G[s] ~= nil) then\n         _G[s] = v\n      end\n   end\nend\n\nif TensorCore_UseTTK then\n   TensorCore_UseTTK = false\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.DutyHelper.enabled = true\n   AnyoneCore.Settings.DutyHelper.requirebotenabled = false\n   AnyoneCore.Settings.DutyHelper.ControlDoTs = true\n   AnyoneCore.Settings.DutyHelper.HealingUsage = true\n   AnyoneCore.Settings.DutyHelper.SmartTarget = false\n   AnyoneCore.Settings.DutyHelper.knockback = true\n   AnyoneCore.Settings.DutyHelper.mitigation = true\n   AnyoneCore.Settings.faceAwayEnabled = true\n   AnyoneCore.Settings.PrepullHelper.enabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.enable = true\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -775,12 +751,6 @@ local tbl =
 				luaNeedsWeaveWindow = false,
 				luaReturnsAction = false,
 				name = "Unattended settings",
-				performance = 
-				{
-					count = 5,
-					maxtick = 2,
-					runtime = 2.0000000004075,
-				},
 				potType = 1,
 				setTarget = false,
 				showPositionPreview = false,
@@ -875,12 +845,6 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
-				performance = 
-				{
-					count = 0,
-					maxtick = 0,
-					runtime = 0,
-				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -960,12 +924,6 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
-				performance = 
-				{
-					count = 5,
-					maxtick = 0,
-					runtime = 0,
-				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1045,12 +1003,6 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
-				performance = 
-				{
-					count = 5,
-					maxtick = 0,
-					runtime = 0,
-				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1130,12 +1082,6 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
-				performance = 
-				{
-					count = 5,
-					maxtick = 0,
-					runtime = 0,
-				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1215,12 +1161,6 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
-				performance = 
-				{
-					count = 0,
-					maxtick = 0,
-					runtime = 0,
-				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1300,12 +1240,6 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
-				performance = 
-				{
-					count = 0,
-					maxtick = 0,
-					runtime = 0,
-				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1385,12 +1319,6 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
-				performance = 
-				{
-					count = 0,
-					maxtick = 0,
-					runtime = 0,
-				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1470,12 +1398,6 @@ local tbl =
 				partyTargetNumber = 1,
 				partyTargetSubType = "Nearest",
 				partyTargetType = "All",
-				performance = 
-				{
-					count = 0,
-					maxtick = 0,
-					runtime = 0,
-				},
 				rangeCheckSourceSubType = "Nearest",
 				rangeCheckSourceType = "Self",
 				rangeSourceContentID = -1,
@@ -1492,13 +1414,6 @@ local tbl =
 		luaNeedsWeaveWindow = false,
 		luaReturnsAction = false,
 		name = "Mist - Utility",
-		performance = 
-		{
-			count = 153,
-			isGeneral = true,
-			maxtick = 2,
-			runtime = 2.0000000004075,
-		},
 		randomOffset = 0,
 		randomTimeout = 3,
 		throttleTime = 1000,
@@ -1511,7 +1426,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "1979115f-ec1c-bd15-bf58-56f73ef1295b",
+		uuid = "9eafcef6-9f62-a1f4-8fe5-b1600af21dd5",
 	},
 	
 	{
@@ -1989,7 +1904,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "56730577-eb81-b178-8933-a8a14627408c",
+		uuid = "da4a6d5b-deed-41ed-bc61-06ed5680ed40",
 	},
 	
 	{
@@ -2225,7 +2140,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "75fed236-b8bb-e11b-ace4-045d2bd15b7d",
+		uuid = "8ae81a73-de5e-cb3f-97a8-b172c3b09398",
 	},
 	
 	{
@@ -2461,7 +2376,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "715b3cf4-ab6e-9679-8e6c-1dfa99e515a8",
+		uuid = "f88ad299-93b5-b0ef-abd3-4781429c9678",
 	},
 	
 	{
@@ -2823,7 +2738,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "c56fce64-e203-634e-8394-9ce97df4421c",
+		uuid = "524be0bb-747d-11f7-8845-4406af08d12f",
 	},
 	
 	{
@@ -3105,7 +3020,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "18485c7b-5bfb-a795-a5a8-e17ce3e96228",
+		uuid = "c92797c0-e72a-c120-91e4-e71271eb55ef",
 	},
 	
 	{
@@ -3261,7 +3176,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "73b7fa34-481c-2630-9a4f-013252ec2ffa",
+		uuid = "80d04675-67da-c759-a80e-7ae548912348",
 	},
 	
 	{
@@ -3748,7 +3663,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "cbd96845-b1e7-82ea-8e27-867de1c22fff",
+		uuid = "6bd3eb34-2dd5-2152-af08-9da9c2cef737",
 	},
 	
 	{
@@ -4220,7 +4135,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "176f76cb-f56f-df14-958a-7cb8f06dd172",
+		uuid = "ebb56d4e-54ea-db71-a2c2-23fcdba613bf",
 	},
 	
 	{
@@ -4674,7 +4589,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "c184226d-e294-4d02-ad4f-ba72e72ea80d",
+		uuid = "a1f09cf9-8c95-e5f3-975b-ccda592326f2",
 	},
 }
 
