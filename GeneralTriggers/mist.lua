@@ -55,7 +55,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "MistDogTag = {}\nlocal MDT = MistDogTag\nMDT.privacy = false\nMDT.dogtaglastcheck = 0\nMDT.dogtaglastleadercheck = 0\nMDT.worlds = {\n   [23] = \"Asura\",\n   [24] = \"Belias\",\n   [25] = \"Chaos\",\n   [26] = \"Hecatoncheir\",\n   [27] = \"Moomba\",\n   [28] = \"Pandaemonium\",\n   [29] = \"Shinryu\",\n   [30] = \"Unicorn\",\n   [31] = \"Yojimbo\",\n   [32] = \"Zeromus\",\n   [33] = \"Twintania\",\n   [34] = \"Brynhildr\",\n   [35] = \"Famfrit\",\n   [36] = \"Lich\",\n   [37] = \"Mateus\",\n   [38] = \"Shemhazai\",\n   [39] = \"Omega\",\n   [40] = \"Jenova\",\n   [41] = \"Zalera\",\n   [42] = \"Zodiark\",\n   [43] = \"Alexander\",\n   [44] = \"Anima\",\n   [45] = \"Carbuncle\",\n   [46] = \"Fenrir\",\n   [47] = \"Hades\",\n   [48] = \"Ixion\",\n   [49] = \"Kujata\",\n   [50] = \"Typhon\",\n   [51] = \"Ultima\",\n   [52] = \"Valefor\",\n   [53] = \"Exodus\",\n   [54] = \"Faerie\",\n   [55] = \"Lamia\",\n   [56] = \"Phoenix\",\n   [57] = \"Siren\",\n   [58] = \"Garuda\",\n   [59] = \"Ifrit\",\n   [60] = \"Ramuh\",\n   [61] = \"Titan\",\n   [62] = \"Diabolos\",\n   [63] = \"Gilgamesh\",\n   [64] = \"Leviathan\",\n   [65] = \"Midgardsormr\",\n   [66] = \"Odin\",\n   [67] = \"Shiva\",\n   [68] = \"Atomos\",\n   [69] = \"Bahamut\",\n   [70] = \"Chocobo\",\n   [71] = \"Moogle\",\n   [72] = \"Tonberry\",\n   [73] = \"Adamantoise\",\n   [74] = \"Coeurl\",\n   [75] = \"Malboro\",\n   [76] = \"Tiamat\",\n   [77] = \"Ultros\",\n   [78] = \"Behemoth\",\n   [79] = \"Cactuar\",\n   [80] = \"Cerberus\",\n   [81] = \"Goblin\",\n   [82] = \"Mandragora\",\n   [83] = \"Louisoix\",\n   [84] = \"Syldra\",\n   [85] = \"Spriggan\",\n   [90] = \"Aegis\",\n   [91] = \"Balmung\",\n   [92] = \"Durandal\",\n   [93] = \"Excalibur\",\n   [94] = \"Gungnir\",\n   [95] = \"Hyperion\",\n   [96] = \"Masamune\",\n   [97] = \"Ragnarok\",\n   [98] = \"Ridill\",\n   [99] = \"Sargatanas\",\n}\nMDT.jobs_tr_general_profile_default = \"Mist\"\nMDT.jobs_tr_general_profile = {\n   [FFXIV.JOBS.BARD] = \"anyone\\\\bard\",\n   [FFXIV.JOBS.DANCER] = \"anyone\\\\dancer\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"anyone\\\\darkknight\",\n   [FFXIV.JOBS.DRAGOON] = \"anyone\\\\dragoon\",\n   [FFXIV.JOBS.GUNBREAKER] = \"anyone\\\\gunbreaker\",\n   [FFXIV.JOBS.MACHINIST] = \"anyone\\\\machinist\",\n   [FFXIV.JOBS.MONK] = \"anyone\\\\monk\",\n   [FFXIV.JOBS.NINJA] = \"anyone\\\\ninja\",\n   [FFXIV.JOBS.PALADIN] = \"anyone\\\\paladin\",\n   [FFXIV.JOBS.REAPER] = \"anyone\\\\reaper\",\n   [FFXIV.JOBS.REDMAGE] = \"anyone\\\\redmage\",\n   [FFXIV.JOBS.SAMURAI] = \"anyone\\\\samurai\",\n   [FFXIV.JOBS.SUMMONER] = \"anyone\\\\summoner\",\n   [FFXIV.JOBS.WARRIOR] = \"anyone\\\\warrior\",\n}\nMDT.jobs_acr_profile = {\n   [FFXIV.JOBS.PALADIN] = \"RikuPLD2\",\n   [FFXIV.JOBS.WARRIOR] = \"RikuWAR2\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"RikuDRK2\",\n   [FFXIV.JOBS.GUNBREAKER] = \"RikuGNB2\",\n   [FFXIV.JOBS.MONK] = \"RikuMNK2\",\n   [FFXIV.JOBS.DRAGOON] = \"RikuDRG2\",\n   [FFXIV.JOBS.NINJA] = \"RikuNIN2\",\n   [FFXIV.JOBS.SAMURAI] = \"TensorWeeb2\",\n   [FFXIV.JOBS.REAPER] = \"TensorReaper\",\n   [FFXIV.JOBS.REDMAGE] = \"RikuRDM2\",\n   [FFXIV.JOBS.WHITEMAGE] = \"Veil\",\n   [FFXIV.JOBS.SCHOLAR] = \"Educator\",\n   [FFXIV.JOBS.ASTROLOGIAN] = \"StarGazer\",\n   [FFXIV.JOBS.SAGE] = \"HM_Free_Profiles\",\n   [FFXIV.JOBS.BARD] = \"TensorRequiem2\",\n   [FFXIV.JOBS.MACHINIST] = \"TensorMagnum2\",\n   [FFXIV.JOBS.DANCER] = \"RikuDNC2\",\n   [FFXIV.JOBS.BLACKMAGE] = \"Salamander\",\n   [FFXIV.JOBS.SUMMONER] = \"TensorRuin2\",\n}\n\nfunction MDT.GetWorldName(id)\n   return MDT.worlds[id] or \"Unknown\"\nend\n",
+				actionLua = "MistDogTag = {}\nlocal MDT = MistDogTag\nMDT.privacy = false\nMDT.dogtaglastcheck = 0\nMDT.dogtaglastleadercheck = 0\nMDT.worlds = {\n   [23] = \"Asura\",\n   [24] = \"Belias\",\n   [25] = \"Chaos\",\n   [26] = \"Hecatoncheir\",\n   [27] = \"Moomba\",\n   [28] = \"Pandaemonium\",\n   [29] = \"Shinryu\",\n   [30] = \"Unicorn\",\n   [31] = \"Yojimbo\",\n   [32] = \"Zeromus\",\n   [33] = \"Twintania\",\n   [34] = \"Brynhildr\",\n   [35] = \"Famfrit\",\n   [36] = \"Lich\",\n   [37] = \"Mateus\",\n   [38] = \"Shemhazai\",\n   [39] = \"Omega\",\n   [40] = \"Jenova\",\n   [41] = \"Zalera\",\n   [42] = \"Zodiark\",\n   [43] = \"Alexander\",\n   [44] = \"Anima\",\n   [45] = \"Carbuncle\",\n   [46] = \"Fenrir\",\n   [47] = \"Hades\",\n   [48] = \"Ixion\",\n   [49] = \"Kujata\",\n   [50] = \"Typhon\",\n   [51] = \"Ultima\",\n   [52] = \"Valefor\",\n   [53] = \"Exodus\",\n   [54] = \"Faerie\",\n   [55] = \"Lamia\",\n   [56] = \"Phoenix\",\n   [57] = \"Siren\",\n   [58] = \"Garuda\",\n   [59] = \"Ifrit\",\n   [60] = \"Ramuh\",\n   [61] = \"Titan\",\n   [62] = \"Diabolos\",\n   [63] = \"Gilgamesh\",\n   [64] = \"Leviathan\",\n   [65] = \"Midgardsormr\",\n   [66] = \"Odin\",\n   [67] = \"Shiva\",\n   [68] = \"Atomos\",\n   [69] = \"Bahamut\",\n   [70] = \"Chocobo\",\n   [71] = \"Moogle\",\n   [72] = \"Tonberry\",\n   [73] = \"Adamantoise\",\n   [74] = \"Coeurl\",\n   [75] = \"Malboro\",\n   [76] = \"Tiamat\",\n   [77] = \"Ultros\",\n   [78] = \"Behemoth\",\n   [79] = \"Cactuar\",\n   [80] = \"Cerberus\",\n   [81] = \"Goblin\",\n   [82] = \"Mandragora\",\n   [83] = \"Louisoix\",\n   [84] = \"Syldra\",\n   [85] = \"Spriggan\",\n   [90] = \"Aegis\",\n   [91] = \"Balmung\",\n   [92] = \"Durandal\",\n   [93] = \"Excalibur\",\n   [94] = \"Gungnir\",\n   [95] = \"Hyperion\",\n   [96] = \"Masamune\",\n   [97] = \"Ragnarok\",\n   [98] = \"Ridill\",\n   [99] = \"Sargatanas\",\n}\nMDT.jobs_tr_general_profile_default = \"mist\"\nMDT.jobs_tr_general_profile = {\n   [FFXIV.JOBS.BARD] = \"anyone\\\\bard\",\n   [FFXIV.JOBS.DANCER] = \"anyone\\\\dancer\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"anyone\\\\darkknight\",\n   [FFXIV.JOBS.DRAGOON] = \"anyone\\\\dragoon\",\n   [FFXIV.JOBS.GUNBREAKER] = \"anyone\\\\gunbreaker\",\n   [FFXIV.JOBS.MACHINIST] = \"anyone\\\\machinist\",\n   [FFXIV.JOBS.MONK] = \"anyone\\\\monk\",\n   [FFXIV.JOBS.NINJA] = \"anyone\\\\ninja\",\n   [FFXIV.JOBS.PALADIN] = \"anyone\\\\paladin\",\n   [FFXIV.JOBS.REAPER] = \"anyone\\\\reaper\",\n   [FFXIV.JOBS.REDMAGE] = \"anyone\\\\redmage\",\n   [FFXIV.JOBS.SAMURAI] = \"anyone\\\\samurai\",\n   [FFXIV.JOBS.SUMMONER] = \"anyone\\\\summoner\",\n   [FFXIV.JOBS.WARRIOR] = \"anyone\\\\warrior\",\n}\nMDT.jobs_acr_profile = {\n   [FFXIV.JOBS.PALADIN] = \"RikuPLD2\",\n   [FFXIV.JOBS.WARRIOR] = \"RikuWAR2\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"RikuDRK2\",\n   [FFXIV.JOBS.GUNBREAKER] = \"RikuGNB2\",\n   [FFXIV.JOBS.MONK] = \"RikuMNK2\",\n   [FFXIV.JOBS.DRAGOON] = \"RikuDRG2\",\n   [FFXIV.JOBS.NINJA] = \"RikuNIN2\",\n   [FFXIV.JOBS.SAMURAI] = \"TensorWeeb2\",\n   [FFXIV.JOBS.REAPER] = \"TensorReaper\",\n   [FFXIV.JOBS.REDMAGE] = \"RikuRDM2\",\n   [FFXIV.JOBS.WHITEMAGE] = \"Veil\",\n   [FFXIV.JOBS.SCHOLAR] = \"Educator\",\n   [FFXIV.JOBS.ASTROLOGIAN] = \"StarGazer\",\n   [FFXIV.JOBS.SAGE] = \"HM_Free_Profiles\",\n   [FFXIV.JOBS.BARD] = \"TensorRequiem2\",\n   [FFXIV.JOBS.MACHINIST] = \"TensorMagnum2\",\n   [FFXIV.JOBS.DANCER] = \"RikuDNC2\",\n   [FFXIV.JOBS.BLACKMAGE] = \"Salamander\",\n   [FFXIV.JOBS.SUMMONER] = \"TensorRuin2\",\n}\n\nfunction MDT.GetWorldName(id)\n   return MDT.worlds[id] or \"Unknown\"\nend\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -102,7 +102,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "local MDT = MistDogTag\nMDT.dogtaglastcheck = Now()\n\n-- name --\nMDT.isleader = false\nlocal tr_general_profile = TensorCore.API.TensorReactions.getGeneralTriggerProfileName()\nMDT.draw_name_red = true\nlocal acr = gACRSelectedProfiles[Player.job]\nlocal acr_correct = (acr == MDT.jobs_acr_profile[Player.job])\nlocal tr_correct = (tr_general_profile ==\n                      (MDT.jobs_tr_general_profile[Player.job] or MDT.jobs_tr_general_profile_default))\nMDT.draw_name_red = not (acr_correct and tr_correct)\n\nlocal skill_profile = gSkillProfile\nMDT.name_tooltip = \"\"\n\nif MDT.isleader then\n   MDT.name_text = \"*\" .. MDT.name_text\nend\n\nif acr then\n   MDT.name_tooltip = \"ACR: \" .. acr .. \"\\n\"\nend\n\nif skill_profile ~= \"None\" and not gACREnabled then\n   MDT.name_tooltip = MDT.name_tooltip .. \"Skill Profile: \" .. skill_profile .. \"\\n\"\nend\n\nif TensorCore ~= nil then\n   MDT.name_tooltip = MDT.name_tooltip .. \"TR General Profile: \" .. tr_general_profile .. \"\\n\"\nend\n\nif TimeSince(MDT.dogtaglastleadercheck) > 60000 then\n   MDT.dogtacklastleadercheck = Now()\n   local elist = table.valid(EntityList.crossworldparty) and EntityList.crossworldparty or EntityList.myparty\n   for _, e in pairs(elist) do\n      if e.isleader then\n         if e.id == Player.id then\n            MDT.isleader = true\n         end\n      end\n   end\nend\n\nlocal level_text\nif Player.level ~= Player.levels[Player.job] then\n   level_text = Player.level .. \"/\" .. Player.levels[Player.job]\nelse\n   level_text = Player.level\nend\n\nMDT.name_text = Player.name .. \" (\" .. level_text .. \" \" .. ffxivminion.classes[Player.job] .. \")\"\n\n-- map --\nMDT.map_text = GetMapName(Player.localmapid)\n\n-- world --\nMDT.world_text = MDT.GetWorldName(Player.currentworld)\n\nif (Player.currentworld ~= Player.homeworld) then\n   MDT.world_text = MDT.world_text .. \" (\" .. MDT.GetWorldName(Player.homeworld) .. \")\"\nend\n\nMDT.draw_map_red = not (MIsLoading() or Player.onmesh)\n\nMDT.map_tooltip = \"localmapid: \" .. Player.localmapid .. \"\\nmapid2: \" .. Player.mapid2 .. \"\\nmesh: \" ..\n                     ml_mesh_mgr.currentfilename\n\n-- privacy --\nif MDT.privacy then\n   MDT.name_text = MDT.name_text:gsub(Player.name, \"Fake Name\")\n   MDT.world_text = \"Fake Server\"\nend\n\nself.used = true\n",
+				actionLua = "local MDT = MistDogTag\nMDT.dogtaglastcheck = Now()\n\n-- name --\nMDT.isleader = false\nlocal tr_general_profile = TensorCore.API.TensorReactions.getGeneralTriggerProfileName()\nMDT.draw_name_red = true\nlocal acr = gACRSelectedProfiles[Player.job]\nlocal acr_correct = (MDT.jobs_acr_profile[Player.job] and (acr == MDT.jobs_acr_profile[Player.job])) or true\nlocal tr_correct = (tr_general_profile ==\n                      (MDT.jobs_tr_general_profile[Player.job] or MDT.jobs_tr_general_profile_default))\nMDT.draw_name_red = not (acr_correct and tr_correct)\n\nlocal skill_profile = gSkillProfile\nMDT.name_tooltip = \"\"\n\nif MDT.isleader then\n   MDT.name_text = \"*\" .. MDT.name_text\nend\n\nif acr then\n   MDT.name_tooltip = \"ACR: \" .. acr .. \"\\n\"\nend\n\nif skill_profile ~= \"None\" and not gACREnabled then\n   MDT.name_tooltip = MDT.name_tooltip .. \"Skill Profile: \" .. skill_profile .. \"\\n\"\nend\n\nif TensorCore ~= nil then\n   MDT.name_tooltip = MDT.name_tooltip .. \"TR General Profile: \" .. tr_general_profile .. \"\\n\"\nend\n\nif TimeSince(MDT.dogtaglastleadercheck) > 60000 then\n   MDT.dogtacklastleadercheck = Now()\n   local elist = table.valid(EntityList.crossworldparty) and EntityList.crossworldparty or EntityList.myparty\n   for _, e in pairs(elist) do\n      if e.isleader then\n         if e.id == Player.id then\n            MDT.isleader = true\n         end\n      end\n   end\nend\n\nlocal level_text\nif Player.level ~= Player.levels[Player.job] then\n   level_text = Player.level .. \"/\" .. Player.levels[Player.job]\nelse\n   level_text = Player.level\nend\n\nMDT.name_text = Player.name .. \" (\" .. level_text .. \" \" .. ffxivminion.classes[Player.job] .. \")\"\n\n-- map --\nMDT.map_text = GetMapName(Player.localmapid)\n\n-- world --\nMDT.world_text = MDT.GetWorldName(Player.currentworld)\n\nif (Player.currentworld ~= Player.homeworld) then\n   MDT.world_text = MDT.world_text .. \" (\" .. MDT.GetWorldName(Player.homeworld) .. \")\"\nend\n\nMDT.draw_map_red = not (MIsLoading() or Player.onmesh)\n\nMDT.map_tooltip = \"localmapid: \" .. Player.localmapid .. \"\\nmapid2: \" .. Player.mapid2 .. \"\\nmesh: \" ..\n                     ml_mesh_mgr.currentfilename\n\n-- privacy --\nif MDT.privacy then\n   MDT.name_text = MDT.name_text:gsub(Player.name, \"Fake Name\")\n   MDT.world_text = \"Fake Server\"\nend\n\nself.used = true\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -531,7 +531,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "42bd0a5d-d498-a9c9-97c8-248f00790926",
+		uuid = "52b86ff1-710d-cfac-9a38-16eeaeaf0722",
 	},
 	
 	{
@@ -1426,7 +1426,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "1d23dee7-6960-dc3c-a0c3-2e77b53eb5ed",
+		uuid = "a836eec0-814e-0f63-b28a-a79c4320237b",
 	},
 	
 	{
@@ -1904,7 +1904,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "9b61e67b-0e6b-d750-8d37-13ddef47a378",
+		uuid = "f7d11c41-bf19-4491-9c81-05aed365711d",
 	},
 	
 	{
@@ -2140,7 +2140,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "83aedde1-7ef0-3974-8713-6323c9118e3e",
+		uuid = "8e373a57-3f7c-fdc3-af75-26784f4afe0b",
 	},
 	
 	{
@@ -2376,7 +2376,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "db39118f-cd9c-bbe8-88f3-ebfb41ead687",
+		uuid = "47195b37-642a-2eff-ba4b-6fb6bc5c804c",
 	},
 	
 	{
@@ -2738,7 +2738,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "0b3fd062-e1f4-492b-a15f-7ab17e17024c",
+		uuid = "4ab03145-e278-b109-839d-eb53607ee9d3",
 	},
 	
 	{
@@ -3020,7 +3020,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "5478d150-f462-5e2c-afd3-c5383a33220b",
+		uuid = "26e944e2-9216-3d04-815e-9147e55884c3",
 	},
 	
 	{
@@ -3176,7 +3176,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "d7be34d6-b3e9-c46d-a494-7e393659e189",
+		uuid = "99dbf98e-bd68-0404-ba26-335af50cc81d",
 	},
 	
 	{
@@ -3727,7 +3727,7 @@ local tbl =
 				clusterRadius = 8,
 				clusterRange = 30,
 				comparator = 1,
-				conditionLua = "-- early stop condition (bot running/timer)\nreturn (TimeSince(data.PromptoLastInteract or 0) < 800) or FFXIV_Common_BotRunning == true or\n          (HusbandoMaxAddonStatus ~= nil and\n             (HusbandoMaxAddonStatus.Assist.Enabled == true or HusbandoMaxAddonStatus.DeepDungeon.Enabled == true or\n                HusbandoMaxAddonStatus.DungeonMaster.Enabled == true or HusbandoMaxAddonStatus.EurekaAnemos.Enabled ==\n                true or HusbandoMaxAddonStatus.EurekaHydatos.Enabled == true or\n                HusbandoMaxAddonStatus.EurekaPagos.Enabled == true or HusbandoMaxAddonStatus.EurekaPyros.Enabled == true or\n                HusbandoMaxAddonStatus.Events.Enabled == true or HusbandoMaxAddonStatus.HuntTracker.Enabled == true or\n                HusbandoMaxAddonStatus.PartyFollowAssist.Enabled == true or HusbandoMaxAddonStatus.TreasureMap.Enabled ==\n                true)) or (KitanoiFuncs ~= nil and KitanoiFuncs.AreKitanoiAddonsRunning() == true)\n",
+				conditionLua = "-- early stop condition (bot running/timer)\nreturn (TimeSince(data.PromptoLastInteract or 0) < 1000) or FFXIV_Common_BotRunning == true or\n          (HusbandoMaxAddonStatus ~= nil and\n             (HusbandoMaxAddonStatus.Assist.Enabled == true or HusbandoMaxAddonStatus.DeepDungeon.Enabled == true or\n                HusbandoMaxAddonStatus.DungeonMaster.Enabled == true or HusbandoMaxAddonStatus.EurekaAnemos.Enabled ==\n                true or HusbandoMaxAddonStatus.EurekaHydatos.Enabled == true or\n                HusbandoMaxAddonStatus.EurekaPagos.Enabled == true or HusbandoMaxAddonStatus.EurekaPyros.Enabled == true or\n                HusbandoMaxAddonStatus.Events.Enabled == true or HusbandoMaxAddonStatus.HuntTracker.Enabled == true or\n                HusbandoMaxAddonStatus.PartyFollowAssist.Enabled == true or HusbandoMaxAddonStatus.TreasureMap.Enabled ==\n                true)) or (KitanoiFuncs ~= nil and KitanoiFuncs.AreKitanoiAddonsRunning() == true)\n",
 				conditionType = 1,
 				conditions = 
 				{
@@ -4101,7 +4101,7 @@ local tbl =
 			},
 		},
 		enabled = true,
-		eventType = 1,
+		eventType = 12,
 		execute = "",
 		executeType = 1,
 		lastUse = 0,
@@ -4110,17 +4110,17 @@ local tbl =
 		name = "Mist - Prompto",
 		randomOffset = 0,
 		randomTimeout = 3,
-		throttleTime = 1000,
+		throttleTime = 0,
 		time = 0,
 		timeRandomRange = false,
 		timeRange = false,
 		timelineIndex = 0,
-		timeout = 5,
+		timeout = 1,
 		timerEndOffset = 0,
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "660a2fdf-d6c7-fbe3-b26c-b9c31020abd5",
+		uuid = "bf31d871-5acc-ad1e-9b81-a7c9ff087c1b",
 	},
 	
 	{
@@ -4592,7 +4592,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "17f2ad81-a634-d9bd-91d8-523688dc38ae",
+		uuid = "a78f5f98-c139-6028-ad23-3fa2d01eb5e1",
 	},
 	
 	{
@@ -5125,7 +5125,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "b3bdafad-d4cb-42f8-9949-0b478a364f33",
+		uuid = "a4394f7e-7d0b-496e-a5fa-e904e5bc185d",
 	},
 }
 
