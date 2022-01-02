@@ -3727,7 +3727,7 @@ local tbl =
 				clusterRadius = 8,
 				clusterRange = 30,
 				comparator = 1,
-				conditionLua = "-- early stop condition (bot running/timer)\nreturn (TimeSince(data.PromptoLastInteract or 0) < 750) or FFXIV_Common_BotRunning == true or\n          (HusbandoMaxAddonStatus ~= nil and\n             (HusbandoMaxAddonStatus.Assist.Enabled == true or HusbandoMaxAddonStatus.DeepDungeon.Enabled == true or\n                HusbandoMaxAddonStatus.DungeonMaster.Enabled == true or HusbandoMaxAddonStatus.EurekaAnemos.Enabled ==\n                true or HusbandoMaxAddonStatus.EurekaHydatos.Enabled == true or\n                HusbandoMaxAddonStatus.EurekaPagos.Enabled == true or HusbandoMaxAddonStatus.EurekaPyros.Enabled == true or\n                HusbandoMaxAddonStatus.Events.Enabled == true or HusbandoMaxAddonStatus.HuntTracker.Enabled == true or\n                HusbandoMaxAddonStatus.PartyFollowAssist.Enabled == true or HusbandoMaxAddonStatus.TreasureMap.Enabled ==\n                true)) or (KitanoiFuncs ~= nil and KitanoiFuncs.AreKitanoiAddonsRunning() == true)\n",
+				conditionLua = "-- early stop condition (bot running/timer)\nreturn (TimeSince(data.PromptoLastInteract or 0) < 800) or FFXIV_Common_BotRunning == true or\n          (HusbandoMaxAddonStatus ~= nil and\n             (HusbandoMaxAddonStatus.Assist.Enabled == true or HusbandoMaxAddonStatus.DeepDungeon.Enabled == true or\n                HusbandoMaxAddonStatus.DungeonMaster.Enabled == true or HusbandoMaxAddonStatus.EurekaAnemos.Enabled ==\n                true or HusbandoMaxAddonStatus.EurekaHydatos.Enabled == true or\n                HusbandoMaxAddonStatus.EurekaPagos.Enabled == true or HusbandoMaxAddonStatus.EurekaPyros.Enabled == true or\n                HusbandoMaxAddonStatus.Events.Enabled == true or HusbandoMaxAddonStatus.HuntTracker.Enabled == true or\n                HusbandoMaxAddonStatus.PartyFollowAssist.Enabled == true or HusbandoMaxAddonStatus.TreasureMap.Enabled ==\n                true)) or (KitanoiFuncs ~= nil and KitanoiFuncs.AreKitanoiAddonsRunning() == true)\n",
 				conditionType = 1,
 				conditions = 
 				{
@@ -4120,7 +4120,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "4834a393-4dbf-e673-ae2f-af867fddaddd",
+		uuid = "660a2fdf-d6c7-fbe3-b26c-b9c31020abd5",
 	},
 	
 	{
