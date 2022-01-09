@@ -531,7 +531,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "7ae2ff95-c3ee-efa3-a4af-8b448cdde56c",
+		uuid = "e8718227-5ec7-7097-aed2-f9da34d1c987",
 	},
 	
 	{
@@ -634,7 +634,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "gAssistUseAutoFace = true\ngPotionHP = 0\ngRestHP = 0\ngUseSprint = false\ngSprintDist = 80\ngMountDist = 200\n\nlocal target = MGetTarget()\nlocal target_attackable = false\nif (table.valid(target)) then\n   target_attackable = target.attackable\nend\n\ngACREnabled = ((not Player.ismounted and MissingBuff(Player.id, 1534)) and\n                 (InInstance() or target_attackable or Player.incombat)) and not BehaviorManager:Running()\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMistUtility.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
+				actionLua = "gAssistUseAutoFace = true\ngPotionHP = 0\ngRestHP = 0\ngUseSprint = false\ngSprintDist = 50\ngMountDist = 200\n\nlocal target = MGetTarget()\nlocal target_attackable = false\nif (table.valid(target)) then\n   target_attackable = target.attackable\nend\n\ngACREnabled = ((not Player.ismounted and MissingBuff(Player.id, 1534)) and\n                 (InInstance() or target_attackable or Player.incombat)) and not BehaviorManager:Running()\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMistUtility.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -1426,7 +1426,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "dfb5e4f0-3505-b1c9-9efa-44a421327ccd",
+		uuid = "9b41a233-7776-b6d4-b35d-3d120e3475cd",
 	},
 	
 	{
@@ -1509,7 +1509,7 @@ local tbl =
 				clusterRadius = 8,
 				clusterRange = 30,
 				comparator = 1,
-				conditionLua = "if (table.valid(ml_navigation.path) and table.size(ml_navigation.path) > 0) then\n  local myPos = Player.pos\n\t\tlocal gotoPos = ml_navigation.path[#ml_navigation.path]\n  local distance = PDistance3D(myPos.x, myPos.y, myPos.z, gotoPos.x, gotoPos.y, gotoPos.z)\n  --d(\"Sprint: \"..distance)\n  return distance > tonumber(gSprintDist) and distance < tonumber(gMountDist)\nend\n    \nreturn false\n",
+				conditionLua = "if (table.valid(ml_navigation.path) and table.size(ml_navigation.path) > 0) then\n  local myPos = Player.pos\n\t\tlocal gotoPos = ml_navigation.path[#ml_navigation.path]\n  local distance = PDistance3D(myPos.x, myPos.y, myPos.z, gotoPos.x, gotoPos.y, gotoPos.z)\n  d(\"Sprint: \"..distance)\n  return distance > tonumber(gSprintDist) and distance < tonumber(gMountDist)\nend\n    \nreturn false\n",
 				conditionType = 1,
 				conditions = 
 				{
@@ -1884,7 +1884,7 @@ local tbl =
 				setFirstMatch = false,
 			},
 		},
-		enabled = false,
+		enabled = true,
 		eventType = 1,
 		execute = "",
 		executeType = 1,
@@ -1904,7 +1904,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "5796f84b-31b5-8874-bad9-5a9ffaaaa61c",
+		uuid = "bd2a1f05-f922-6c08-ad18-84f6c8581bbd",
 	},
 	
 	{
@@ -2140,7 +2140,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "1d87f57a-cdb9-059c-896a-5bdfa023cd8e",
+		uuid = "ac43ad9f-bc5c-18ac-8b50-4ca5fab9397d",
 	},
 	
 	{
@@ -2376,7 +2376,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "1d85ccbf-326b-0a7e-8b19-dce813cf6730",
+		uuid = "f9eb80c4-8c70-e5ae-b6bc-bde369c943c0",
 	},
 	
 	{
@@ -2738,7 +2738,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "9ffb017b-ef04-e5e5-9d2f-7759bb0c5c57",
+		uuid = "f0d5563c-76d9-c620-ac9c-e7cab85b09ff",
 	},
 	
 	{
@@ -2814,7 +2814,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "01cf421b-a854-0dce-9a6b-708e76ec4263",
+		uuid = "af48f5ae-6547-9508-a157-f0dd4221c215",
 	},
 	
 	{
@@ -2969,7 +2969,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "419c9a3b-52a2-5301-9303-161360faa7b7",
+		uuid = "eaf10dae-844f-8b60-9885-aa1a0dde9ca7",
 	},
 	
 	{
@@ -4120,7 +4120,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "b48b27da-f308-5b99-b82d-d9d51164b03e",
+		uuid = "edf1ae3a-7054-47eb-b972-6d9df4f0860f",
 	},
 	
 	{
@@ -4408,7 +4408,7 @@ local tbl =
 				clusterRadius = 8,
 				clusterRange = 30,
 				comparator = 1,
-				conditionLua = "return (HusbandoMaxAddonStatus and HusbandoMaxAddonStatus.DungeonMaster.Enabled and InInstance())\n",
+				conditionLua = "return (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DungeonMaster.Enabled and InInstance())\n",
 				conditionType = 1,
 				conditions = 
 				{
@@ -4644,7 +4644,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "90ea94e4-09d1-ba19-9562-5561bb7434d1",
+		uuid = "b5dfdb4f-21c8-9f1e-a518-34e8a1767c86",
 	},
 	
 	{
@@ -4800,7 +4800,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "99118eaf-5d00-c2d9-b954-015ac6a53da1",
+		uuid = "72421554-bdf6-0171-8255-a25024434e99",
 	},
 }
 
