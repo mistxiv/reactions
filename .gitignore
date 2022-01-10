@@ -2,3 +2,4 @@
 GeneralTriggers/*
 !GeneralTriggers/
 !GeneralTriggers/mist.lua
+!README.md
