@@ -531,7 +531,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "7e9e6618-da74-eacf-a8de-0259c3f1b0ea",
+		uuid = "da65c920-84c3-8343-8930-ac6341ef08d1",
 	},
 	
 	{
@@ -1426,12 +1426,59 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "ec91546a-29b7-3896-8fe7-9c279d5b23df",
+		uuid = "d904f5f7-cc43-2f6d-bf0d-edcc18125fe0",
 	},
 	
 	{
 		actions = 
 		{
+			
+			{
+				aType = 1,
+				actionID = 7557,
+				actionLua = "",
+				allowInterrupt = false,
+				atomicPriority = false,
+				castAtMouse = false,
+				castPosX = 0,
+				castPosY = 0,
+				castPosZ = 0,
+				clusterMinPercent = false,
+				clusterMinTarget = 1,
+				clusterRadius = 8,
+				clusterRange = 30,
+				conditions = 
+				{
+					6,
+				},
+				endIfUsed = true,
+				fallthrough = false,
+				gVar = "",
+				gVarValue = 1,
+				ignoreWeaveRules = true,
+				isAreaTarget = false,
+				luaNeedsWeaveWindow = false,
+				luaReturnsAction = false,
+				name = "Peloton",
+				potType = 1,
+				setTarget = false,
+				showPositionPreview = false,
+				stopCasting = false,
+				stopMoving = false,
+				targetContentID = -1,
+				targetName = "",
+				targetSubType = "Nearest",
+				targetType = "Self",
+				untarget = false,
+				useForWeaving = false,
+				useItem = false,
+				useItemID = 0,
+				useItemName = "",
+				usePot = false,
+				used = false,
+				variableIsHover = false,
+				variableTogglesType = 1,
+			},
 			
 			{
 				aType = 1,
@@ -1449,11 +1496,7 @@ local tbl =
 				clusterRange = 30,
 				conditions = 
 				{
-					1,
-					2,
-					3,
-					4,
-					5,
+					6,
 				},
 				endIfUsed = true,
 				fallthrough = false,
@@ -1883,6 +1926,90 @@ local tbl =
 				setEventTargetSubtype = 1,
 				setFirstMatch = false,
 			},
+			
+			{
+				actionCDValue = 0,
+				actionID = -1,
+				buffCheckType = 1,
+				buffDuration = 0,
+				buffID = -1,
+				buffIDList = 
+				{
+				},
+				category = 6,
+				channelCheckSpellID = -1,
+				channelCheckSpellIDList = 
+				{
+				},
+				channelCheckTimeRemain = 0,
+				channelCheckType = 1,
+				clusterMinPercent = false,
+				clusterMinTarget = 1,
+				clusterOriginalTarget = false,
+				clusterRadius = 8,
+				clusterRange = 30,
+				comparator = 1,
+				conditionLua = "",
+				conditionType = 1,
+				conditions = 
+				{
+					1,
+					2,
+					3,
+					4,
+					5,
+				},
+				contentid = -1,
+				dequeueIfLuaFalse = false,
+				enmityValue = 0,
+				eventArgOptionType = 1,
+				eventArgType = 1,
+				eventBuffDuration = 0,
+				eventBuffID = -1,
+				eventChatLine = "",
+				eventEntityContentID = -1,
+				eventEntityID = -1,
+				eventEntityName = "",
+				eventMarkerID = -1,
+				eventOwnerContentID = -1,
+				eventOwnerID = -1,
+				eventOwnerName = "",
+				eventSpellID = -1,
+				eventSpellName = -1,
+				eventTargetContentID = -1,
+				eventTargetID = -1,
+				eventTargetName = "",
+				filterTargetSubtype = "Nearest",
+				filterTargetType = "Self",
+				gaugeIndex = 1,
+				gaugeValue = 0,
+				hpType = 1,
+				hpValue = 0,
+				inCombatType = 1,
+				inRangeValue = 0,
+				lastSkillID = -1,
+				localmapid = -1,
+				matchAnyBuff = false,
+				minTargetPercent = false,
+				mpType = 1,
+				mpValue = 0,
+				name = "f - zoom zoom",
+				partyHpType = 1,
+				partyHpValue = 0,
+				partyMpType = 1,
+				partyMpValue = 0,
+				partyTargetContentID = -1,
+				partyTargetName = "",
+				partyTargetNumber = 0,
+				partyTargetSubType = "Nearest",
+				partyTargetType = "All",
+				rangeCheckSourceSubType = "Nearest",
+				rangeCheckSourceType = "Self",
+				rangeSourceContentID = -1,
+				rangeSourceName = "",
+				setEventTargetSubtype = 1,
+				setFirstMatch = false,
+			},
 		},
 		enabled = true,
 		eventType = 1,
@@ -1904,7 +2031,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "55179457-5388-601e-9c81-3f493fa55b07",
+		uuid = "8d2554ce-2a59-6e95-8cf6-d6a38b5a73f0",
 	},
 	
 	{
@@ -2140,7 +2267,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "ffd0d9b9-4a15-54bc-92c2-1c99678f0535",
+		uuid = "4f5c8423-5baf-5bb2-a7b4-dd4cc136149d",
 	},
 	
 	{
@@ -2376,7 +2503,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "88b7c972-2dff-7d56-8b7e-88b426bbf61b",
+		uuid = "e951c248-f2a5-a4e1-aa99-8952e0794cd9",
 	},
 	
 	{
@@ -2738,7 +2865,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "e8996b8c-24b7-856f-b450-92e52172abc6",
+		uuid = "dbfcb348-b361-add2-a64a-1bb7922a094e",
 	},
 	
 	{
@@ -2814,7 +2941,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "d021ea38-523d-b9ce-8552-8fb1b81be1ec",
+		uuid = "8af409c0-b4c0-06e1-9db6-e0f7159f0318",
 	},
 	
 	{
@@ -2969,7 +3096,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "ce77b17f-8432-88f3-804e-147526ced8c5",
+		uuid = "151de43c-0f98-1c4e-b82b-3eeac1b017f9",
 	},
 	
 	{
@@ -4120,7 +4247,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "0854a0be-5262-a2d4-8139-18b050eec304",
+		uuid = "51482b84-9322-de18-b8ad-28635b2390d0",
 	},
 	
 	{
@@ -4644,7 +4771,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "a0beb80a-1eba-0efe-8f1a-d8db15df67e0",
+		uuid = "cedebd5f-f598-1715-82cd-b60cc2dba255",
 	},
 	
 	{
@@ -4800,7 +4927,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "72ba5ddf-e504-0052-aad5-bf85fee39c47",
+		uuid = "304672dc-79d6-9147-bf8f-ab556ad85472",
 	},
 }
 
