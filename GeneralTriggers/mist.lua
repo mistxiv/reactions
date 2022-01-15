@@ -531,7 +531,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "80ee6c85-0546-4cf6-9bd5-ab7914f56607",
+		uuid = "daeb100b-4b65-aa41-9da1-10a0f060ab58",
 	},
 	
 	{
@@ -635,7 +635,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "gAssistUseAutoFace = true\ngPotionHP = 0\ngRestHP = 0\ngUseSprint = false\ngSprintDist = 50\ngMountDist = 75\n\nlocal target = MGetTarget()\nlocal target_attackable = false\nif (table.valid(target)) then\n   target_attackable = target.attackable\nend\n\ngACREnabled = ((not Player.ismounted and MissingBuff(Player.id, 1534)) and\n                 (InInstance() or target_attackable or Player.incombat)) and not BehaviorManager:Running()\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMistUtility.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
+				actionLua = "gAssistUseAutoFace = true\ngPotionHP = 0\ngRestHP = 0\ngUseSprint = false\ngSprintDist = 50\ngMountDist = 75\n\nlocal target = MGetTarget()\nlocal target_attackable = false\nif (table.valid(target)) then\n   target_attackable = target.attackable\nend\n\ngACREnabled = ((not Player.ismounted and MissingBuff(Player.id, 1534)) and\n                 (InInstance() or target_attackable or Player.incombat or (Duty:GetActiveDutyInfo().dutytype or 0) ==\n                    32774)) and not BehaviorManager:Running()\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMistUtility.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -1412,7 +1412,7 @@ local tbl =
 		eventType = 12,
 		execute = "medicated_spiritbond = false\nfor _, buff in pairs(Player.Buffs) do \n\t\tif buff.id == 49 and buff.stacks == 10452 then \n\t\t\t\tmedicated_spiritbond=true \n\t\tend \nend\nreturn medicated_spiritbond",
 		executeType = 1,
-		lastUse = 0,
+		lastUse = 4784859,
 		luaNeedsWeaveWindow = false,
 		luaReturnsAction = false,
 		name = "Mist - Utility",
@@ -1428,7 +1428,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "ddfb1952-8498-ca82-87d4-c55834b28f5f",
+		uuid = "d76fc91a-15de-bde1-8649-4c2107288e10",
 	},
 	
 	{
@@ -1818,7 +1818,7 @@ local tbl =
 			},
 		},
 		enabled = true,
-		eventType = 12,
+		eventType = 1,
 		execute = "",
 		executeType = 1,
 		lastUse = 0,
@@ -1837,7 +1837,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "176fff6e-d161-2f93-ad68-79436c626b15",
+		uuid = "a4da8e75-c418-db07-8a8d-5cc82986b53d",
 	},
 	
 	{
@@ -2073,7 +2073,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "4a86d621-2a87-b7e0-a3c8-e4ecbff51d1f",
+		uuid = "dcaf2bc5-b766-91e6-876a-61652e0d4cbc",
 	},
 	
 	{
@@ -2309,7 +2309,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "87d7bd8c-d97c-a0bd-9958-80c14cb85bae",
+		uuid = "7f8c32f9-ab6d-b6ea-9e41-874e45cc01fb",
 	},
 	
 	{
@@ -2652,7 +2652,6 @@ local tbl =
 			},
 		},
 		enabled = true,
-		eventConditionMismatch = true,
 		eventType = 12,
 		execute = "",
 		executeType = 1,
@@ -2672,7 +2671,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "4a802ebe-5c4a-7883-9bba-643784e01a2d",
+		uuid = "05d5be03-015a-926d-9633-40b485f1875c",
 	},
 	
 	{
@@ -2682,7 +2681,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "local filename = GetStartupPath() .. [[\\prom\\ffxivminion_]] .. GetUUID() .. [[.prom]]\nlocal outstring\nlocal tbl = {\"# HELP ffxiv_item Item quantity\", \"# TYPE ffxiv_item gauge\"}\nlocal items_summed = {\n   [1] = 0, -- gil\n   [20] = 0, -- storm seal\n   [21] = 0, -- serpent seal\n   [22] = 0, -- flame seal\n   [25] = 0, -- wolf mark\n   [27] = 0, -- allied seal\n   [29] = 0, -- MGP\n   [12669] = 0, -- hi-cordial\n   [33328] = 0, -- ostensibly special timeworn map\n   [33916] = 0, -- grade 8 dark matter\n}\n\nlocal item_ids = {}\nfor k, _ in pairs(items_summed) do\n   item_ids[#item_ids + 1] = k\nend\n\n-- items\nlocal ffxiv_item = \"ffxiv_item{character=\\\"%s\\\",id=\\\"%s\\\"} %d\"\nlocal inventories = {FFXIV.INVENTORYTYPE.INV_BAG0, FFXIV.INVENTORYTYPE.INV_BAG1, FFXIV.INVENTORYTYPE.INV_BAG2,\n                     FFXIV.INVENTORYTYPE.INV_BAG3, FFXIV.INVENTORYTYPE.INV_CURRENCY, FFXIV.INVENTORYTYPE.INV_SHARDS}\nlocal items = GetItems(item_ids, inventories)\nfor _, result in pairs(items) do\n   local item = result.item\n   items_summed[item.id] = items_summed[item.id] + item.count\nend\n\nfor item_id, item_count in pairs(items_summed) do\n   tbl[#tbl + 1] = string.format(ffxiv_item, Player.name, item_id, item_count)\nend\n\n-- special currencies\ntbl[#tbl + 1] = \"# HELP ffxiv_currency Currency count\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_currency gauge\"\nlocal currencies = {28, -- Poetics\n42, -- Allagan Tomestone of Aphorism\n43, -- Allagan Tomestone of Astronomy\n21072, -- Venture\n25199, -- White Crafters' Scrip \n25200, -- White Gatherers' Scrip\n26807, -- bicolor gemstone\n28063, -- skybuilders' scrip\n33913, -- Purple Crafters' Scrip\n33914 -- Purple Gatherers' Scrip\n}\nlocal gsc = Inventory:GetSpecialCurrencies()\nlocal ffxiv_currency = \"ffxiv_currency{character=\\\"%s\\\",id=\\\"%s\\\"} %d\"\nfor _, id in pairs(currencies) do\n   local count = (gsc[id] and gsc[id].count) or Inventory:GetCurrencyCountByID(id)\n   if (count) then\n      tbl[#tbl + 1] = string.format(ffxiv_currency, Player.name, id, count)\n   end\nend\n\n-- leve allowances\nlocal allowances = Quest:GetQuestAllowance()\nif allowances then\n   tbl[#tbl + 1] = \"# HELP ffxiv_leve_allowances Number of leve allowances\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_leve_allowances gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_leve_allowances{character=\\\"%s\\\"} %d\", Player.name, allowances)\nend\n\n-- free inventory slots\nlocal free = 0\nfor i = 0, 3 do\n   free = free + Inventory:Get(i).free\nend\ntbl[#tbl + 1] = \"# HELP ffxiv_inventory_free_slots Number of free inventory slots\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_inventory_free_slots gauge\"\ntbl[#tbl + 1] = string.format(\"ffxiv_inventory_free_slots{character=\\\"%s\\\"} %d\", Player.name, free)\n\n-- heartbeat\ntbl[#tbl + 1] = \"# HELP ffxiv_heartbeat Lua os.time() - Unix timestamp in seconds\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_heartbeat gauge\"\ntbl[#tbl + 1] =\n   string.format(\"ffxiv_heartbeat{character=\\\"%s\\\",pid=\\\"%s\\\"} %d\", Player.name, GetCurrentPID(), os.time())\n\n-- job exp/lvl\nif (Player:GetSyncLevel() == 0) then\n   local exp = GetControl(\"_Exp\")\n   local expd = exp:GetData()\n   if (expd ~= nil) then\n      local exps = exp:GetStrings()\n      local level_exact = Player.level + (expd.current / expd.max)\n      local level_job = string.sub(exps[4], 1, 3)\n\n      tbl[#tbl + 1] = \"# HELP ffxiv_exp Experience for current job\"\n      tbl[#tbl + 1] = \"# TYPE ffxiv_exp gauge\"\n      tbl[#tbl + 1] = string.format(\"ffxiv_exp{character=\\\"%s\\\",job=\\\"%s\\\"} %f\", Player.name, level_job, level_exact)\n   end\nend\n\nif (Player.levels[Player.job] < 90 and not InInstance()) then\n   local hob2 = (HasBuffX(Player.id, 365, 10) and 0 or 1)\n   tbl[#tbl + 1] = \"# HELP ffxiv_heat_of_battle_ii Heat of Battle II XP buff\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_heat_of_battle_ii gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_heat_of_battle_ii{character=\\\"%s\\\"} %d\", Player.name, hob2)\nend\n\n-- gp \nif (In(Player.job, FFXIV.JOBS.BOTANIST, FFXIV.JOBS.MINER, FFXIV.JOBS.FISHER)) then\n   tbl[#tbl + 1] = \"# HELP ffxiv_gp_current Current GP\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_gp_current gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_gp_current{character=\\\"%s\\\"} %d\", Player.name, Player.gp.current)\n\n   tbl[#tbl + 1] = \"# HELP ffxiv_gp_max Max GP\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_gp_max gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_gp_max{character=\\\"%s\\\"} %d\", Player.name, Player.gp.max)\nend\n\n-- finish up\nFileWrite(filename, table.concat(tbl, \"\\n\") .. \"\\n\")\ndata.MistPromWriteTime = Now()\nself.used = true\n",
+				actionLua = "local filename = GetStartupPath() .. [[\\prom\\ffxivminion_]] .. GetUUID() .. [[.prom]]\nlocal outstring\nlocal tbl = {\"# HELP ffxiv_item Item quantity\", \"# TYPE ffxiv_item gauge\"}\nlocal items_summed = {\n   [1] = 0, -- gil\n   [20] = 0, -- storm seal\n   [21] = 0, -- serpent seal\n   [22] = 0, -- flame seal\n   [25] = 0, -- wolf mark\n   [27] = 0, -- allied seal\n   [29] = 0, -- MGP\n   [12669] = 0, -- hi-cordial\n   [33328] = 0, -- ostensibly special timeworn map\n   [33916] = 0, -- grade 8 dark matter\n}\n\nlocal item_ids = {}\nfor k, _ in pairs(items_summed) do\n   item_ids[#item_ids + 1] = k\nend\n\n-- items\nlocal ffxiv_item = \"ffxiv_item{character=\\\"%s\\\",id=\\\"%s\\\"} %d\"\nlocal inventories = {FFXIV.INVENTORYTYPE.INV_BAG0, FFXIV.INVENTORYTYPE.INV_BAG1, FFXIV.INVENTORYTYPE.INV_BAG2,\n                     FFXIV.INVENTORYTYPE.INV_BAG3, FFXIV.INVENTORYTYPE.INV_CURRENCY, FFXIV.INVENTORYTYPE.INV_SHARDS}\nlocal items = GetItems(item_ids, inventories)\nfor _, result in pairs(items) do\n   local item = result.item\n   items_summed[item.id] = items_summed[item.id] + item.count\nend\n\nfor item_id, item_count in pairs(items_summed) do\n   tbl[#tbl + 1] = string.format(ffxiv_item, Player.name, item_id, item_count)\nend\n\n-- special currencies\ntbl[#tbl + 1] = \"# HELP ffxiv_currency Currency count\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_currency gauge\"\nlocal currencies = {28, -- Poetics\n42, -- Allagan Tomestone of Aphorism\n43, -- Allagan Tomestone of Astronomy\n21072, -- Venture\n25199, -- White Crafters' Scrip \n25200, -- White Gatherers' Scrip\n26807, -- bicolor gemstone\n28063, -- skybuilders' scrip\n33913, -- Purple Crafters' Scrip\n33914 -- Purple Gatherers' Scrip\n}\nlocal gsc = Inventory:GetSpecialCurrencies()\nlocal ffxiv_currency = \"ffxiv_currency{character=\\\"%s\\\",id=\\\"%s\\\"} %d\"\nfor _, id in pairs(currencies) do\n   local count = (gsc[id] and gsc[id].count) or Inventory:GetCurrencyCountByID(id)\n   if (count) then\n      tbl[#tbl + 1] = string.format(ffxiv_currency, Player.name, id, count)\n   end\nend\n\n-- leve allowances\nlocal allowances = Quest:GetQuestAllowance()\nif allowances then\n   tbl[#tbl + 1] = \"# HELP ffxiv_leve_allowances Number of leve allowances\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_leve_allowances gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_leve_allowances{character=\\\"%s\\\"} %d\", Player.name, allowances)\nend\n\n-- free inventory slots\nlocal free = 0\nfor i = 0, 3 do\n   free = free + Inventory:Get(i).free\nend\ntbl[#tbl + 1] = \"# HELP ffxiv_inventory_free_slots Number of free inventory slots\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_inventory_free_slots gauge\"\ntbl[#tbl + 1] = string.format(\"ffxiv_inventory_free_slots{character=\\\"%s\\\"} %d\", Player.name, free)\n\n-- heartbeat\ntbl[#tbl + 1] = \"# HELP ffxiv_heartbeat Lua os.time() - Unix timestamp in seconds\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_heartbeat gauge\"\ntbl[#tbl + 1] =\n   string.format(\"ffxiv_heartbeat{character=\\\"%s\\\",pid=\\\"%s\\\"} %d\", Player.name, GetCurrentPID(), os.time())\n\n-- job exp/lvl\nif (Player.level == Player.levels[Player.job]) then\n   local exp = GetControl(\"_Exp\")\n   local expd = exp:GetData()\n   if (expd ~= nil) then\n      local exps = exp:GetStrings()\n      local level_exact = Player.level + (expd.current / expd.max)\n      local level_job = string.sub(exps[4], 1, 3)\n\n      tbl[#tbl + 1] = \"# HELP ffxiv_exp Experience for current job\"\n      tbl[#tbl + 1] = \"# TYPE ffxiv_exp gauge\"\n      tbl[#tbl + 1] = string.format(\"ffxiv_exp{character=\\\"%s\\\",job=\\\"%s\\\"} %f\", Player.name, level_job, level_exact)\n   end\nend\n\nif (Player.levels[Player.job] < 90 and not InInstance()) then\n   local hob2 = (HasBuffX(Player.id, 365, 10) and 0 or 1)\n   tbl[#tbl + 1] = \"# HELP ffxiv_heat_of_battle_ii Heat of Battle II XP buff\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_heat_of_battle_ii gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_heat_of_battle_ii{character=\\\"%s\\\"} %d\", Player.name, hob2)\nend\n\n-- gp \nif (In(Player.job, FFXIV.JOBS.BOTANIST, FFXIV.JOBS.MINER, FFXIV.JOBS.FISHER)) then\n   tbl[#tbl + 1] = \"# HELP ffxiv_gp_current Current GP\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_gp_current gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_gp_current{character=\\\"%s\\\"} %d\", Player.name, Player.gp.current)\n\n   tbl[#tbl + 1] = \"# HELP ffxiv_gp_max Max GP\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_gp_max gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_gp_max{character=\\\"%s\\\"} %d\", Player.name, Player.gp.max)\nend\n\n-- finish up\nFileWrite(filename, table.concat(tbl, \"\\n\") .. \"\\n\")\ndata.MistPromWriteTime = Now()\nself.used = true\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -2732,7 +2731,7 @@ local tbl =
 		eventType = 12,
 		execute = "",
 		executeType = 1,
-		lastUse = 0,
+		lastUse = 41716968,
 		luaNeedsWeaveWindow = false,
 		luaReturnsAction = false,
 		name = "Mist - Prometheus",
@@ -2748,7 +2747,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "b4995523-9509-70b4-b60d-5e657581adb9",
+		uuid = "b313ff5a-1776-a183-9e9e-c169aaaadf21",
 	},
 	
 	{
@@ -2903,7 +2902,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "a84ac74b-a6d2-6e75-bb9b-ccbc46027175",
+		uuid = "5020ab27-0832-4645-9a93-7ac5698e460c",
 	},
 	
 	{
@@ -4035,7 +4034,7 @@ local tbl =
 			},
 		},
 		enabled = true,
-		eventType = 1,
+		eventType = 12,
 		execute = "",
 		executeType = 1,
 		lastUse = 0,
@@ -4054,7 +4053,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "9d6b1086-a974-5537-a16d-8c009d677820",
+		uuid = "3afbd689-77bc-bea8-bc99-cf1fe19b8618",
 	},
 	
 	{
@@ -4578,7 +4577,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "e304ca96-c1f5-af2f-bddd-c37ab1b59000",
+		uuid = "dd52d82d-e90a-6d5b-adcf-3cb1bed5e07b",
 	},
 	
 	{
@@ -4734,7 +4733,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "ab25c880-9b55-3038-8f9f-a4a154568a4b",
+		uuid = "50b31caf-7683-bb6f-9b49-1eb559871cc6",
 	},
 }
 
