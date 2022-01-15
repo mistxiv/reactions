@@ -531,7 +531,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "daeb100b-4b65-aa41-9da1-10a0f060ab58",
+		uuid = "08ff239d-1134-75df-b28c-541e8a3a7c71",
 	},
 	
 	{
@@ -635,7 +635,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "gAssistUseAutoFace = true\ngPotionHP = 0\ngRestHP = 0\ngUseSprint = false\ngSprintDist = 50\ngMountDist = 75\n\nlocal target = MGetTarget()\nlocal target_attackable = false\nif (table.valid(target)) then\n   target_attackable = target.attackable\nend\n\ngACREnabled = ((not Player.ismounted and MissingBuff(Player.id, 1534)) and\n                 (InInstance() or target_attackable or Player.incombat or (Duty:GetActiveDutyInfo().dutytype or 0) ==\n                    32774)) and not BehaviorManager:Running()\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMistUtility.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
+				actionLua = "local ffxivminion_settings = {\n   gAssistUseAutoFace = true,\n   gAssistUseLegacy = true,\n   gEurekaAvoidHP = 0,\n   gEurekaFleeHP = 0,\n   gEurekaPotionHP = 0,\n   gEurekaRestHP = 0,\n   gFleeHP = 0,\n   gFleeMP = 0,\n   gMountDist = 75,\n   gPotionHP = 0,\n   gPotionMP = 0,\n   gRestHP = 0,\n   gRestMP = 0,\n   gSprintDist = 50,\n   gUseSprint = false,\n}\n\nfor k, v in pairs(ffxivminion_settings) do\n   _G[k] = v\n   Settings.FFXIVMINION[k] = v\nend\n\nlocal target = MGetTarget()\nlocal target_attackable = false\nif (table.valid(target)) then\n   target_attackable = target.attackable\nend\n\nlocal duty_info = Duty:GetActiveDutyInfo()\ngACREnabled = ((not Player.ismounted and MissingBuff(Player.id, 1534)) and\n                 (InInstance() or target_attackable or Player.incombat or (duty_info and duty_info.dutytype == 32774)) and\n                 not BehaviorManager:Running())\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMistUtility.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -1408,11 +1408,10 @@ local tbl =
 			},
 		},
 		enabled = true,
-		eventConditionMismatch = true,
 		eventType = 12,
 		execute = "medicated_spiritbond = false\nfor _, buff in pairs(Player.Buffs) do \n\t\tif buff.id == 49 and buff.stacks == 10452 then \n\t\t\t\tmedicated_spiritbond=true \n\t\tend \nend\nreturn medicated_spiritbond",
 		executeType = 1,
-		lastUse = 4784859,
+		lastUse = 0,
 		luaNeedsWeaveWindow = false,
 		luaReturnsAction = false,
 		name = "Mist - Utility",
@@ -1428,7 +1427,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "d76fc91a-15de-bde1-8649-4c2107288e10",
+		uuid = "f0c475cf-1239-8fda-9248-48935a0fb337",
 	},
 	
 	{
@@ -1837,7 +1836,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "a4da8e75-c418-db07-8a8d-5cc82986b53d",
+		uuid = "0c11b33d-319b-4b85-ae9b-cf47090d970d",
 	},
 	
 	{
@@ -2073,7 +2072,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "dcaf2bc5-b766-91e6-876a-61652e0d4cbc",
+		uuid = "81988358-e8cd-599a-ac7c-d21ba8a0e554",
 	},
 	
 	{
@@ -2309,7 +2308,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "7f8c32f9-ab6d-b6ea-9e41-874e45cc01fb",
+		uuid = "1dc4893d-718b-1a57-9b11-b7e733e4ef93",
 	},
 	
 	{
@@ -2671,7 +2670,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "05d5be03-015a-926d-9633-40b485f1875c",
+		uuid = "d368e107-e631-a5f0-baf7-b82a569cc28a",
 	},
 	
 	{
@@ -2731,7 +2730,7 @@ local tbl =
 		eventType = 12,
 		execute = "",
 		executeType = 1,
-		lastUse = 41716968,
+		lastUse = 0,
 		luaNeedsWeaveWindow = false,
 		luaReturnsAction = false,
 		name = "Mist - Prometheus",
@@ -2747,7 +2746,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "b313ff5a-1776-a183-9e9e-c169aaaadf21",
+		uuid = "65e68f4a-99d3-ec1a-a3f5-bfcc6ae2ada7",
 	},
 	
 	{
@@ -2902,7 +2901,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "5020ab27-0832-4645-9a93-7ac5698e460c",
+		uuid = "3874cd80-9d96-0ada-a903-6204ba24fe26",
 	},
 	
 	{
@@ -4053,7 +4052,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "3afbd689-77bc-bea8-bc99-cf1fe19b8618",
+		uuid = "9e686b3a-8c74-773d-9e97-5c102fe94df2",
 	},
 	
 	{
@@ -4577,7 +4576,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "dd52d82d-e90a-6d5b-adcf-3cb1bed5e07b",
+		uuid = "feef8dfe-f994-b34b-a521-0579a2013860",
 	},
 	
 	{
@@ -4733,7 +4732,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "50b31caf-7683-bb6f-9b49-1eb559871cc6",
+		uuid = "8fd7b6f5-860b-3cd2-9ca2-aa5c88476855",
 	},
 }
 
