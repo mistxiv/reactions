@@ -531,7 +531,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "786613a6-2e02-e724-9607-38f68eedada1",
+		uuid = "968abe90-bab8-9a39-b004-3590943aaadc",
 	},
 	
 	{
@@ -681,7 +681,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "gPulseTime = 50\n\nlocal do_los = true\n\nlocal game_settings = {\n   [\"BattleEffectSelf\"] = 0, -- Full\n   [\"BattleEffectParty\"] = 1, -- Limited\n   [\"BattleEffectOther\"] = 2, -- Off\n   [\"BattleEffectPvPEnemyPc\"] = 1, -- Some\n   -- Shadows\n   [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n   [\"ShadowVisibilityTypeSelf_DX11\"] = 1, -- Show\n   [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n   [\"ShadowTextureSizeType_DX11\"] = 2, -- Normal - 1024p\n   [\"ShadowCascadeCountType_DX11\"] = 2, -- Best\n}\n\ntable.merge(MistUtility.game_settings, game_settings)\n\nMistUtility.gs_set(MistUtility.game_settings)\n\nlocal acr_settings_common = {\n   [\"HighPerformanceMode\"] = true,\n   [\"LoS\"] = do_los,\n   [\"ShowHotbar\"] = true,\n   [\"ShowTankbar\"] = true,\n   [\"ShowHealbar\"] = true,\n   [\"ShowHotbarQueue\"] = true,\n   [\"NoKeybindsOOC\"] = false,\n   [\"ZeroPingEnabled\"] = true,\n   [\"ZeroPingFakePing\"] = 20,\n}\n\nlocal acr_settings = {\n   [\"RikuPLD2\"] = {},\n   [\"RikuWAR2\"] = {},\n   [\"RikuDRK2\"] = {},\n   [\"RikuGNB2\"] = {},\n   [\"RikuWHM22\"] = {},\n   [\"RikuSCH2\"] = {},\n   [\"RikuAST2\"] = {},\n   [\"RikuMNK2\"] = {\n      [\"PositionalMode\"] = \"Argus\",\n   },\n   [\"RikuDRG2\"] = {\n      [\"PositionalMode\"] = \"Argus\",\n   },\n   [\"RikuNIN2\"] = {\n      [\"PositionalMode\"] = \"Argus\",\n   },\n   [\"TensorWeeb2\"] = {\n      [\"PositionalMode\"] = \"Argus\",\n   },\n   [\"RikuRDM2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"TensorRequiem2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"TensorMagnum2\"] = {},\n   [\"RikuDNC2\"] = {\n      [\"ShowPositionalIndicator\"] = true,\n   },\n   [\"TensorRuin2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n   },\n   [\"RikuRDM2\"] = {\n      [\"ShowPositionalIndicator\"] = true,\n   },\n   [\"TensorReaper\"] = {\n      [\"PositionalMode\"] = \"Argus\",\n   },\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n   local acr_settings_merged = table.merge(acr_settings[acr_name], acr_settings_common)\n   for k, v in pairs(acr_settings_merged) do\n      local s = \"ACR_\" .. acr_name .. \"_\" .. k\n      if (_G[s] ~= nil) then\n         _G[s] = v\n      end\n   end\nend\n\nif TensorCore_UseTTK ~= nil then\n   TensorCore_UseTTK = false\nend\n\nlocal drift = (MistUtility.jobs_drift[Player.job] == true)\n\nif TensorDrift_SlidecastEnabled ~= nil then\n   if not table.valid(ml_navigation.path) then\n      TensorDrift_SlidecastEnabled = drift\n   end\nend\n\nif TensorBinds_Enabled ~= nil then\n   TensorBinds_Enabled = true\nend\n\nif AnyoneCore ~= nil then\n   AnyoneCore.Settings.DutyHelper.SmartTarget = true\n   AnyoneCore.Settings.faceAwayEnabled = true\nend\n\nif MoogleTelegraphs ~= nil then\n   MoogleTelegraphs.Settings.enable = true\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
+				actionLua = "gPulseTime = 50\n\nlocal do_los = true\n\nlocal game_settings = {\n   [\"BattleEffectSelf\"] = 0, -- Full\n   [\"BattleEffectParty\"] = 1, -- Limited\n   [\"BattleEffectOther\"] = 2, -- Off\n   [\"BattleEffectPvPEnemyPc\"] = 1, -- Some\n   -- Shadows\n   [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n   [\"ShadowVisibilityTypeSelf_DX11\"] = 1, -- Show\n   [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n   [\"ShadowTextureSizeType_DX11\"] = 2, -- Normal - 1024p\n   [\"ShadowCascadeCountType_DX11\"] = 2, -- Best\n}\n\ntable.merge(MistUtility.game_settings, game_settings)\n\nMistUtility.gs_set(MistUtility.game_settings)\n\nlocal acr_settings_common = {\n   [\"HighPerformanceMode\"] = true,\n   [\"LoS\"] = do_los,\n   [\"ShowHotbar\"] = true,\n   [\"ShowTankbar\"] = true,\n   [\"ShowHealbar\"] = true,\n   [\"ShowHotbarQueue\"] = true,\n   [\"NoKeybindsOOC\"] = false,\n   [\"ZeroPingEnabled\"] = true,\n   [\"ZeroPingFakePing\"] = 0,\n}\n\nlocal acr_settings = {\n   [\"RikuPLD2\"] = {},\n   [\"RikuWAR2\"] = {},\n   [\"RikuDRK2\"] = {},\n   [\"RikuGNB2\"] = {},\n   [\"RikuWHM22\"] = {},\n   [\"RikuSCH2\"] = {},\n   [\"RikuAST2\"] = {},\n   [\"RikuMNK2\"] = {\n      [\"PositionalMode\"] = \"Argus\",\n   },\n   [\"RikuDRG2\"] = {\n      [\"PositionalMode\"] = \"Argus\",\n   },\n   [\"RikuNIN2\"] = {\n      [\"PositionalMode\"] = \"Argus\",\n   },\n   [\"TensorWeeb2\"] = {\n      [\"PositionalMode\"] = \"Argus\",\n   },\n   [\"RikuRDM2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"TensorRequiem2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"TensorMagnum2\"] = {},\n   [\"RikuDNC2\"] = {\n      [\"ShowPositionalIndicator\"] = true,\n   },\n   [\"TensorRuin2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n   },\n   [\"RikuRDM2\"] = {\n      [\"ShowPositionalIndicator\"] = true,\n   },\n   [\"TensorReaper\"] = {\n      [\"PositionalMode\"] = \"Argus\",\n   },\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n   local acr_settings_merged = table.merge(acr_settings[acr_name], acr_settings_common)\n   for k, v in pairs(acr_settings_merged) do\n      local s = \"ACR_\" .. acr_name .. \"_\" .. k\n      if (_G[s] ~= nil) then\n         _G[s] = v\n      end\n   end\nend\n\nif TensorCore_UseTTK ~= nil then\n   TensorCore_UseTTK = false\nend\n\nlocal drift = (MistUtility.jobs_drift[Player.job] == true)\n\nif TensorDrift_SlidecastEnabled ~= nil then\n   if not table.valid(ml_navigation.path) then\n      TensorDrift_SlidecastEnabled = drift\n   end\nend\n\nif TensorBinds_Enabled ~= nil then\n   TensorBinds_Enabled = true\nend\n\nif AnyoneCore ~= nil then\n   AnyoneCore.Settings.DutyHelper.SmartTarget = true\n   AnyoneCore.Settings.faceAwayEnabled = true\nend\n\nif MoogleTelegraphs ~= nil then\n   MoogleTelegraphs.Settings.enable = true\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -728,7 +728,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "gPulseTime = InInstance() and 50 or 300\n\nlocal do_los = true\nlocal do_interrupt = true\nlocal do_jumps = false\nlocal do_safe_jumps = true\nlocal do_tank_ranged = true\nlocal do_hard_res = not Player.incombat\nlocal do_swift_res = true\nlocal is_mt = MistUtility.is_mt()\n\nlocal game_settings = {\n   [\"BattleEffectSelf\"] = 2,\n   [\"BattleEffectParty\"] = 2,\n   [\"BattleEffectOther\"] = 2,\n   [\"BattleEffectPvPEnemyPc\"] = 2,\n   -- Shadows\n   [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n   [\"ShadowVisibilityTypeSelf_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n   [\"ShadowTextureSizeType_DX11\"] = 0, -- Low - 512p\n   [\"ShadowCascadeCountType_DX11\"] = 0, -- Off\n}\n\ntable.merge(MistUtility.game_settings, game_settings)\n\nMistUtility.gs_set(game_settings)\n\nlocal acr_settings_common = {\n   [\"HighPerformanceMode\"] = false,\n   [\"LoS\"] = do_los,\n   [\"ShowHotbar\"] = false,\n   [\"ShowTankbar\"] = false,\n   [\"ShowHealbar\"] = true,\n   [\"ShowHotbarQueue\"] = true,\n   [\"SmartAOE\"] = false,\n   [\"SmartDoT\"] = false,\n   [\"Jumps\"] = do_jumps,\n   [\"SafeJump\"] = do_safe_jumps,\n   [\"NoKeybindsOOC\"] = true,\n   [\"ZeroPingEnabled\"] = true,\n   [\"ZeroPingFakePing\"] = 20,\n   [\"Potion\"] = false,\n}\n\nlocal acr_settings = {\n   [\"RikuPLD2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = is_mt,\n      [\"ShieldLob\"] = do_tank_ranged,\n   },\n   [\"RikuWAR2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = is_mt,\n      [\"Tomahawk\"] = do_tank_ranged,\n   },\n   [\"RikuDRK2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = is_mt,\n      [\"Unmend\"] = do_tank_ranged,\n   },\n   [\"RikuGNB2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = is_mt,\n      [\"LightningShot\"] = do_tank_ranged,\n   },\n   [\"RikuWHM2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuSCH2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuAST2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuMNK2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuDRG2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuNIN2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorWeeb2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorRequiem2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n\n   },\n   [\"TensorMagnum2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"RikuDNC2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n      [\"Interrupt\"] = true,\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"TensorRuin2\"] = {\n      [\"JumpOffForceHold\"] = not do_jumps,\n      [\"ResWhenNoTarget\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"RikuRDM2\"] = {\n      [\"Melee\"] = do_jumps,\n      [\"JumpIn\"] = do_jumps,\n      [\"JumpOut\"] = do_jumps,\n      [\"ShowPositionalIndicator\"] = false,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"TensorReaper\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n   local acr_settings_merged = table.merge(acr_settings[acr_name], acr_settings_common)\n   for k, v in pairs(acr_settings_merged) do\n      local s = \"ACR_\" .. acr_name .. \"_\" .. k\n      if (_G[s] ~= nil) then\n         _G[s] = v\n      end\n   end\nend\n\nif TensorCore_UseTTK then\n   TensorCore_UseTTK = false\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.DutyHelper.enabled = true\n   AnyoneCore.Settings.DutyHelper.requirebotenabled = false\n   AnyoneCore.Settings.DutyHelper.ControlDoTs = true\n   AnyoneCore.Settings.DutyHelper.HealingUsage = true\n   AnyoneCore.Settings.DutyHelper.SmartTarget = false\n   AnyoneCore.Settings.DutyHelper.knockback = true\n   AnyoneCore.Settings.DutyHelper.mitigation = true\n   AnyoneCore.Settings.faceAwayEnabled = true\n   AnyoneCore.Settings.PrepullHelper.enabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.enable = true\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
+				actionLua = "gPulseTime = InInstance() and 50 or 300\n\nlocal do_los = true\nlocal do_interrupt = true\nlocal do_jumps = false\nlocal do_safe_jumps = true\nlocal do_tank_ranged = true\nlocal do_hard_res = not Player.incombat\nlocal do_swift_res = true\nlocal is_mt = MistUtility.is_mt()\n\nlocal game_settings = {\n   [\"BattleEffectSelf\"] = 2,\n   [\"BattleEffectParty\"] = 2,\n   [\"BattleEffectOther\"] = 2,\n   [\"BattleEffectPvPEnemyPc\"] = 2,\n   -- Shadows\n   [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n   [\"ShadowVisibilityTypeSelf_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n   [\"ShadowTextureSizeType_DX11\"] = 0, -- Low - 512p\n   [\"ShadowCascadeCountType_DX11\"] = 0, -- Off\n}\n\ntable.merge(MistUtility.game_settings, game_settings)\n\nMistUtility.gs_set(game_settings)\n\nlocal acr_settings_common = {\n   [\"HighPerformanceMode\"] = false,\n   [\"LoS\"] = do_los,\n   [\"ShowHotbar\"] = false,\n   [\"ShowTankbar\"] = false,\n   [\"ShowHealbar\"] = true,\n   [\"ShowHotbarQueue\"] = true,\n   [\"SmartAOE\"] = false,\n   [\"SmartDoT\"] = false,\n   [\"Jumps\"] = do_jumps,\n   [\"SafeJump\"] = do_safe_jumps,\n   [\"NoKeybindsOOC\"] = true,\n   [\"ZeroPingEnabled\"] = true,\n   [\"ZeroPingFakePing\"] = 0,\n   [\"Potion\"] = false,\n}\n\nlocal acr_settings = {\n   [\"RikuPLD2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = is_mt,\n      [\"ShieldLob\"] = do_tank_ranged,\n   },\n   [\"RikuWAR2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = is_mt,\n      [\"Tomahawk\"] = do_tank_ranged,\n   },\n   [\"RikuDRK2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = is_mt,\n      [\"Unmend\"] = do_tank_ranged,\n   },\n   [\"RikuGNB2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = true,\n      [\"AutoProvoke\"] = is_mt,\n      [\"LightningShot\"] = do_tank_ranged,\n   },\n   [\"RikuWHM2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuSCH2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuAST2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuMNK2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuDRG2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuNIN2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorWeeb2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorRequiem2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n\n   },\n   [\"TensorMagnum2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"RikuDNC2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n      [\"Interrupt\"] = true,\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"TensorRuin2\"] = {\n      [\"JumpOffForceHold\"] = not do_jumps,\n      [\"ResWhenNoTarget\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"RikuRDM2\"] = {\n      [\"Melee\"] = do_jumps,\n      [\"JumpIn\"] = do_jumps,\n      [\"JumpOut\"] = do_jumps,\n      [\"ShowPositionalIndicator\"] = false,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"TensorReaper\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n   local acr_settings_merged = table.merge(acr_settings[acr_name], acr_settings_common)\n   for k, v in pairs(acr_settings_merged) do\n      local s = \"ACR_\" .. acr_name .. \"_\" .. k\n      if (_G[s] ~= nil) then\n         _G[s] = v\n      end\n   end\nend\n\nif TensorCore_UseTTK then\n   TensorCore_UseTTK = false\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.DutyHelper.enabled = true\n   AnyoneCore.Settings.DutyHelper.requirebotenabled = false\n   AnyoneCore.Settings.DutyHelper.ControlDoTs = true\n   AnyoneCore.Settings.DutyHelper.HealingUsage = true\n   AnyoneCore.Settings.DutyHelper.SmartTarget = false\n   AnyoneCore.Settings.DutyHelper.knockback = true\n   AnyoneCore.Settings.DutyHelper.mitigation = true\n   AnyoneCore.Settings.faceAwayEnabled = true\n   AnyoneCore.Settings.PrepullHelper.enabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.enable = true\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -1412,7 +1412,7 @@ local tbl =
 		eventType = 12,
 		execute = "medicated_spiritbond = false\nfor _, buff in pairs(Player.Buffs) do \n\t\tif buff.id == 49 and buff.stacks == 10452 then \n\t\t\t\tmedicated_spiritbond=true \n\t\tend \nend\nreturn medicated_spiritbond",
 		executeType = 1,
-		lastUse = 40623281,
+		lastUse = 101516921,
 		luaNeedsWeaveWindow = false,
 		luaReturnsAction = false,
 		name = "Mist - Utility",
@@ -1428,7 +1428,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "52c1ff12-1c5e-c5cb-89be-9f7ed2022f51",
+		uuid = "fcee9f7b-89b5-30e7-947d-c8db5d022c8b",
 	},
 	
 	{
@@ -1837,7 +1837,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "8128268f-e7de-4f97-814f-cf89035a5f66",
+		uuid = "f64ac8a2-0587-de02-a15d-ee36fe01aaa6",
 	},
 	
 	{
@@ -2073,7 +2073,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "f5d01298-6deb-65dc-b8c9-e45b048300ed",
+		uuid = "6b87021c-e80b-53df-9499-6ffe998bc8cf",
 	},
 	
 	{
@@ -2435,7 +2435,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "29791955-3fea-acd5-8ae6-3689470722bc",
+		uuid = "16fa21a1-91a9-8e0e-b4e9-6f76a054e52a",
 	},
 	
 	{
@@ -2591,7 +2591,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "fe8a8b9d-102e-ec17-83eb-a4a214640775",
+		uuid = "aed31bec-4fb4-0653-ae4e-e3e2646d6b7d",
 	},
 	
 	{
@@ -2746,7 +2746,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "f7150c75-2b5c-0aa5-9fbd-44321e723d34",
+		uuid = "0da5ce86-01a5-39f5-9b25-35b4ae1f6005",
 	},
 	
 	{
@@ -3897,7 +3897,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "7fcd0e02-6ec9-94ba-a52b-2d36c470ff02",
+		uuid = "bd364493-c442-20e7-9628-0e611e1a865c",
 	},
 	
 	{
@@ -4501,7 +4501,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "b2d350fa-e038-1c39-b4b9-03d3d584a435",
+		uuid = "69b1bffa-cd18-a0da-81b2-20c830e1a639",
 	},
 	
 	{
@@ -4795,7 +4795,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "520dc8ca-3fcb-80ab-ae3c-f23e0e76cc9a",
+		uuid = "6945e0dd-1f9e-bb72-8bb5-cca95c17988b",
 	},
 }
 
