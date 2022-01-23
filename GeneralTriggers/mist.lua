@@ -55,7 +55,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "MistDogTag = {}\nlocal MDT = MistDogTag\nMDT.privacy = false\nMDT.dogtaglastcheck = 0\nMDT.dogtaglastleadercheck = 0\nMDT.worlds = {\n   [23] = \"Asura\",\n   [24] = \"Belias\",\n   [25] = \"Chaos\",\n   [26] = \"Hecatoncheir\",\n   [27] = \"Moomba\",\n   [28] = \"Pandaemonium\",\n   [29] = \"Shinryu\",\n   [30] = \"Unicorn\",\n   [31] = \"Yojimbo\",\n   [32] = \"Zeromus\",\n   [33] = \"Twintania\",\n   [34] = \"Brynhildr\",\n   [35] = \"Famfrit\",\n   [36] = \"Lich\",\n   [37] = \"Mateus\",\n   [38] = \"Shemhazai\",\n   [39] = \"Omega\",\n   [40] = \"Jenova\",\n   [41] = \"Zalera\",\n   [42] = \"Zodiark\",\n   [43] = \"Alexander\",\n   [44] = \"Anima\",\n   [45] = \"Carbuncle\",\n   [46] = \"Fenrir\",\n   [47] = \"Hades\",\n   [48] = \"Ixion\",\n   [49] = \"Kujata\",\n   [50] = \"Typhon\",\n   [51] = \"Ultima\",\n   [52] = \"Valefor\",\n   [53] = \"Exodus\",\n   [54] = \"Faerie\",\n   [55] = \"Lamia\",\n   [56] = \"Phoenix\",\n   [57] = \"Siren\",\n   [58] = \"Garuda\",\n   [59] = \"Ifrit\",\n   [60] = \"Ramuh\",\n   [61] = \"Titan\",\n   [62] = \"Diabolos\",\n   [63] = \"Gilgamesh\",\n   [64] = \"Leviathan\",\n   [65] = \"Midgardsormr\",\n   [66] = \"Odin\",\n   [67] = \"Shiva\",\n   [68] = \"Atomos\",\n   [69] = \"Bahamut\",\n   [70] = \"Chocobo\",\n   [71] = \"Moogle\",\n   [72] = \"Tonberry\",\n   [73] = \"Adamantoise\",\n   [74] = \"Coeurl\",\n   [75] = \"Malboro\",\n   [76] = \"Tiamat\",\n   [77] = \"Ultros\",\n   [78] = \"Behemoth\",\n   [79] = \"Cactuar\",\n   [80] = \"Cerberus\",\n   [81] = \"Goblin\",\n   [82] = \"Mandragora\",\n   [83] = \"Louisoix\",\n   [84] = \"Syldra\",\n   [85] = \"Spriggan\",\n   [90] = \"Aegis\",\n   [91] = \"Balmung\",\n   [92] = \"Durandal\",\n   [93] = \"Excalibur\",\n   [94] = \"Gungnir\",\n   [95] = \"Hyperion\",\n   [96] = \"Masamune\",\n   [97] = \"Ragnarok\",\n   [98] = \"Ridill\",\n   [99] = \"Sargatanas\",\n}\nMDT.jobs_tr_general_profile_default = \"mist\"\nMDT.jobs_tr_general_profile = {\n   [FFXIV.JOBS.BARD] = \"anyone\\\\bard\",\n   [FFXIV.JOBS.DANCER] = \"anyone\\\\dancer\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"anyone\\\\darkknight\",\n   [FFXIV.JOBS.DRAGOON] = \"anyone\\\\dragoon\",\n   [FFXIV.JOBS.GUNBREAKER] = \"anyone\\\\gunbreaker\",\n   [FFXIV.JOBS.MACHINIST] = \"anyone\\\\machinist\",\n   [FFXIV.JOBS.MONK] = \"anyone\\\\monk\",\n   [FFXIV.JOBS.NINJA] = \"anyone\\\\ninja\",\n   [FFXIV.JOBS.PALADIN] = \"anyone\\\\paladin\",\n   [FFXIV.JOBS.REAPER] = \"anyone\\\\reaper\",\n   [FFXIV.JOBS.REDMAGE] = \"anyone\\\\redmage\",\n   [FFXIV.JOBS.SAMURAI] = \"anyone\\\\samurai\",\n   [FFXIV.JOBS.SUMMONER] = \"anyone\\\\summoner\",\n   [FFXIV.JOBS.WARRIOR] = \"anyone\\\\warrior\",\n   [FFXIV.JOBS.ASTROLOGIAN] = \"astrologian\",\n}\nMDT.jobs_acr_profile = {\n   [FFXIV.JOBS.PALADIN] = \"RikuPLD2\",\n   [FFXIV.JOBS.WARRIOR] = \"RikuWAR2\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"RikuDRK2\",\n   [FFXIV.JOBS.GUNBREAKER] = \"RikuGNB2\",\n   [FFXIV.JOBS.MONK] = \"RikuMNK2\",\n   [FFXIV.JOBS.DRAGOON] = \"RikuDRG2\",\n   [FFXIV.JOBS.NINJA] = \"RikuNIN2\",\n   [FFXIV.JOBS.SAMURAI] = \"TensorWeeb2\",\n   [FFXIV.JOBS.REAPER] = \"TensorReaper\",\n   [FFXIV.JOBS.REDMAGE] = \"RikuRDM2\",\n   [FFXIV.JOBS.WHITEMAGE] = \"Veil\",\n   [FFXIV.JOBS.SCHOLAR] = \"Educator\",\n   [FFXIV.JOBS.ASTROLOGIAN] = \"RikuAST2\",\n   [FFXIV.JOBS.SAGE] = \"HM_Free_Profiles\",\n   [FFXIV.JOBS.BARD] = \"TensorRequiem2\",\n   [FFXIV.JOBS.MACHINIST] = \"TensorMagnum2\",\n   [FFXIV.JOBS.DANCER] = \"RikuDNC2\",\n   [FFXIV.JOBS.BLACKMAGE] = \"Salamander\",\n   [FFXIV.JOBS.SUMMONER] = \"TensorRuin2\",\n}\n\nfunction MDT.GetWorldName(id)\n   return MDT.worlds[id] or \"Unknown\"\nend\n",
+				actionLua = "MistDogTag = {}\nlocal MDT = MistDogTag\nMDT.privacy = false\nMDT.dogtaglastcheck = 0\nMDT.dogtaglastleadercheck = 0\nMDT.worlds = {\n   [23] = \"Asura\",\n   [24] = \"Belias\",\n   [25] = \"Chaos\",\n   [26] = \"Hecatoncheir\",\n   [27] = \"Moomba\",\n   [28] = \"Pandaemonium\",\n   [29] = \"Shinryu\",\n   [30] = \"Unicorn\",\n   [31] = \"Yojimbo\",\n   [32] = \"Zeromus\",\n   [33] = \"Twintania\",\n   [34] = \"Brynhildr\",\n   [35] = \"Famfrit\",\n   [36] = \"Lich\",\n   [37] = \"Mateus\",\n   [38] = \"Shemhazai\",\n   [39] = \"Omega\",\n   [40] = \"Jenova\",\n   [41] = \"Zalera\",\n   [42] = \"Zodiark\",\n   [43] = \"Alexander\",\n   [44] = \"Anima\",\n   [45] = \"Carbuncle\",\n   [46] = \"Fenrir\",\n   [47] = \"Hades\",\n   [48] = \"Ixion\",\n   [49] = \"Kujata\",\n   [50] = \"Typhon\",\n   [51] = \"Ultima\",\n   [52] = \"Valefor\",\n   [53] = \"Exodus\",\n   [54] = \"Faerie\",\n   [55] = \"Lamia\",\n   [56] = \"Phoenix\",\n   [57] = \"Siren\",\n   [58] = \"Garuda\",\n   [59] = \"Ifrit\",\n   [60] = \"Ramuh\",\n   [61] = \"Titan\",\n   [62] = \"Diabolos\",\n   [63] = \"Gilgamesh\",\n   [64] = \"Leviathan\",\n   [65] = \"Midgardsormr\",\n   [66] = \"Odin\",\n   [67] = \"Shiva\",\n   [68] = \"Atomos\",\n   [69] = \"Bahamut\",\n   [70] = \"Chocobo\",\n   [71] = \"Moogle\",\n   [72] = \"Tonberry\",\n   [73] = \"Adamantoise\",\n   [74] = \"Coeurl\",\n   [75] = \"Malboro\",\n   [76] = \"Tiamat\",\n   [77] = \"Ultros\",\n   [78] = \"Behemoth\",\n   [79] = \"Cactuar\",\n   [80] = \"Cerberus\",\n   [81] = \"Goblin\",\n   [82] = \"Mandragora\",\n   [83] = \"Louisoix\",\n   [84] = \"Syldra\",\n   [85] = \"Spriggan\",\n   [90] = \"Aegis\",\n   [91] = \"Balmung\",\n   [92] = \"Durandal\",\n   [93] = \"Excalibur\",\n   [94] = \"Gungnir\",\n   [95] = \"Hyperion\",\n   [96] = \"Masamune\",\n   [97] = \"Ragnarok\",\n   [98] = \"Ridill\",\n   [99] = \"Sargatanas\",\n}\nMDT.jobs_tr_general_profile_default = \"mist\"\nMDT.jobs_tr_general_profile = {\n   [FFXIV.JOBS.BARD] = \"anyone\\\\bard\",\n   [FFXIV.JOBS.DANCER] = \"anyone\\\\dancer\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"anyone\\\\darkknight\",\n   [FFXIV.JOBS.DRAGOON] = \"anyone\\\\dragoon\",\n   [FFXIV.JOBS.GUNBREAKER] = \"anyone\\\\gunbreaker\",\n   [FFXIV.JOBS.MACHINIST] = \"anyone\\\\machinist\",\n   [FFXIV.JOBS.MONK] = \"anyone\\\\monk\",\n   [FFXIV.JOBS.NINJA] = \"anyone\\\\ninja\",\n   [FFXIV.JOBS.PALADIN] = \"anyone\\\\paladin\",\n   [FFXIV.JOBS.REAPER] = \"anyone\\\\reaper\",\n   [FFXIV.JOBS.REDMAGE] = \"anyone\\\\redmage\",\n   [FFXIV.JOBS.SAMURAI] = \"anyone\\\\samurai\",\n   [FFXIV.JOBS.SUMMONER] = \"anyone\\\\summoner\",\n   [FFXIV.JOBS.WARRIOR] = \"anyone\\\\warrior\",\n   [FFXIV.JOBS.ASTROLOGIAN] = \"anyone\\\\astrologian\",\n}\nMDT.jobs_acr_profile = {\n   [FFXIV.JOBS.PALADIN] = \"RikuPLD2\",\n   [FFXIV.JOBS.WARRIOR] = \"RikuWAR2\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"RikuDRK2\",\n   [FFXIV.JOBS.GUNBREAKER] = \"RikuGNB2\",\n   [FFXIV.JOBS.MONK] = \"RikuMNK2\",\n   [FFXIV.JOBS.DRAGOON] = \"RikuDRG2\",\n   [FFXIV.JOBS.NINJA] = \"RikuNIN2\",\n   [FFXIV.JOBS.SAMURAI] = \"TensorWeeb2\",\n   [FFXIV.JOBS.REAPER] = \"TensorReaper\",\n   [FFXIV.JOBS.REDMAGE] = \"RikuRDM2\",\n   [FFXIV.JOBS.WHITEMAGE] = \"Veil\",\n   [FFXIV.JOBS.SCHOLAR] = \"Educator\",\n   [FFXIV.JOBS.ASTROLOGIAN] = \"RikuAST2\",\n   [FFXIV.JOBS.SAGE] = \"HM_Free_Profiles\",\n   [FFXIV.JOBS.BARD] = \"TensorRequiem2\",\n   [FFXIV.JOBS.MACHINIST] = \"TensorMagnum2\",\n   [FFXIV.JOBS.DANCER] = \"RikuDNC2\",\n   [FFXIV.JOBS.BLACKMAGE] = \"Salamander\",\n   [FFXIV.JOBS.SUMMONER] = \"TensorRuin2\",\n}\n\nfunction MDT.GetWorldName(id)\n   return MDT.worlds[id] or \"Unknown\"\nend\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -531,7 +531,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "968abe90-bab8-9a39-b004-3590943aaadc",
+		uuid = "eefca628-105d-b458-b55c-a7c4659a5a44",
 	},
 	
 	{
@@ -876,7 +876,7 @@ local tbl =
 				clusterRadius = 8,
 				clusterRange = 30,
 				comparator = 1,
-				conditionLua = "return false == (\n\t\tFFXIV_Common_BotRunning and gBotMode == GetString(\"assistMode\")\n  and not (Kitanois_USP_Lanner_Farm ~= nil and Kitanois_USP_Lanner_Farm.Enable == true)\n  and not (Kitanois_USP_Pony_Farm ~= nil and Kitanois_USP_Pony_Farm.Enable == true)\n)",
+				conditionLua = "return false == (\n\t\tFFXIV_Common_BotRunning and gBotMode == GetString(\"assistMode\")\n)",
 				conditionType = 1,
 				conditions = 
 				{
@@ -955,7 +955,7 @@ local tbl =
 				clusterRadius = 8,
 				clusterRange = 30,
 				comparator = 1,
-				conditionLua = "return true == (\n\t\tFFXIV_Common_BotRunning and gBotMode == GetString(\"assistMode\")\n  and not (Kitanois_USP_Lanner_Farm ~= nil and Kitanois_USP_Lanner_Farm.Enable == true)\n  and not (Kitanois_USP_Pony_Farm ~= nil and Kitanois_USP_Pony_Farm.Enable == true)\n)",
+				conditionLua = "return true == (\n\t\tFFXIV_Common_BotRunning and gBotMode == GetString(\"assistMode\")\n)",
 				conditionType = 1,
 				conditions = 
 				{
@@ -1412,7 +1412,7 @@ local tbl =
 		eventType = 12,
 		execute = "medicated_spiritbond = false\nfor _, buff in pairs(Player.Buffs) do \n\t\tif buff.id == 49 and buff.stacks == 10452 then \n\t\t\t\tmedicated_spiritbond=true \n\t\tend \nend\nreturn medicated_spiritbond",
 		executeType = 1,
-		lastUse = 101516921,
+		lastUse = 217156390,
 		luaNeedsWeaveWindow = false,
 		luaReturnsAction = false,
 		name = "Mist - Utility",
@@ -1428,7 +1428,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "fcee9f7b-89b5-30e7-947d-c8db5d022c8b",
+		uuid = "38088409-ed26-6bc1-96c0-80876c59e439",
 	},
 	
 	{
@@ -1817,7 +1817,7 @@ local tbl =
 				setFirstMatch = false,
 			},
 		},
-		enabled = true,
+		enabled = false,
 		eventType = 1,
 		execute = "",
 		executeType = 1,
@@ -1837,7 +1837,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "f64ac8a2-0587-de02-a15d-ee36fe01aaa6",
+		uuid = "05a8a8ee-7f7a-4f80-8ef4-fc126c422f5e",
 	},
 	
 	{
@@ -2073,7 +2073,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "6b87021c-e80b-53df-9499-6ffe998bc8cf",
+		uuid = "6b9f6052-e98f-141b-ad47-01b828728c6f",
 	},
 	
 	{
@@ -2415,7 +2415,7 @@ local tbl =
 				setFirstMatch = false,
 			},
 		},
-		enabled = true,
+		enabled = false,
 		eventType = 12,
 		execute = "",
 		executeType = 1,
@@ -2435,7 +2435,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "16fa21a1-91a9-8e0e-b4e9-6f76a054e52a",
+		uuid = "76c11c14-1cbd-8760-86ae-8cd35cdce690",
 	},
 	
 	{
@@ -2591,7 +2591,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "aed31bec-4fb4-0653-ae4e-e3e2646d6b7d",
+		uuid = "cf17aecb-fa4b-8a90-9590-022424ef6e2f",
 	},
 	
 	{
@@ -2746,7 +2746,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "0da5ce86-01a5-39f5-9b25-35b4ae1f6005",
+		uuid = "5ea2de3b-5365-0024-85f4-d3170b76a427",
 	},
 	
 	{
@@ -3897,7 +3897,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "bd364493-c442-20e7-9628-0e611e1a865c",
+		uuid = "9523b5b6-4f4d-961e-99e0-29485275bd12",
 	},
 	
 	{
@@ -4501,7 +4501,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "69b1bffa-cd18-a0da-81b2-20c830e1a639",
+		uuid = "64ac5f60-0f4d-6fdd-b661-3025d33dd422",
 	},
 	
 	{
@@ -4692,6 +4692,52 @@ local tbl =
 				variableIsHover = false,
 				variableTogglesType = 1,
 			},
+			
+			{
+				aType = 3,
+				actionID = -1,
+				actionLua = "",
+				allowInterrupt = false,
+				atomicPriority = false,
+				castAtMouse = false,
+				castPosX = 0,
+				castPosY = 0,
+				castPosZ = 0,
+				clusterMinPercent = false,
+				clusterMinTarget = 1,
+				clusterRadius = 8,
+				clusterRange = 30,
+				conditions = 
+				{
+				},
+				endIfUsed = true,
+				fallthrough = false,
+				gVar = "",
+				gVarValue = 1,
+				ignoreWeaveRules = true,
+				isAreaTarget = false,
+				luaNeedsWeaveWindow = false,
+				luaReturnsAction = false,
+				name = "shinryu coffer",
+				potType = 1,
+				setTarget = false,
+				showPositionPreview = false,
+				stopCasting = false,
+				stopMoving = false,
+				targetContentID = -1,
+				targetName = "",
+				targetSubType = "Nearest",
+				targetType = "Self",
+				untarget = false,
+				useForWeaving = false,
+				useItem = true,
+				useItemID = 36149,
+				useItemName = "Shinryu Weapon Coffer (HQ)",
+				usePot = false,
+				used = false,
+				variableIsHover = false,
+				variableTogglesType = 1,
+			},
 		},
 		conditions = 
 		{
@@ -4795,7 +4841,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "6945e0dd-1f9e-bb72-8bb5-cca95c17988b",
+		uuid = "5c2b785e-33fe-e14c-a679-a9cf866df0d7",
 	},
 }
 
