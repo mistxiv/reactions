@@ -55,7 +55,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "MistDogTag = {}\nlocal MDT = MistDogTag\nMDT.privacy = false\nMDT.dogtaglastcheck = 0\nMDT.dogtaglastleadercheck = 0\nMDT.worlds = {\n   [23] = \"Asura\",\n   [24] = \"Belias\",\n   [25] = \"Chaos\",\n   [26] = \"Hecatoncheir\",\n   [27] = \"Moomba\",\n   [28] = \"Pandaemonium\",\n   [29] = \"Shinryu\",\n   [30] = \"Unicorn\",\n   [31] = \"Yojimbo\",\n   [32] = \"Zeromus\",\n   [33] = \"Twintania\",\n   [34] = \"Brynhildr\",\n   [35] = \"Famfrit\",\n   [36] = \"Lich\",\n   [37] = \"Mateus\",\n   [38] = \"Shemhazai\",\n   [39] = \"Omega\",\n   [40] = \"Jenova\",\n   [41] = \"Zalera\",\n   [42] = \"Zodiark\",\n   [43] = \"Alexander\",\n   [44] = \"Anima\",\n   [45] = \"Carbuncle\",\n   [46] = \"Fenrir\",\n   [47] = \"Hades\",\n   [48] = \"Ixion\",\n   [49] = \"Kujata\",\n   [50] = \"Typhon\",\n   [51] = \"Ultima\",\n   [52] = \"Valefor\",\n   [53] = \"Exodus\",\n   [54] = \"Faerie\",\n   [55] = \"Lamia\",\n   [56] = \"Phoenix\",\n   [57] = \"Siren\",\n   [58] = \"Garuda\",\n   [59] = \"Ifrit\",\n   [60] = \"Ramuh\",\n   [61] = \"Titan\",\n   [62] = \"Diabolos\",\n   [63] = \"Gilgamesh\",\n   [64] = \"Leviathan\",\n   [65] = \"Midgardsormr\",\n   [66] = \"Odin\",\n   [67] = \"Shiva\",\n   [68] = \"Atomos\",\n   [69] = \"Bahamut\",\n   [70] = \"Chocobo\",\n   [71] = \"Moogle\",\n   [72] = \"Tonberry\",\n   [73] = \"Adamantoise\",\n   [74] = \"Coeurl\",\n   [75] = \"Malboro\",\n   [76] = \"Tiamat\",\n   [77] = \"Ultros\",\n   [78] = \"Behemoth\",\n   [79] = \"Cactuar\",\n   [80] = \"Cerberus\",\n   [81] = \"Goblin\",\n   [82] = \"Mandragora\",\n   [83] = \"Louisoix\",\n   [84] = \"Syldra\",\n   [85] = \"Spriggan\",\n   [90] = \"Aegis\",\n   [91] = \"Balmung\",\n   [92] = \"Durandal\",\n   [93] = \"Excalibur\",\n   [94] = \"Gungnir\",\n   [95] = \"Hyperion\",\n   [96] = \"Masamune\",\n   [97] = \"Ragnarok\",\n   [98] = \"Ridill\",\n   [99] = \"Sargatanas\",\n}\nMDT.jobs_tr_general_profile_default = \"mist\"\nMDT.jobs_tr_general_profile = {\n   [FFXIV.JOBS.BARD] = \"anyone\\\\bard\",\n   [FFXIV.JOBS.DANCER] = \"anyone\\\\dancer\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"anyone\\\\darkknight\",\n   [FFXIV.JOBS.DRAGOON] = \"anyone\\\\dragoon\",\n   [FFXIV.JOBS.GUNBREAKER] = \"anyone\\\\gunbreaker\",\n   [FFXIV.JOBS.MACHINIST] = \"anyone\\\\machinist\",\n   [FFXIV.JOBS.MONK] = \"anyone\\\\monk\",\n   [FFXIV.JOBS.NINJA] = \"anyone\\\\ninja\",\n   [FFXIV.JOBS.PALADIN] = \"anyone\\\\paladin\",\n   [FFXIV.JOBS.REAPER] = \"anyone\\\\reaper\",\n   [FFXIV.JOBS.REDMAGE] = \"anyone\\\\redmage\",\n   [FFXIV.JOBS.SAMURAI] = \"anyone\\\\samurai\",\n   [FFXIV.JOBS.SUMMONER] = \"anyone\\\\summoner\",\n   [FFXIV.JOBS.WARRIOR] = \"anyone\\\\warrior\",\n   [FFXIV.JOBS.ASTROLOGIAN] = \"astrologian\",\n}\nMDT.jobs_acr_profile = {\n   [FFXIV.JOBS.PALADIN] = \"RikuPLD2\",\n   [FFXIV.JOBS.WARRIOR] = \"RikuWAR2\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"RikuDRK2\",\n   [FFXIV.JOBS.GUNBREAKER] = \"RikuGNB2\",\n   [FFXIV.JOBS.MONK] = \"RikuMNK2\",\n   [FFXIV.JOBS.DRAGOON] = \"RikuDRG2\",\n   [FFXIV.JOBS.NINJA] = \"RikuNIN2\",\n   [FFXIV.JOBS.SAMURAI] = \"TensorWeeb2\",\n   [FFXIV.JOBS.REAPER] = \"TensorReaper\",\n   [FFXIV.JOBS.REDMAGE] = \"RikuRDM2\",\n   [FFXIV.JOBS.WHITEMAGE] = \"Veil\",\n   [FFXIV.JOBS.SCHOLAR] = \"Educator\",\n   [FFXIV.JOBS.ASTROLOGIAN] = \"RikuAST2\",\n   [FFXIV.JOBS.SAGE] = \"HM_Free_Profiles\",\n   [FFXIV.JOBS.BARD] = \"TensorRequiem2\",\n   [FFXIV.JOBS.MACHINIST] = \"TensorMagnum2\",\n   [FFXIV.JOBS.DANCER] = \"RikuDNC2\",\n   [FFXIV.JOBS.BLACKMAGE] = \"Salamander\",\n   [FFXIV.JOBS.SUMMONER] = \"TensorRuin2\",\n}\n\nfunction MDT.GetWorldName(id)\n   return MDT.worlds[id] or \"Unknown\"\nend\n",
+				actionLua = "MistDogTag = {}\nlocal MDT = MistDogTag\nMDT.privacy = false\nMDT.dogtaglastcheck = 0\nMDT.dogtaglastleadercheck = 0\nMDT.worlds = {\n   [21] = \"Ravana\",\n   [22] = \"Bismarck\",\n   [23] = \"Asura\",\n   [24] = \"Belias\",\n   [25] = \"Chaos\",\n   [26] = \"Hecatoncheir\",\n   [27] = \"Moomba\",\n   [28] = \"Pandaemonium\",\n   [29] = \"Shinryu\",\n   [30] = \"Unicorn\",\n   [31] = \"Yojimbo\",\n   [32] = \"Zeromus\",\n   [33] = \"Twintania\",\n   [34] = \"Brynhildr\",\n   [35] = \"Famfrit\",\n   [36] = \"Lich\",\n   [37] = \"Mateus\",\n   [38] = \"Shemhazai\",\n   [39] = \"Omega\",\n   [40] = \"Jenova\",\n   [41] = \"Zalera\",\n   [42] = \"Zodiark\",\n   [43] = \"Alexander\",\n   [44] = \"Anima\",\n   [45] = \"Carbuncle\",\n   [46] = \"Fenrir\",\n   [47] = \"Hades\",\n   [48] = \"Ixion\",\n   [49] = \"Kujata\",\n   [50] = \"Typhon\",\n   [51] = \"Ultima\",\n   [52] = \"Valefor\",\n   [53] = \"Exodus\",\n   [54] = \"Faerie\",\n   [55] = \"Lamia\",\n   [56] = \"Phoenix\",\n   [57] = \"Siren\",\n   [58] = \"Garuda\",\n   [59] = \"Ifrit\",\n   [60] = \"Ramuh\",\n   [61] = \"Titan\",\n   [62] = \"Diabolos\",\n   [63] = \"Gilgamesh\",\n   [64] = \"Leviathan\",\n   [65] = \"Midgardsormr\",\n   [66] = \"Odin\",\n   [67] = \"Shiva\",\n   [68] = \"Atomos\",\n   [69] = \"Bahamut\",\n   [70] = \"Chocobo\",\n   [71] = \"Moogle\",\n   [72] = \"Tonberry\",\n   [73] = \"Adamantoise\",\n   [74] = \"Coeurl\",\n   [75] = \"Malboro\",\n   [76] = \"Tiamat\",\n   [77] = \"Ultros\",\n   [78] = \"Behemoth\",\n   [79] = \"Cactuar\",\n   [80] = \"Cerberus\",\n   [81] = \"Goblin\",\n   [82] = \"Mandragora\",\n   [83] = \"Louisoix\",\n   [84] = \"Syldra\",\n   [85] = \"Spriggan\",\n   [86] = \"Sephirot\",\n   [87] = \"Sophia\",\n   [88] = \"Zurvan\",\n   [90] = \"Aegis\",\n   [91] = \"Balmung\",\n   [92] = \"Durandal\",\n   [93] = \"Excalibur\",\n   [94] = \"Gungnir\",\n   [95] = \"Hyperion\",\n   [96] = \"Masamune\",\n   [97] = \"Ragnarok\",\n   [98] = \"Ridill\",\n   [99] = \"Sargatanas\",\n}\nMDT.jobs_tr_general_profile_default = \"mist\"\nMDT.jobs_tr_general_profile = {\n   [FFXIV.JOBS.BARD] = \"anyone\\\\bard\",\n   [FFXIV.JOBS.DANCER] = \"anyone\\\\dancer\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"anyone\\\\darkknight\",\n   [FFXIV.JOBS.DRAGOON] = \"anyone\\\\dragoon\",\n   [FFXIV.JOBS.GUNBREAKER] = \"anyone\\\\gunbreaker\",\n   [FFXIV.JOBS.MACHINIST] = \"anyone\\\\machinist\",\n   [FFXIV.JOBS.MONK] = \"anyone\\\\monk\",\n   [FFXIV.JOBS.NINJA] = \"anyone\\\\ninja\",\n   [FFXIV.JOBS.PALADIN] = \"anyone\\\\paladin\",\n   [FFXIV.JOBS.REAPER] = \"anyone\\\\reaper\",\n   [FFXIV.JOBS.REDMAGE] = \"anyone\\\\redmage\",\n   [FFXIV.JOBS.SAMURAI] = \"anyone\\\\samurai\",\n   [FFXIV.JOBS.SUMMONER] = \"anyone\\\\summoner\",\n   [FFXIV.JOBS.WARRIOR] = \"anyone\\\\warrior\",\n   [FFXIV.JOBS.ASTROLOGIAN] = \"astrologian\",\n}\nMDT.jobs_acr_profile = {\n   [FFXIV.JOBS.PALADIN] = \"RikuPLD2\",\n   [FFXIV.JOBS.WARRIOR] = \"RikuWAR2\",\n   [FFXIV.JOBS.DARKKNIGHT] = \"RikuDRK2\",\n   [FFXIV.JOBS.GUNBREAKER] = \"RikuGNB2\",\n   [FFXIV.JOBS.MONK] = \"RikuMNK2\",\n   [FFXIV.JOBS.DRAGOON] = \"RikuDRG2\",\n   [FFXIV.JOBS.NINJA] = \"RikuNIN2\",\n   [FFXIV.JOBS.SAMURAI] = \"TensorWeeb2\",\n   [FFXIV.JOBS.REAPER] = \"TensorReaper\",\n   [FFXIV.JOBS.REDMAGE] = \"RikuRDM2\",\n   [FFXIV.JOBS.WHITEMAGE] = \"Veil\",\n   [FFXIV.JOBS.SCHOLAR] = \"Educator\",\n   [FFXIV.JOBS.ASTROLOGIAN] = \"RikuAST2\",\n   [FFXIV.JOBS.SAGE] = \"HM_Free_Profiles\",\n   [FFXIV.JOBS.BARD] = \"TensorRequiem2\",\n   [FFXIV.JOBS.MACHINIST] = \"TensorMagnum2\",\n   [FFXIV.JOBS.DANCER] = \"RikuDNC2\",\n   [FFXIV.JOBS.BLACKMAGE] = \"Salamander\",\n   [FFXIV.JOBS.SUMMONER] = \"TensorRuin2\",\n}\n\nfunction MDT.GetWorldName(id)\n   return MDT.worlds[id] or \"Unknown\"\nend\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -531,7 +531,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "1072d7b6-0e90-3970-8833-265b1d1779c0",
+		uuid = "a5dafc22-4238-297a-a52d-cdfc922007cf",
 	},
 	
 	{
@@ -556,7 +556,7 @@ local tbl =
 				{
 					6,
 				},
-				endIfUsed = false,
+				endIfUsed = true,
 				fallthrough = false,
 				gVar = "",
 				gVarValue = 1,
@@ -635,7 +635,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "--local target = MGetTarget()\n--local target_attackable = false\n--if (table.valid(target)) then\n--   target_attackable = target.attackable\n--end\n--local duty_info = Duty:GetActiveDutyInfo()\n--local do_acr = ((not Player.ismounted and MissingBuff(Player.id, 1534)) and\n--                  (InInstance() or target_attackable or Player.incombat or (duty_info and duty_info.dutytype == 32774)) and\n--                  not BehaviorManager:Running())\n\nlocal ffxivminion_settings = {\n   gAssistUseAutoFace = true,\n   gAssistUseLegacy = true,\n   gEurekaAvoidHP = 0,\n   gEurekaFleeHP = 0,\n   gEurekaFleeMP = 0,\n   gEurekaPotionHP = 0,\n   gEurekaRestHP = 0,\n   gEurekaRestMP = 0,\n   gFleeHP = 0,\n   gFleeMP = 0,\n   gMountDist = 200,\n   gPotionHP = 0,\n   gPotionMP = 0,\n   gRestHP = 0,\n   gRestMP = 0,\n   gSprintDist = 75,\n   gUseSprint = false,\n}\n\nfor k, v in pairs(ffxivminion_settings) do\n   _G[k] = v\n   Settings.FFXIVMINION[k] = v\nend\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMistUtility.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
+				actionLua = "-- local p, t = TensorCore.mGetPlayer(), TensorCore.mGetTarget()\n-- local target_attackable = table.valid(t) and t.attackable\n-- local duty_info = Duty:GetActiveDutyInfo()\n-- local do_acr = ((not p.ismounted and not TensorCore.hasBuff(p.id, 1534)) and\n--                  (InInstance() or target_attackable or p.incombat or (table.valid(duty_info) and duty_info.dutytype == 32774)) and\n--                  not BehaviorManager:Running())\nlocal ffxivminion_settings = {\n   --   gACREnabled = do_acr,\n   gAssistUseAutoFace = true,\n   gAssistUseLegacy = true,\n\n--   gAvoidAOE = true,\n   gAvoidHP = 100,\n   gRestHP = 70,\n   gRestMP = 0,\n   gPotionMP = 0,\n   gPotionHP = 50,\n   gFleeHP = 25,\n   gFleeMP = 0,\n\n   gEurekaAvoidHP = 100,\n   gEurekaRestHP = 70,\n   gEurekaRestMP = 0,\n   gEurekaPotionHP = 75,\n   gEurekaPotionMP = 0,\n   gEurekaFleeHP = 25,\n   gEurekaFleeMP = 0,\n   gEurekaAntidote = false,\n\n   gMountDist = 75,\n   gSprintDist = 50,\n   gUseSprint = true,\n}\n\nfor k, v in pairs(ffxivminion_settings) do\n   _G[k] = v\n   Settings.FFXIVMINION[k] = v\nend\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMistUtility.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -728,7 +728,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "gPulseTime = InInstance() and 50 or 300\n\nlocal do_los = true\nlocal do_interrupt = true\nlocal do_jumps = false\nlocal do_safe_jumps = true\nlocal do_tank_ranged = true\nlocal do_hard_res = not Player.incombat\nlocal do_swift_res = true\nlocal do_auto_provoke = false\nlocal do_auto_stance = false\nlocal is_mt = MistUtility.is_mt()\n\nlocal game_settings = {\n   [\"BattleEffectSelf\"] = 2,\n   [\"BattleEffectParty\"] = 2,\n   [\"BattleEffectOther\"] = 2,\n   [\"BattleEffectPvPEnemyPc\"] = 2,\n   -- Shadows\n   [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n   [\"ShadowVisibilityTypeSelf_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n   [\"ShadowTextureSizeType_DX11\"] = 0, -- Low - 512p\n   [\"ShadowCascadeCountType_DX11\"] = 0, -- Off\n}\n\ntable.merge(MistUtility.game_settings, game_settings)\n\nMistUtility.gs_set(game_settings)\n\nlocal acr_settings_common = {\n   [\"HighPerformanceMode\"] = false,\n   [\"LoS\"] = do_los,\n   [\"ShowHotbar\"] = false,\n   [\"ShowTankbar\"] = false,\n   [\"ShowHealbar\"] = true,\n   [\"ShowHotbarQueue\"] = true,\n   [\"SmartAOE\"] = false,\n   [\"SmartDoT\"] = false,\n   [\"Jumps\"] = do_jumps,\n   [\"SafeJump\"] = do_safe_jumps,\n   [\"NoKeybindsOOC\"] = true,\n   [\"ZeroPingEnabled\"] = true,\n   [\"ZeroPingFakePing\"] = 0,\n   [\"Potion\"] = false,\n}\n\nlocal acr_settings = {\n   [\"RikuPLD2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = do_auto_stance,\n      [\"AutoProvoke\"] = do_auto_provoke,\n      [\"ShieldLob\"] = do_tank_ranged,\n   },\n   [\"RikuWAR2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = do_auto_stance,\n      [\"AutoProvoke\"] = do_auto_provoke,\n      [\"Tomahawk\"] = do_tank_ranged,\n   },\n   [\"RikuDRK2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = do_auto_stance,\n      [\"AutoProvoke\"] = do_auto_provoke,\n      [\"Unmend\"] = do_tank_ranged,\n   },\n   [\"RikuGNB2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      [\"AutoStance\"] = do_auto_stance,\n      [\"AutoProvoke\"] = do_auto_provoke,\n      [\"LightningShot\"] = do_tank_ranged,\n   },\n   [\"RikuWHM2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuSCH2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuAST2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuMNK2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuDRG2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuNIN2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorWeeb2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorRequiem2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n\n   },\n   [\"TensorMagnum2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"RikuDNC2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n      [\"Interrupt\"] = true,\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"TensorRuin2\"] = {\n      [\"JumpOffForceHold\"] = not do_jumps,\n      [\"ResWhenNoTarget\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"RikuRDM2\"] = {\n      [\"Melee\"] = do_jumps,\n      [\"JumpIn\"] = do_jumps,\n      [\"JumpOut\"] = do_jumps,\n      [\"ShowPositionalIndicator\"] = false,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"TensorReaper\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n   local acr_settings_merged = table.merge(acr_settings[acr_name], acr_settings_common)\n   for k, v in pairs(acr_settings_merged) do\n      local s = \"ACR_\" .. acr_name .. \"_\" .. k\n      if (_G[s] ~= nil) then\n         _G[s] = v\n      end\n   end\nend\n\nif TensorCore_UseTTK then\n   TensorCore_UseTTK = false\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.DutyHelper.enabled = true\n   AnyoneCore.Settings.DutyHelper.requirebotenabled = false\n   AnyoneCore.Settings.DutyHelper.ControlDoTs = true\n   AnyoneCore.Settings.DutyHelper.HealingUsage = true\n   AnyoneCore.Settings.DutyHelper.SmartTarget = false\n   AnyoneCore.Settings.DutyHelper.knockback = true\n   AnyoneCore.Settings.DutyHelper.mitigation = true\n   AnyoneCore.Settings.faceAwayEnabled = true\n   AnyoneCore.Settings.PrepullHelper.enabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.enable = true\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
+				actionLua = "gPulseTime = InInstance() and 50 or 300\n\nlocal do_los = true\nlocal do_interrupt = true\nlocal do_jumps = false\nlocal do_safe_jumps = true\nlocal do_tank_ranged = true\nlocal do_hard_res = not Player.incombat\nlocal do_swift_res = true\nlocal do_auto_provoke = false\nlocal do_auto_stance = false\nlocal is_mt = MistUtility.is_mt()\n\nlocal game_settings = {\n   [\"BattleEffectSelf\"] = 2,\n   [\"BattleEffectParty\"] = 2,\n   [\"BattleEffectOther\"] = 2,\n   [\"BattleEffectPvPEnemyPc\"] = 2,\n   -- Shadows\n   [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n   [\"ShadowVisibilityTypeSelf_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n   [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n   [\"ShadowTextureSizeType_DX11\"] = 0, -- Low - 512p\n   [\"ShadowCascadeCountType_DX11\"] = 0, -- Off\n}\n\ntable.merge(MistUtility.game_settings, game_settings)\n\nMistUtility.gs_set(game_settings)\n\nlocal acr_settings_common = {\n   [\"HighPerformanceMode\"] = false,\n   [\"LoS\"] = do_los,\n   [\"ShowHotbar\"] = false,\n   [\"ShowTankbar\"] = false,\n   [\"ShowHealbar\"] = false,\n   [\"ShowHotbarQueue\"] = true,\n   [\"SmartAOE\"] = false,\n   [\"SmartDoT\"] = false,\n   [\"Jumps\"] = do_jumps,\n   [\"SafeJump\"] = do_safe_jumps,\n   [\"NoKeybindsOOC\"] = true,\n   [\"ZeroPingEnabled\"] = true,\n   [\"ZeroPingFakePing\"] = 0,\n   [\"Potion\"] = false,\n}\n\nlocal acr_settings = {\n   [\"RikuPLD2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      --   [\"AutoStance\"] = do_auto_stance,\n      --   [\"AutoProvoke\"] = do_auto_provoke,\n      [\"ShieldLob\"] = do_tank_ranged,\n   },\n   [\"RikuWAR2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      --   [\"AutoStance\"] = do_auto_stance,\n      --   [\"AutoProvoke\"] = do_auto_provoke,\n      [\"Tomahawk\"] = do_tank_ranged,\n   },\n   [\"RikuDRK2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      --   [\"AutoStance\"] = do_auto_stance,\n      --   [\"AutoProvoke\"] = do_auto_provoke,\n      [\"Unmend\"] = do_tank_ranged,\n   },\n   [\"RikuGNB2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n      --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n      --   [\"AutoStance\"] = do_auto_stance,\n      --   [\"AutoProvoke\"] = do_auto_provoke,\n      [\"LightningShot\"] = do_tank_ranged,\n   },\n   [\"RikuWHM2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuSCH2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuAST2\"] = {\n      [\"ResWhenNoTarget\"] = true,\n      [\"ResOutOfCombat\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"RikuMNK2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuDRG2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"RikuNIN2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorWeeb2\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n   [\"TensorRequiem2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n\n   },\n   [\"TensorMagnum2\"] = {\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"RikuDNC2\"] = {\n      [\"ShowPositionalIndicator\"] = false,\n      [\"Interrupt\"] = true,\n      [\"AutoInterrupt\"] = do_interrupt,\n   },\n   [\"TensorRuin2\"] = {\n      [\"JumpOffForceHold\"] = not do_jumps,\n      [\"ResWhenNoTarget\"] = true,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n      [\"ShowPositionalIndicator\"] = false,\n   },\n   [\"RikuRDM2\"] = {\n      [\"Melee\"] = do_jumps,\n      [\"JumpIn\"] = do_jumps,\n      [\"JumpOut\"] = do_jumps,\n      [\"ShowPositionalIndicator\"] = false,\n      [\"SwiftRes\"] = do_swift_res,\n      [\"HardRes\"] = do_hard_res,\n   },\n   [\"TensorReaper\"] = {\n      [\"PositionalMode\"] = \"None\",\n   },\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n   local acr_settings_merged = table.merge(acr_settings[acr_name], acr_settings_common)\n   for k, v in pairs(acr_settings_merged) do\n      local s = \"ACR_\" .. acr_name .. \"_\" .. k\n      if (_G[s] ~= nil) then\n         _G[s] = v\n      end\n   end\nend\n\nif TensorCore_UseTTK then\n   TensorCore_UseTTK = false\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.DutyHelper.enabled = true\n   AnyoneCore.Settings.DutyHelper.requirebotenabled = false\n   AnyoneCore.Settings.DutyHelper.ControlDoTs = true\n   AnyoneCore.Settings.DutyHelper.HealingUsage = true\n   AnyoneCore.Settings.DutyHelper.SmartTarget = false\n   AnyoneCore.Settings.DutyHelper.knockback = true\n   AnyoneCore.Settings.DutyHelper.mitigation = true\n   AnyoneCore.Settings.faceAwayEnabled = true\n   AnyoneCore.Settings.PrepullHelper.enabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif TensorDrift_SlidecastEnabled then\n   TensorDrift_SlidecastEnabled = false\nend\n\nif ACR_TensorRuin_SlidecastEnabled then\n   ACR_TensorRuin_SlidecastEnabled = false\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.enable = true\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -1427,7 +1427,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "073c50d3-6b89-a650-8c53-d08de3359a45",
+		uuid = "fa8ef241-93f4-9406-9548-125c50efd89d",
 	},
 	
 	{
@@ -1836,7 +1836,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "12d7a82e-12ff-28ff-ab99-67d5535a963b",
+		uuid = "904c5cef-c37a-fe0d-b3e3-792d08a4ff4d",
 	},
 	
 	{
@@ -2178,7 +2178,7 @@ local tbl =
 				setFirstMatch = false,
 			},
 		},
-		enabled = false,
+		enabled = true,
 		eventType = 12,
 		execute = "",
 		executeType = 1,
@@ -2198,7 +2198,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "0b62b437-d5a0-8695-a2b4-0798aa4e2239",
+		uuid = "8be086c7-8375-d81b-99fa-cb1877724ea5",
 	},
 	
 	{
@@ -2208,7 +2208,7 @@ local tbl =
 			{
 				aType = 4,
 				actionID = -1,
-				actionLua = "local filename = GetStartupPath() .. [[\\prom\\ffxivminion_]] .. GetUUID() .. [[.prom]]\nlocal outstring\nlocal tbl = {\"# HELP ffxiv_item Item quantity\", \"# TYPE ffxiv_item gauge\"}\nlocal items_summed = {\n   [1] = 0, -- gil\n   [20] = 0, -- storm seal\n   [21] = 0, -- serpent seal\n   [22] = 0, -- flame seal\n   [25] = 0, -- wolf mark\n   [27] = 0, -- allied seal\n   [29] = 0, -- MGP\n   [12669] = 0, -- hi-cordial\n   [33328] = 0, -- ostensibly special timeworn map\n   [33916] = 0, -- grade 8 dark matter\n   [23043] = 0, -- Lunar Totem\n   [23209] = 0, -- Celestial Kimono Remnant\n   [24797] = 0, -- Seiryu Totem\n   [24803] = 0, -- Seiryu Scale\n   [21196] = 0, -- Shinryu Totem\n   [21090] = 0, -- Shinryu Scale\n   [24003] = 0, -- Scarlet Tailfeather\n   [23962] = 0, -- Suzaku Totem\n}\n\nlocal item_ids = {}\nfor k, _ in pairs(items_summed) do\n   item_ids[#item_ids + 1] = k\nend\n\n-- items\nlocal ffxiv_item = \"ffxiv_item{character=\\\"%s\\\",id=\\\"%s\\\"} %d\"\nlocal inventories = {FFXIV.INVENTORYTYPE.INV_BAG0, FFXIV.INVENTORYTYPE.INV_BAG1, FFXIV.INVENTORYTYPE.INV_BAG2, FFXIV.INVENTORYTYPE.INV_BAG3,\n                     FFXIV.INVENTORYTYPE.INV_CURRENCY, FFXIV.INVENTORYTYPE.INV_SHARDS}\nlocal items = GetItems(item_ids, inventories)\nfor _, result in pairs(items) do\n   local item = result.item\n   items_summed[item.id] = items_summed[item.id] + item.count\nend\n\nfor item_id, item_count in pairs(items_summed) do\n   tbl[#tbl + 1] = string.format(ffxiv_item, Player.name, item_id, item_count)\nend\n\n-- special currencies\ntbl[#tbl + 1] = \"# HELP ffxiv_currency Currency count\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_currency gauge\"\nlocal currencies = {28, -- Poetics\n42, -- Allagan Tomestone of Aphorism\n43, -- Allagan Tomestone of Astronomy\n21072, -- Venture\n25199, -- White Crafters' Scrip \n25200, -- White Gatherers' Scrip\n26807, -- bicolor gemstone\n28063, -- skybuilders' scrip\n33913, -- Purple Crafters' Scrip\n33914 -- Purple Gatherers' Scrip\n}\nlocal gsc = Inventory:GetSpecialCurrencies()\nlocal ffxiv_currency = \"ffxiv_currency{character=\\\"%s\\\",id=\\\"%s\\\"} %d\"\nfor _, id in pairs(currencies) do\n   local count = (gsc[id] and gsc[id].count) or Inventory:GetCurrencyCountByID(id)\n   if (count) then\n      tbl[#tbl + 1] = string.format(ffxiv_currency, Player.name, id, count)\n   end\nend\n\n-- leve allowances\nlocal allowances = Quest:GetQuestAllowance()\nif allowances then\n   tbl[#tbl + 1] = \"# HELP ffxiv_leve_allowances Number of leve allowances\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_leve_allowances gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_leve_allowances{character=\\\"%s\\\"} %d\", Player.name, allowances)\nend\n\n-- free inventory slots\nlocal free = 0\nfor i = 0, 3 do\n   free = free + Inventory:Get(i).free\nend\ntbl[#tbl + 1] = \"# HELP ffxiv_inventory_free_slots Number of free inventory slots\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_inventory_free_slots gauge\"\ntbl[#tbl + 1] = string.format(\"ffxiv_inventory_free_slots{character=\\\"%s\\\"} %d\", Player.name, free)\n\n-- heartbeat\ntbl[#tbl + 1] = \"# HELP ffxiv_heartbeat Lua os.time() - Unix timestamp in seconds\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_heartbeat gauge\"\ntbl[#tbl + 1] = string.format(\"ffxiv_heartbeat{character=\\\"%s\\\",pid=\\\"%s\\\"} %d\", Player.name, GetCurrentPID(), os.time())\n\n-- job exp/lvl\nif (Player.level == Player.levels[Player.job]) then\n   local exp = GetControl(\"_Exp\")\n   local expd = exp:GetData()\n   if (expd ~= nil) then\n      local exps = exp:GetStrings()\n      local level_exact = Player.level + (expd.current / expd.max)\n      local level_job = string.sub(exps[4], 1, 3)\n\n      tbl[#tbl + 1] = \"# HELP ffxiv_exp Experience for current job\"\n      tbl[#tbl + 1] = \"# TYPE ffxiv_exp gauge\"\n      tbl[#tbl + 1] = string.format(\"ffxiv_exp{character=\\\"%s\\\",job=\\\"%s\\\"} %f\", Player.name, level_job, level_exact)\n   end\nend\n\nif (Player.levels[Player.job] < 90 and not InInstance()) then\n   local hob2 = (HasBuffX(Player.id, 365, 10) and 0 or 1)\n   tbl[#tbl + 1] = \"# HELP ffxiv_heat_of_battle_ii Heat of Battle II XP buff\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_heat_of_battle_ii gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_heat_of_battle_ii{character=\\\"%s\\\"} %d\", Player.name, hob2)\nend\n\n-- gp \nif (In(Player.job, FFXIV.JOBS.BOTANIST, FFXIV.JOBS.MINER, FFXIV.JOBS.FISHER)) then\n   tbl[#tbl + 1] = \"# HELP ffxiv_gp_current Current GP\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_gp_current gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_gp_current{character=\\\"%s\\\"} %d\", Player.name, Player.gp.current)\n\n   tbl[#tbl + 1] = \"# HELP ffxiv_gp_max Max GP\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_gp_max gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_gp_max{character=\\\"%s\\\"} %d\", Player.name, Player.gp.max)\nend\n\n-- finish up\nFileWrite(filename, table.concat(tbl, \"\\n\") .. \"\\n\")\ndata.MistPromWriteTime = Now()\nself.used = true\n",
+				actionLua = "local filename = GetStartupPath() .. [[\\prom\\ffxivminion_]] .. GetUUID() .. [[.prom]]\nlocal outstring\nlocal tbl = {\"# HELP ffxiv_item Item quantity\", \"# TYPE ffxiv_item gauge\"}\nlocal items_summed = {\n   [1] = 0, -- gil\n   [20] = 0, -- storm seal\n   [21] = 0, -- serpent seal\n   [22] = 0, -- flame seal\n   [25] = 0, -- wolf mark\n   [27] = 0, -- allied seal\n   [29] = 0, -- MGP\n   [12669] = 0, -- hi-cordial\n   [33328] = 0, -- ostensibly special timeworn map\n   [33916] = 0, -- grade 8 dark matter\n   [23043] = 0, -- Lunar Totem\n   [23209] = 0, -- Celestial Kimono Remnant\n   [24797] = 0, -- Seiryu Totem\n   [24803] = 0, -- Seiryu Scale\n   [21196] = 0, -- Shinryu Totem\n   [21090] = 0, -- Shinryu Scale\n   [24003] = 0, -- Scarlet Tailfeather\n   [23962] = 0, -- Suzaku Totem\n   [28631] = 0, -- hades auracyte\n   [28708] = 0, -- hades totem\n}\n\nlocal item_ids = {}\nfor k, _ in pairs(items_summed) do\n   item_ids[#item_ids + 1] = k\nend\n\n-- items\nlocal ffxiv_item = \"ffxiv_item{character=\\\"%s\\\",id=\\\"%s\\\"} %d\"\nlocal inventories = {FFXIV.INVENTORYTYPE.INV_BAG0, FFXIV.INVENTORYTYPE.INV_BAG1, FFXIV.INVENTORYTYPE.INV_BAG2, FFXIV.INVENTORYTYPE.INV_BAG3,\n                     FFXIV.INVENTORYTYPE.INV_CURRENCY, FFXIV.INVENTORYTYPE.INV_SHARDS}\nlocal items = GetItems(item_ids, inventories)\nfor _, result in pairs(items) do\n   local item = result.item\n   items_summed[item.id] = items_summed[item.id] + item.count\nend\n\nfor item_id, item_count in pairs(items_summed) do\n   tbl[#tbl + 1] = string.format(ffxiv_item, Player.name, item_id, item_count)\nend\n\n-- special currencies\ntbl[#tbl + 1] = \"# HELP ffxiv_currency Currency count\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_currency gauge\"\nlocal currencies = {28, -- Poetics\n42, -- Allagan Tomestone of Aphorism\n43, -- Allagan Tomestone of Astronomy\n21072, -- Venture\n25199, -- White Crafters' Scrip \n25200, -- White Gatherers' Scrip\n26807, -- bicolor gemstone\n28063, -- skybuilders' scrip\n33913, -- Purple Crafters' Scrip\n33914 -- Purple Gatherers' Scrip\n}\nlocal gsc = Inventory:GetSpecialCurrencies()\nlocal ffxiv_currency = \"ffxiv_currency{character=\\\"%s\\\",id=\\\"%s\\\"} %d\"\nfor _, id in pairs(currencies) do\n   local count = (gsc[id] and gsc[id].count) or Inventory:GetCurrencyCountByID(id)\n   if (count) then\n      tbl[#tbl + 1] = string.format(ffxiv_currency, Player.name, id, count)\n   end\nend\n\n-- leve allowances\nlocal allowances = Quest:GetQuestAllowance()\nif allowances then\n   tbl[#tbl + 1] = \"# HELP ffxiv_leve_allowances Number of leve allowances\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_leve_allowances gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_leve_allowances{character=\\\"%s\\\"} %d\", Player.name, allowances)\nend\n\n-- free inventory slots\nlocal free = 0\nfor i = 0, 3 do\n   free = free + Inventory:Get(i).free\nend\ntbl[#tbl + 1] = \"# HELP ffxiv_inventory_free_slots Number of free inventory slots\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_inventory_free_slots gauge\"\ntbl[#tbl + 1] = string.format(\"ffxiv_inventory_free_slots{character=\\\"%s\\\"} %d\", Player.name, free)\n\n-- heartbeat\ntbl[#tbl + 1] = \"# HELP ffxiv_heartbeat Lua os.time() - Unix timestamp in seconds\"\ntbl[#tbl + 1] = \"# TYPE ffxiv_heartbeat gauge\"\ntbl[#tbl + 1] = string.format(\"ffxiv_heartbeat{character=\\\"%s\\\",pid=\\\"%s\\\"} %d\", Player.name, GetCurrentPID(), os.time())\n\n-- job exp/lvl\nif (Player.level == Player.levels[Player.job]) then\n   local exp = GetControl(\"_Exp\")\n   local expd = exp:GetData()\n   if (expd ~= nil) then\n      local exps = exp:GetStrings()\n      local level_exact = Player.level + (expd.current / expd.max)\n      local level_job = string.sub(exps[4], 1, 3)\n\n      tbl[#tbl + 1] = \"# HELP ffxiv_exp Experience for current job\"\n      tbl[#tbl + 1] = \"# TYPE ffxiv_exp gauge\"\n      tbl[#tbl + 1] = string.format(\"ffxiv_exp{character=\\\"%s\\\",job=\\\"%s\\\"} %f\", Player.name, level_job, level_exact)\n   end\nend\n\nif (Player.levels[Player.job] < 90 and not InInstance()) then\n   local hob2 = (HasBuffX(Player.id, 365, 10) and 0 or 1)\n   tbl[#tbl + 1] = \"# HELP ffxiv_heat_of_battle_ii Heat of Battle II XP buff\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_heat_of_battle_ii gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_heat_of_battle_ii{character=\\\"%s\\\"} %d\", Player.name, hob2)\nend\n\n-- gp \nif (In(Player.job, FFXIV.JOBS.BOTANIST, FFXIV.JOBS.MINER, FFXIV.JOBS.FISHER)) then\n   tbl[#tbl + 1] = \"# HELP ffxiv_gp_current Current GP\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_gp_current gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_gp_current{character=\\\"%s\\\"} %d\", Player.name, Player.gp.current)\n\n   tbl[#tbl + 1] = \"# HELP ffxiv_gp_max Max GP\"\n   tbl[#tbl + 1] = \"# TYPE ffxiv_gp_max gauge\"\n   tbl[#tbl + 1] = string.format(\"ffxiv_gp_max{character=\\\"%s\\\"} %d\", Player.name, Player.gp.max)\nend\n\n-- finish up\nFileWrite(filename, table.concat(tbl, \"\\n\") .. \"\\n\")\ndata.MistPromWriteTime = Now()\nself.used = true\n",
 				allowInterrupt = false,
 				atomicPriority = false,
 				castAtMouse = false,
@@ -2354,7 +2354,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "b34fe41a-3b8e-4229-b2ad-46bee9227c69",
+		uuid = "343156a0-691f-e50f-b9f3-655ef1608153",
 	},
 	
 	{
@@ -2509,7 +2509,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "cdec2686-bfd9-2925-b357-38dcf52fe2c2",
+		uuid = "a21a3a77-83cb-f577-8000-8d04b47db8b8",
 	},
 	
 	{
@@ -3660,7 +3660,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "c2ff930b-c1d4-57e2-8f2a-3d2ad8a76dd0",
+		uuid = "d6d05fda-2938-76a6-a29c-48740227a23a",
 	},
 	
 	{
@@ -3684,7 +3684,6 @@ local tbl =
 				conditions = 
 				{
 					1,
-					4,
 					5,
 				},
 				endIfUsed = true,
@@ -3733,7 +3732,6 @@ local tbl =
 				conditions = 
 				{
 					2,
-					4,
 					5,
 				},
 				endIfUsed = true,
@@ -4264,7 +4262,7 @@ local tbl =
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "3f36c2a7-b50f-7349-9558-10a0224541ca",
+		uuid = "1726828e-adb1-69e3-aa9f-2ece5839b0e1",
 	},
 	
 	{
@@ -4573,7 +4571,7 @@ local tbl =
 				clusterRadius = 8,
 				clusterRange = 30,
 				comparator = 1,
-				conditionLua = "return InInstance() or In(Player.job, FFXIV.JOBS.SAGE, FFXIV.JOBS.REAPER)",
+				conditionLua = "return InInstance() or In(Player.job, FFXIV.JOBS.SAGE, FFXIV.JOBS.REAPER, FFXIV.JOBS.BLUEMAGE)",
 				conditionType = 1,
 				conditions = 
 				{
@@ -4645,88 +4643,12 @@ local tbl =
 		timeRandomRange = false,
 		timeRange = false,
 		timelineIndex = 0,
-		timeout = 10,
+		timeout = 5,
 		timerEndOffset = 0,
 		timerOffset = 0,
 		timerStartOffset = 0,
 		used = false,
-		uuid = "318a3ba1-97f5-abfc-beac-67fedd8cf859",
-	},
-	
-	{
-		actions = 
-		{
-			
-			{
-				aType = 4,
-				actionID = -1,
-				actionLua = "data.MistFacings = { 0, 1.57, 3.14, -1.57 }\ndata.MistFacingIndex = ((data.MistFacingIndex or 0) % #data.MistFacings + 1)\nPlayer:SetFacing(data.MistFacings[data.MistFacingIndex])\nself.used = true",
-				allowInterrupt = false,
-				atomicPriority = false,
-				castAtMouse = false,
-				castPosX = 0,
-				castPosY = 0,
-				castPosZ = 0,
-				clusterMinPercent = false,
-				clusterMinTarget = 1,
-				clusterRadius = 8,
-				clusterRange = 30,
-				conditions = 
-				{
-				},
-				endIfUsed = false,
-				fallthrough = false,
-				gVar = "",
-				gVarValue = 1,
-				ignoreWeaveRules = false,
-				isAreaTarget = false,
-				luaNeedsWeaveWindow = false,
-				luaReturnsAction = false,
-				name = "",
-				potType = 1,
-				setTarget = false,
-				showPositionPreview = false,
-				stopCasting = false,
-				stopMoving = false,
-				targetContentID = -1,
-				targetName = "",
-				targetSubType = "Nearest",
-				targetType = "Self",
-				untarget = false,
-				useForWeaving = false,
-				useItem = false,
-				useItemID = 0,
-				useItemName = "",
-				usePot = false,
-				used = false,
-				variableIsHover = false,
-				variableTogglesType = 1,
-			},
-		},
-		conditions = 
-		{
-		},
-		enabled = false,
-		eventType = 1,
-		execute = "",
-		executeType = 1,
-		lastUse = 0,
-		luaNeedsWeaveWindow = false,
-		luaReturnsAction = false,
-		name = "Mist - Suzaku Spin",
-		randomOffset = 0,
-		randomTimeout = 3,
-		throttleTime = 1000,
-		time = 0,
-		timeRandomRange = false,
-		timeRange = false,
-		timelineIndex = 0,
-		timeout = 1,
-		timerEndOffset = 0,
-		timerOffset = 0,
-		timerStartOffset = 0,
-		used = false,
-		uuid = "44109c14-f9c9-057c-9b43-ca21479533b7",
+		uuid = "c71b221d-a7bf-9e4b-af4f-83d45c2703fd",
 	},
 }
 
