@@ -904,6 +904,7 @@ local tbl =
 					},
 				},
 			},
+			enabled = false,
 			name = "Mist - Prompto",
 			throttleTime = 500,
 			uuid = "f009255c-2530-1e04-90f3-f0ff5e23381f",
