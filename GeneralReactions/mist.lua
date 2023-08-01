@@ -458,7 +458,6 @@ local tbl =
 					},
 				},
 			},
-			enabled = false,
 			name = "Mist - Sprint",
 			throttleTime = 1000,
 			uuid = "9f394b0d-9a92-7532-b04e-5f1a14aaa816",
