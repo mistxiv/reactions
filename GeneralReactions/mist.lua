@@ -6,6 +6,23 @@ local tbl =
 		{
 			actions = 
 			{
+			},
+			conditions = 
+			{
+			},
+			enabled = false,
+			name = "--Mist",
+			uuid = "516a5ad3-d477-182d-80c8-214f9aaa71f5",
+			version = 2,
+		},
+		inheritedIndex = 1,
+	},
+	
+	{
+		data = 
+		{
+			actions = 
+			{
 				
 				{
 					data = 
@@ -1184,6 +1201,7 @@ local tbl =
 			uuid = "0193ca0e-c10d-1dcc-98bd-bda1e028e4f1",
 			version = 2,
 		},
+		inheritedIndex = 10,
 	}, 
 	inheritedProfiles = 
 	{
