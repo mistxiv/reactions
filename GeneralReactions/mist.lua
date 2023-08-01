@@ -509,12 +509,43 @@ local tbl =
 								"dcf54889-24ca-c9cc-8489-506cf9740937",
 								true,
 							},
+							
+							{
+								"8737061a-51aa-1ce0-8180-d7163a0da357",
+								true,
+							},
 						},
 						endIfUsed = true,
-						name = "buy",
+						name = "buy dm8",
 						uuid = "8bf2e31c-ec9b-930e-9405-a71521798dcc",
 						version = 2,
 					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "Inventory:BuyShopItem(4728, data.raisins_buy_qty)\nself.used = true",
+						conditions = 
+						{
+							
+							{
+								"f7f81f72-391d-81f5-b064-e79f5a47a92b",
+								true,
+							},
+							
+							{
+								"dcf54889-24ca-c9cc-8489-506cf9740937",
+								true,
+							},
+						},
+						endIfUsed = true,
+						name = "buy raisins",
+						uuid = "6b9b0862-44f2-0cf9-944a-c79dcb6fe49f",
+						version = 2,
+					},
+					inheritedIndex = 3,
 				},
 			},
 			conditions = 
@@ -524,12 +555,25 @@ local tbl =
 					data = 
 					{
 						category = "Lua",
-						conditionLua = "local slist = Inventory:GetShopList()\nif (table.valid(slist)) then\n  for _, e in pairs(slist) do\n    if e.id == 33916 and e.count < 999 then\n      data.dm_buy_qty = math.min(99, 999-e.count)\n      return true\n    end\n  end\nend\nreturn false",
+						conditionLua = "local slist = Inventory:GetShopList()\nif (table.valid(slist)) then\n    for _, e in pairs(slist) do\n        if e.id == 33916 and e.count < 999 then\n            data.dm_buy_qty = math.min(99, 999 - e.count)\n            return true\n        end\n    end\nend\nreturn false\n",
 						dequeueIfLuaFalse = true,
-						name = "buyable dm [true]",
+						name = "buyable dm8 [true]",
 						uuid = "5631b7a0-ec46-86e7-b8cd-e18c258856e9",
 						version = 2,
 					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "local slist = Inventory:GetShopList()\nif (table.valid(slist)) then\n    for _, e in pairs(slist) do\n        if e.id == 4728 and e.count < 99 then\n            data.raisins_buy_qty = math.min(99, 99 - e.count)\n            return true\n        end\n    end\nend\nreturn false\n",
+						dequeueIfLuaFalse = true,
+						name = "buyable raisins [true]",
+						uuid = "f7f81f72-391d-81f5-b064-e79f5a47a92b",
+						version = 2,
+					},
+					inheritedIndex = 2,
 				},
 				
 				{
@@ -553,8 +597,18 @@ local tbl =
 						version = 2,
 					},
 				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return false",
+						name = "false",
+						uuid = "8737061a-51aa-1ce0-8180-d7163a0da357",
+						version = 2,
+					},
+				},
 			},
-			enabled = false,
 			eventType = 12,
 			name = "Mist - Vendor Buy",
 			throttleTime = 1000,
