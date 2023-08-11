@@ -67,7 +67,7 @@ local tbl =
 					data = 
 					{
 						aType = "Lua",
-						actionLua = "local MDT = MistDogTag\nMDT.dogtaglastcheck = Now()\n\n-- name --\nMDT.isleader = false\nlocal tr_general_profile = TensorCore.API.TensorReactions.getGeneralReactionProfileName()\nMDT.draw_name_red = true\nlocal acr = gACRSelectedProfiles[Player.job]\nlocal acr_correct = (MDT.jobs_acr_profile[Player.job] and (acr == MDT.jobs_acr_profile[Player.job])) or true\nlocal tr_correct = (tr_general_profile ==\n                      (MDT.jobs_tr_general_profile[Player.job] or MDT.jobs_tr_general_profile_default))\nMDT.draw_name_red = not (acr_correct and tr_correct)\n\nlocal skill_profile = gSkillProfile\nMDT.name_tooltip = \"\"\n\nif MDT.isleader then\n   MDT.name_text = \"*\" .. MDT.name_text\nend\n\nif acr then\n   MDT.name_tooltip = \"ACR: \" .. acr .. \"\\n\"\nend\n\nif skill_profile ~= \"None\" and not gACREnabled then\n   MDT.name_tooltip = MDT.name_tooltip .. \"Skill Profile: \" .. skill_profile .. \"\\n\"\nend\n\nif TensorCore ~= nil then\n   MDT.name_tooltip = MDT.name_tooltip .. \"TR General Profile: \" .. tr_general_profile .. \"\\n\"\nend\n\nif TimeSince(MDT.dogtaglastleadercheck) > 60000 then\n   MDT.dogtacklastleadercheck = Now()\n   local elist = table.valid(EntityList.crossworldparty) and EntityList.crossworldparty or EntityList.myparty\n   for _, e in pairs(elist) do\n      if e.isleader then\n         if e.id == Player.id then\n            MDT.isleader = true\n         end\n      end\n   end\nend\n\nlocal level_text\nif Player.level ~= Player.levels[Player.job] then\n   level_text = Player.level .. \"/\" .. Player.levels[Player.job]\nelse\n   level_text = Player.level\nend\n\nMDT.name_text = Player.name .. \" (\" .. level_text .. \" \" .. ffxivminion.classes[Player.job] .. \")\"\n\n-- map --\nMDT.map_text = GetMapName(Player.localmapid)\nlocal instancedarea = Player.instancedarea\nif (instancedarea ~= 0) then\n   MDT.map_text = MDT.map_text .. \" \" .. instancedarea\nend\n\n-- world --\nMDT.world_text = MDT.GetWorldName(Player.currentworld)\n\nif (Player.currentworld ~= Player.homeworld) then\n   MDT.world_text = MDT.world_text .. \" (\" .. MDT.GetWorldName(Player.homeworld) .. \")\"\nend\n\nMDT.world_tooltip = \"homeworld: \" .. Player.homeworld .. \"\\ncurentworld: \" .. Player.currentworld\n\nMDT.draw_map_red = not (MIsLoading() or Player.onmesh)\n\nMDT.map_tooltip = \"localmapid: \" .. Player.localmapid .. \"\\nmapid2: \" .. Player.mapid2 .. \"\\nmesh: \" ..\n                     ml_mesh_mgr.currentfilename\n\n-- privacy --\nif MDT.privacy then\n   MDT.name_text = MDT.name_text:gsub(Player.name, \"Fake Name\")\n   MDT.world_text = \"Fake Server\"\nend\n\nself.used = true\n",
+						actionLua = "local MDT = MistDogTag\nMDT.dogtaglastcheck = Now()\n\n-- name --\nMDT.isleader = false\nlocal tr_general_profile = TensorCore.API.TensorReactions\n                               .getGeneralReactionProfileName()\nMDT.draw_name_red = true\nlocal acr = gACRSelectedProfiles[Player.job]\nlocal acr_correct = (MDT.jobs_acr_profile[Player.job] and\n                        (acr == MDT.jobs_acr_profile[Player.job])) or true\nlocal tr_correct = (tr_general_profile ==\n                       (MDT.jobs_tr_general_profile[Player.job] or\n                           MDT.jobs_tr_general_profile_default))\nMDT.draw_name_red = not (acr_correct and tr_correct)\n\nlocal skill_profile = gSkillProfile\nMDT.name_tooltip = \"\"\n\nif MDT.isleader then MDT.name_text = \"*\" .. MDT.name_text end\n\nif acr then MDT.name_tooltip = \"ACR: \" .. acr .. \"\\n\" end\n\nif skill_profile ~= \"None\" and not gACREnabled then\n    MDT.name_tooltip = MDT.name_tooltip .. \"Skill Profile: \" .. skill_profile ..\n                           \"\\n\"\nend\n\nif TensorCore ~= nil then\n    MDT.name_tooltip = MDT.name_tooltip .. \"TR General Profile: \" ..\n                           tr_general_profile .. \"\\n\"\nend\n\nif TimeSince(MDT.dogtaglastleadercheck) > 60000 then\n    MDT.dogtaglastleadercheck = Now()\n    local elist = table.valid(EntityList.crossworldparty) and\n                      EntityList.crossworldparty or EntityList.myparty\n    for _, e in pairs(elist) do\n        if e.isleader then\n            if e.id == Player.id then MDT.isleader = true end\n        end\n    end\nend\n\nlocal level_text\nif Player.level ~= Player.levels[Player.job] then\n    level_text = Player.level .. \"/\" .. Player.levels[Player.job]\nelse\n    level_text = Player.level\nend\n\nMDT.name_text = Player.name .. \" (\" .. level_text .. \" \" ..\n                    ffxivminion.classes[Player.job] .. \")\"\n\n-- map --\nMDT.map_text = GetMapName(Player.localmapid)\nlocal instancedarea = Player.instancedarea\nif (instancedarea ~= 0) then MDT.map_text = MDT.map_text .. \" \" .. instancedarea end\n\n-- world --\nMDT.world_text = MDT.GetWorldName(Player.currentworld)\n\nif (Player.currentworld ~= Player.homeworld) then\n    MDT.world_text = MDT.world_text .. \" (\" ..\n                         MDT.GetWorldName(Player.homeworld) .. \")\"\nend\n\nMDT.world_tooltip = \"homeworld: \" .. Player.homeworld .. \"\\ncurentworld: \" ..\n                        Player.currentworld\n\nMDT.draw_map_red = not (MIsLoading() or Player.onmesh)\n\nMDT.map_tooltip = \"localmapid: \" .. Player.localmapid .. \"\\nmapid2: \" ..\n                      Player.mapid2 .. \"\\nmesh: \" .. ml_mesh_mgr.currentfilename\n\n-- privacy --\nif MDT.privacy then\n    MDT.name_text = MDT.name_text:gsub(Player.name, \"Fake Name\")\n    MDT.world_text = \"Fake Server\"\nend\n\nself.used = true\n",
 						conditions = 
 						{
 							
@@ -86,7 +86,7 @@ local tbl =
 					data = 
 					{
 						aType = "Lua",
-						actionLua = "local MDT = MistDogTag\n-- GUI:PushStyleColor(GUI.Col_WindowBg, 0, 0, 0, .6)\nGUI:Begin(\"DogTag\", true, GUI.WindowFlags_NoTitleBar + GUI.WindowFlags_NoScrollbar + GUI.WindowFlags_NoScrollWithMouse +\n   GUI.WindowFlags_NoCollapse + GUI.WindowFlags_AlwaysAutoResize)\n\n-- name --\nif MDT.draw_name_red then\n   GUI:TextColored(1.0, 0.25, 0.25, 1.0, MDT.name_text)\nelse\n   GUI:Text(MDT.name_text)\nend\nif GUI:IsItemHovered() then\n   GUI:SetTooltip(MDT.name_tooltip)\nend\n\n-- map --\nif GUI:IsItemClicked(0) then\n   MDT.privacy = not MDT.privacy\n   MDT.dogtaglastcheck = 0\nelseif GUI:IsItemClicked(1) then\n   GUI:SetClipboardText(GetUUID() .. \"\\n\")\nend\nif MDT.draw_map_red then\n   GUI:TextColored(1.0, 0.25, 0.25, 1.0, MDT.map_text)\nelse\n   GUI:Text(MDT.map_text)\nend\nif GUI:IsItemHovered() then\n   GUI:SetTooltip(MDT.map_tooltip)\nend\nif GUI:IsItemClicked() then\n   GUI:SetClipboardText(table.concat({math.round(Player.pos.x, 2), math.round(Player.pos.y, 2),\n                                      math.round(Player.pos.z, 2), Player.localmapid}, \", \"))\nend\n\n-- world --\nGUI:Text(MDT.world_text)\nif GUI:IsItemHovered() then\n   GUI:SetTooltip(MDT.world_tooltip)\nend\n\nGUI:End()\n-- GUI:PopStyleColor()\nself.used = true\n",
+						actionLua = "local MDT = MistDogTag\n-- GUI:PushStyleColor(GUI.Col_WindowBg, 0, 0, 0, .6)\nGUI:Begin(\"DogTag\", true,\n          GUI.WindowFlags_NoTitleBar + GUI.WindowFlags_NoScrollbar +\n              GUI.WindowFlags_NoScrollWithMouse + GUI.WindowFlags_NoCollapse +\n              GUI.WindowFlags_AlwaysAutoResize)\n\n-- name --\nif MDT.draw_name_red then\n    GUI:TextColored(1.0, 0.25, 0.25, 1.0, MDT.name_text)\nelse\n    GUI:Text(MDT.name_text)\nend\nif GUI:IsItemHovered() then GUI:SetTooltip(MDT.name_tooltip) end\n\n-- map --\nif GUI:IsItemClicked(0) then\n    MDT.privacy = not MDT.privacy\n    MDT.dogtaglastcheck = 0\nelseif GUI:IsItemClicked(1) then\n    GUI:SetClipboardText(GetUUID() .. \"\\n\")\nend\nif MDT.draw_map_red then\n    GUI:TextColored(1.0, 0.25, 0.25, 1.0, MDT.map_text)\nelse\n    GUI:Text(MDT.map_text)\nend\nif GUI:IsItemHovered() then GUI:SetTooltip(MDT.map_tooltip) end\nif GUI:IsItemClicked() then\n    GUI:SetClipboardText('{x=' .. math.round(Player.pos.x, 2) .. ',y=' ..\n                             math.round(Player.pos.y, 2) .. ',z=' ..\n                             math.round(Player.pos.z, 2) .. '}')\nend\n\n-- world --\nGUI:Text(MDT.world_text)\nif GUI:IsItemHovered() then GUI:SetTooltip(MDT.world_tooltip) end\n\nGUI:End()\n-- GUI:PopStyleColor()\nself.used = true\n",
 						name = "draw ui",
 						uuid = "617cd58b-4415-1eda-a2b5-c01a92cf00a2",
 						version = 2,
@@ -144,156 +144,6 @@ local tbl =
 			eventType = 13,
 			name = "Mist - DogTag",
 			uuid = "e2d92074-df7c-1002-93f4-dac37c024d84",
-			version = 2,
-		},
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "self.used = true",
-						conditions = 
-						{
-							
-							{
-								"81f46168-b3aa-0240-b892-cca558420452",
-								true,
-							},
-						},
-						endIfUsed = true,
-						name = "end",
-						uuid = "8b0e600f-6468-be5f-a241-f29dbd933b2d",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "MistUtility = {}\n\nMistUtility.jobs_drift = {\n   [FFXIV.JOBS.ARCANIST] = true,\n   [FFXIV.JOBS.ASTROLOGIAN] = true,\n   [FFXIV.JOBS.BLACKMAGE] = true,\n   [FFXIV.JOBS.BLUEMAGE] = true,\n   [FFXIV.JOBS.CONJURER] = true,\n   [FFXIV.JOBS.NINJA] = true,\n   [FFXIV.JOBS.PALADIN] = true,\n   [FFXIV.JOBS.REDMAGE] = true,\n   [FFXIV.JOBS.SAMURAI] = true,\n   [FFXIV.JOBS.SCHOLAR] = true,\n   [FFXIV.JOBS.SUMMONER] = true,\n   [FFXIV.JOBS.THAUMATURGE] = true,\n   [FFXIV.JOBS.WHITEMAGE] = true,\n   [FFXIV.JOBS.SAGE] = true,\n   [FFXIV.JOBS.REAPER] = true,\n}\n\nfunction MistUtility.gs_set(tbl)\n   if (MistUtility.gs_set_last == nil) then\n      MistUtility.gs_set_last = 0\n   end\n   if (TimeSince(MistUtility.gs_set_last) < 5000) then\n      return\n   end\n   local gs = GetGameSettings()\n   for tbl_k, tbl_v in pairs(tbl) do\n      for gs_k, gs_v in pairs(gs) do\n         if (gs_v.name == tbl_k) then\n            gs[gs_k]:SetValue(tbl_v)\n            break\n         end\n      end\n   end\n   MistUtility.gs_set_last = Now()\nend\n\nfunction MistUtility.is_mt()\n   local elist = table.size(EntityList.crossworldparty) ~= 0 and EntityList.crossworldparty or EntityList.myparty\n   local mt_id = 0\n   -- Solo\n   if (table.size(elist) == 0) then\n      return true\n   else\n      for i, e in pairs(elist) do\n         if IsTank(e) then\n            if e.id > mt_id then\n               mt_id = e.id\n            end\n         end\n      end\n      return Player.id == mt_id\n   end\n   -- Anything else\n   return false\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
-						conditions = 
-						{
-							
-							{
-								"10df0079-f12f-67b8-b07d-f660d0f3af74",
-								false,
-							},
-						},
-						name = "Define functions",
-						uuid = "1cac5440-55f8-43af-ac34-76dbf71a2575",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "local ffxivminion_settings = {\n   --   gACREnabled = do_acr,\n   gAssistUseAutoFace = true,\n   gAssistUseLegacy = true,\n\n--   gAvoidAOE = true,\n   gAvoidHP = 100,\n   gRestHP = 70,\n   gRestMP = 0,\n   gPotionMP = 0,\n   gPotionHP = 50,\n   gFleeHP = 25,\n   gFleeMP = 0,\n\n   gEurekaAvoidHP = 100,\n   gEurekaRestHP = 70,\n   gEurekaRestMP = 0,\n   gEurekaPotionHP = 75,\n   gEurekaPotionMP = 0,\n   gEurekaFleeHP = 25,\n   gEurekaFleeMP = 0,\n   gEurekaAntidote = false,\n\n   gMountDist = 75,\n   gSprintDist = 50,\n   gUseSprint = true,\n}\n\nfor k, v in pairs(ffxivminion_settings) do\n   _G[k] = v\n   Settings.FFXIVMINION[k] = v\nend\n\nif (HusbandoMaxAddonStatus ~= nil and HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n   Settings.minionlib.ShowNavPath = true\n   NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs then\n   MoogleTelegraphs.Settings.DebugTypesEnabled = {\n      [1] = false, -- Casting\n      [2] = false, -- Channeling\n      [3] = false, -- Markers\n   }\nend\n\nif AnyoneCore then\n   AnyoneCore.Settings.ControlDoTs = true\nend\n\nMistUtility.game_settings = {\n   [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n   [\"DisplayObjectLimitType\"] = 4, -- Minimum\n   [\"LodType_DX11\"] = 1, -- Low detail on\n   [\"RadialBlur_DX11\"] = 0, -- Off\n   [\"Vignetting_DX11\"] = 0, -- Off\n   [\"SSAO_DX11\"] = 0, -- Off\n   [\"Glare_DX11\"] = 0, -- Off\n   [\"GlareRepresentation_DX11\"] = 0, -- Off\n   [\"DistortionWater_DX11\"] = 0, -- Off\n   [\"GrassQuality_DX11\"] = 0, -- Off\n   [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n   [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n   [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n   [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n   [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n   -- Cutscene\n   [\"CutsceneSkipIsShip\"] = 1,\n   [\"CutsceneSkipIsContents\"] = 1,\n   [\"CutsceneSkipIsHousing\"] = 1,\n   [\"PadAvailable\"] = 0, -- Enable gamepad\n\n   -- Targeting\n   [\"AutoFaceTargetOnAction\"] = 1, -- On\n   [\"AutoLockOn\"] = 0, -- Off\n}\n",
-						name = "Unconditional settings",
-						uuid = "92846c0f-201e-0d18-b71f-7b31e403b916",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "gPulseTime = 150\n\nlocal do_los = true\nlocal do_interrupt = true\nlocal do_jumps = true\nlocal do_safe_jumps = true\nlocal do_tank_ranged = true\nlocal do_hard_res = not Player.incombat\nlocal do_swift_res = true\nlocal do_auto_provoke = true\nlocal do_auto_stance = true\nlocal is_mt = MistUtility.is_mt()\n\nlocal game_settings = {\n    [\"BattleEffectSelf\"] = 2,\n    [\"BattleEffectParty\"] = 2,\n    [\"BattleEffectOther\"] = 2,\n    [\"BattleEffectPvPEnemyPc\"] = 2,\n    -- Shadows\n    [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n    [\"ShadowVisibilityTypeSelf_DX11\"] = 0, -- Hide\n    [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n    [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n    [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n    [\"ShadowTextureSizeType_DX11\"] = 0, -- Low - 512p\n    [\"ShadowCascadeCountType_DX11\"] = 0 -- Off\n}\n\ntable.merge(MistUtility.game_settings, game_settings)\n\nMistUtility.gs_set(game_settings)\n\nlocal acr_settings_common = {\n    [\"HighPerformanceMode\"] = false,\n    [\"LoS\"] = do_los,\n    [\"ShowHotbar\"] = true,\n    [\"ShowTankbar\"] = true,\n    [\"ShowHealbar\"] = true,\n    [\"ShowHotbarQueue\"] = true,\n    [\"SmartAOE\"] = false,\n    [\"SmartDoT\"] = false,\n    [\"Jumps\"] = do_jumps,\n    -- [\"SafeJump\"] = do_safe_jumps,\n    [\"NoKeybindsOOC\"] = true,\n    [\"ZeroPingEnabled\"] = true,\n    [\"ZeroPingFakePing\"] = 0,\n    [\"Potion\"] = false\n}\n\nlocal acr_settings = {\n    [\"RikuPLD2\"] = {\n        [\"AutoInterrupt\"] = do_interrupt,\n        --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n        [\"AutoStance\"] = do_auto_stance,\n        [\"AutoProvoke\"] = do_auto_provoke,\n        [\"ShieldLob\"] = do_tank_ranged\n    },\n    [\"RikuWAR2\"] = {\n        [\"AutoInterrupt\"] = do_interrupt,\n        --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n        [\"AutoStance\"] = do_auto_stance,\n        [\"AutoProvoke\"] = do_auto_provoke,\n        [\"Tomahawk\"] = do_tank_ranged\n    },\n    [\"RikuDRK2\"] = {\n        [\"AutoInterrupt\"] = do_interrupt,\n        --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n        [\"AutoStance\"] = do_auto_stance,\n        [\"AutoProvoke\"] = do_auto_provoke,\n        [\"Unmend\"] = do_tank_ranged\n    },\n    [\"RikuGNB2\"] = {\n        [\"AutoInterrupt\"] = do_interrupt,\n        --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n        [\"AutoStance\"] = do_auto_stance,\n        [\"AutoProvoke\"] = do_auto_provoke,\n        [\"LightningShot\"] = do_tank_ranged\n    },\n    [\"RikuWHM2\"] = {\n        [\"ResWhenNoTarget\"] = true,\n        [\"ResOutOfCombat\"] = true,\n        [\"SwiftRes\"] = do_swift_res,\n        [\"HardRes\"] = do_hard_res\n    },\n    [\"RikuSCH2\"] = {\n        [\"ResWhenNoTarget\"] = true,\n        [\"ResOutOfCombat\"] = true,\n        [\"SwiftRes\"] = do_swift_res,\n        [\"HardRes\"] = do_hard_res\n    },\n    [\"RikuAST2\"] = {\n        [\"ResWhenNoTarget\"] = true,\n        [\"ResOutOfCombat\"] = true,\n        [\"SwiftRes\"] = do_swift_res,\n        [\"HardRes\"] = do_hard_res\n    },\n    [\"RikuMNK2\"] = {[\"PositionalMode\"] = \"None\"},\n    [\"RikuDRG2\"] = {[\"PositionalMode\"] = \"None\"},\n    [\"RikuNIN2\"] = {[\"PositionalMode\"] = \"None\"},\n    [\"TensorWeeb2\"] = {[\"PositionalMode\"] = \"None\"},\n    [\"TensorRequiem2\"] = {[\"AutoInterrupt\"] = do_interrupt},\n    [\"TensorMagnum2\"] = {[\"AutoInterrupt\"] = do_interrupt},\n    [\"RikuDNC2\"] = {\n        [\"ShowPositionalIndicator\"] = false,\n        [\"Interrupt\"] = true,\n        [\"AutoInterrupt\"] = do_interrupt\n    },\n    [\"TensorRuin2\"] = {\n        [\"JumpOffForceHold\"] = not do_jumps,\n        [\"ResWhenNoTarget\"] = true,\n        [\"SwiftRes\"] = do_swift_res,\n        [\"HardRes\"] = do_hard_res,\n        [\"ShowPositionalIndicator\"] = false\n    },\n    [\"RikuRDM2\"] = {\n        [\"Melee\"] = do_jumps,\n        [\"JumpIn\"] = do_jumps,\n        [\"JumpOut\"] = do_jumps,\n        [\"ShowPositionalIndicator\"] = false,\n        [\"SwiftRes\"] = do_swift_res,\n        [\"HardRes\"] = do_hard_res\n    },\n    [\"TensorReaper\"] = {[\"PositionalMode\"] = \"None\"}\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n    local acr_settings_merged = table.merge(acr_settings[acr_name],\n                                            acr_settings_common)\n    for k, v in pairs(acr_settings_merged) do\n        local s = \"ACR_\" .. acr_name .. \"_\" .. k\n        if (_G[s] ~= nil) then _G[s] = v end\n    end\nend\n\nif TensorCore_UseTTK then TensorCore_UseTTK = false end\n\nif AnyoneCore then\n    AnyoneCore.Settings.DutyHelper.enabled = true\n    AnyoneCore.Settings.DutyHelper.requirebotenabled = false\n    AnyoneCore.Settings.DutyHelper.ControlDoTs = true\n    AnyoneCore.Settings.DutyHelper.HealingUsage = true\n    AnyoneCore.Settings.DutyHelper.SmartTarget = false\n    AnyoneCore.Settings.DutyHelper.knockback = true\n    AnyoneCore.Settings.DutyHelper.mitigation = true\n    AnyoneCore.Settings.faceAwayEnabled = true\n    AnyoneCore.Settings.PrepullHelper.enabled = false\nend\n\nif TensorDrift_SlidecastEnabled then TensorDrift_SlidecastEnabled = false end\n\nif ACR_TensorRuin_SlidecastEnabled then ACR_TensorRuin_SlidecastEnabled = false end\n\nif TensorDrift_SlidecastEnabled then TensorDrift_SlidecastEnabled = false end\n\nif ACR_TensorRuin_SlidecastEnabled then ACR_TensorRuin_SlidecastEnabled = false end\n\nif MoogleTelegraphs then MoogleTelegraphs.Settings.enable = false end\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
-						conditions = 
-						{
-							
-							{
-								"c4c821cd-6e28-9557-aba5-9daa24b80b5e",
-								true,
-							},
-						},
-						endIfUsed = true,
-						gVar = "ACR_RikuDRK_CD",
-						name = "Unattended settings",
-						useItemID = 1027960,
-						useItemName = "Superior Spiritbond Potion (HQ)",
-						uuid = "06edffe1-29d8-88f9-afea-cc20256ed463",
-						version = 2,
-					},
-					inheritedIndex = 4,
-				},
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "local do_los = true\n\nif FFXIV_Common_BotRunning then gPulseTime = 50 end\n\nlocal game_settings = {\n    [\"BattleEffectSelf\"] = 0, -- Full\n    [\"BattleEffectParty\"] = 1, -- Limited\n    [\"BattleEffectOther\"] = 2, -- Off\n    [\"BattleEffectPvPEnemyPc\"] = 1, -- Some\n    -- Shadows\n    [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n    [\"ShadowVisibilityTypeSelf_DX11\"] = 1, -- Show\n    [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n    [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n    [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n    [\"ShadowTextureSizeType_DX11\"] = 2, -- Normal - 1024p\n    [\"ShadowCascadeCountType_DX11\"] = 2 -- Best\n}\n\ntable.merge(MistUtility.game_settings, game_settings)\n\nMistUtility.gs_set(MistUtility.game_settings)\n\nlocal acr_settings_common = {\n    [\"HighPerformanceMode\"] = true,\n    [\"LoS\"] = do_los,\n    [\"ShowHotbar\"] = true,\n    [\"ShowTankbar\"] = true,\n    [\"ShowHealbar\"] = true,\n    [\"ShowHotbarQueue\"] = true,\n    [\"NoKeybindsOOC\"] = false,\n    [\"ZeroPingEnabled\"] = true,\n    [\"ZeroPingFakePing\"] = 0\n}\n\nlocal acr_settings = {\n    [\"RikuPLD2\"] = {},\n    [\"RikuWAR2\"] = {},\n    [\"RikuDRK2\"] = {},\n    [\"RikuGNB2\"] = {},\n    [\"RikuWHM22\"] = {},\n    [\"RikuSCH2\"] = {},\n    [\"RikuAST2\"] = {},\n    [\"RikuMNK2\"] = {[\"PositionalMode\"] = \"Argus\"},\n    [\"RikuDRG2\"] = {[\"PositionalMode\"] = \"Argus\"},\n    [\"RikuNIN2\"] = {[\"PositionalMode\"] = \"Argus\"},\n    [\"TensorWeeb2\"] = {[\"PositionalMode\"] = \"Argus\"},\n    [\"RikuRDM2\"] = {[\"ShowPositionalIndicator\"] = false},\n    [\"TensorRequiem2\"] = {[\"ShowPositionalIndicator\"] = false},\n    [\"TensorMagnum2\"] = {},\n    [\"RikuDNC2\"] = {[\"ShowPositionalIndicator\"] = true},\n    [\"TensorRuin2\"] = {[\"ResWhenNoTarget\"] = true},\n    [\"RikuRDM2\"] = {[\"ShowPositionalIndicator\"] = true},\n    [\"TensorReaper\"] = {[\"PositionalMode\"] = \"Argus\"}\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n    local acr_settings_merged = table.merge(acr_settings[acr_name],\n                                            acr_settings_common)\n    for k, v in pairs(acr_settings_merged) do\n        local s = \"ACR_\" .. acr_name .. \"_\" .. k\n        if (_G[s] ~= nil) then _G[s] = v end\n    end\nend\n\nif TensorCore_UseTTK ~= nil then TensorCore_UseTTK = false end\n\nlocal drift = (MistUtility.jobs_drift[Player.job] == true)\n\nif TensorDrift_SlidecastEnabled ~= nil then\n    if not table.valid(ml_navigation.path) then\n        TensorDrift_SlidecastEnabled = drift\n    end\nend\n\nif TensorBinds_Enabled ~= nil then TensorBinds_Enabled = true end\n\nif AnyoneCore ~= nil then\n    AnyoneCore.Settings.DutyHelper.SmartTarget = true\n    AnyoneCore.Settings.faceAwayEnabled = true\nend\n\nif MoogleTelegraphs ~= nil then MoogleTelegraphs.Settings.enable = true end\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
-						endIfUsed = true,
-						gVar = "ACR_RikuDRK_CD",
-						name = "Attended settings",
-						useItemID = 1027960,
-						useItemName = "Superior Spiritbond Potion (HQ)",
-						uuid = "4caa9473-e0f6-e36d-8977-6a9982a986fb",
-						version = 2,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Lua",
-						conditionLua = "return MistUtility ~= nil\n\n",
-						name = "Functions defined",
-						uuid = "10df0079-f12f-67b8-b07d-f660d0f3af74",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Lua",
-						conditionLua = "return Between(Player.job,8,18,true) == false",
-						name = "DoM/DoW",
-						uuid = "67f6629f-a640-85c4-b11f-82d4ffde7bfa",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Lua",
-						conditionLua = "return false",
-						name = "false",
-						uuid = "81f46168-b3aa-0240-b892-cca558420452",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Lua",
-						conditionLua = "local non_assist_running = (FFXIV_Common_BotRunning and gBotMode ~=\n                               GetString(\"assistMode\"))\nlocal kitanoi_running = (KitanoiFuncs ~= nil and\n                            KitanoiFuncs.AreKitanoiAddonsRunning())\nlocal husbando_running = (HusbandoMaxAddonStatus ~= nil and\n                             HusbandoMaxAddonStatus.DungeonMaster.Enabled)\nreturn (non_assist_running or kitanoi_running or husbando_running)\n",
-						name = "Unattended",
-						uuid = "c4c821cd-6e28-9557-aba5-9daa24b80b5e",
-						version = 2,
-					},
-				},
-			},
-			execute = "medicated_spiritbond = false\nfor _, buff in pairs(Player.Buffs) do \n\t\tif buff.id == 49 and buff.stacks == 10452 then \n\t\t\t\tmedicated_spiritbond=true \n\t\tend \nend\nreturn medicated_spiritbond",
-			name = "Mist - Utility",
-			throttleTime = 5000,
-			uuid = "56742687-bfd5-b765-9024-da179f47dde6",
 			version = 2,
 		},
 	},
@@ -624,6 +474,159 @@ local tbl =
 					data = 
 					{
 						aType = "Lua",
+						actionLua = "self.used = true",
+						conditions = 
+						{
+							
+							{
+								"81f46168-b3aa-0240-b892-cca558420452",
+								true,
+							},
+						},
+						endIfUsed = true,
+						name = "end",
+						uuid = "8b0e600f-6468-be5f-a241-f29dbd933b2d",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "MistUtility = {}\nlocal MU = MistUtility\n\nMU.jobs_drift = {\n    [FFXIV.JOBS.ARCANIST] = true,\n    [FFXIV.JOBS.ASTROLOGIAN] = true,\n    [FFXIV.JOBS.BLACKMAGE] = true,\n    [FFXIV.JOBS.BLUEMAGE] = true,\n    [FFXIV.JOBS.CONJURER] = true,\n    [FFXIV.JOBS.NINJA] = true,\n    [FFXIV.JOBS.PALADIN] = true,\n    [FFXIV.JOBS.REDMAGE] = true,\n    [FFXIV.JOBS.SAMURAI] = true,\n    [FFXIV.JOBS.SCHOLAR] = true,\n    [FFXIV.JOBS.SUMMONER] = true,\n    [FFXIV.JOBS.THAUMATURGE] = true,\n    [FFXIV.JOBS.WHITEMAGE] = true,\n    [FFXIV.JOBS.SAGE] = true,\n    [FFXIV.JOBS.REAPER] = true\n}\n\nfunction MU.gs_set(tbl)\n    if (MU.gs_set_last == nil) then MU.gs_set_last = 0 end\n    if (TimeSince(MU.gs_set_last) < 5000) then return end\n    local gs = GetGameSettings()\n    for tbl_k, tbl_v in pairs(tbl) do\n        for gs_k, gs_v in pairs(gs) do\n            if (gs_v.name == tbl_k) then\n                gs[gs_k]:SetValue(tbl_v)\n                break\n            end\n        end\n    end\n    MU.gs_set_last = Now()\nend\n\nfunction MU.is_mt()\n    local elist = table.size(EntityList.crossworldparty) ~= 0 and\n                      EntityList.crossworldparty or EntityList.myparty\n    local mt_id = 0\n    -- Solo\n    if (table.size(elist) == 0) then\n        return true\n    else\n        for i, e in pairs(elist) do\n            if IsTank(e) then if e.id > mt_id then mt_id = e.id end end\n        end\n        return Player.id == mt_id\n    end\n    -- Anything else\n    return false\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
+						conditions = 
+						{
+							
+							{
+								"10df0079-f12f-67b8-b07d-f660d0f3af74",
+								false,
+							},
+						},
+						name = "Define functions",
+						uuid = "1cac5440-55f8-43af-ac34-76dbf71a2575",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "local MU = MistUtility\n-- if Sellout ~= nil then gSORunBackground = false end\nlocal ffxivminion_settings = {\n    gACREnabled = true,\n    gACRAutoEnable = true,\n    gAssistUseAutoFace = true,\n    gAssistUseLegacy = true,\n    --    gSprintDist = 50,\n    --    gMountDist = 75,\n    gSprintDist = 100,\n    gMountDist = 200,\n    gUseSprint = true\n}\n\nfor k, v in pairs(ffxivminion_settings) do\n    _G[k] = v\n    Settings.FFXIVMINION[k] = v\nend\n\nif (HusbandoMaxAddonStatus and HusbandoMaxAddonStatus.DeepDungeon and\n    HusbandoMaxAddonStatus.DeepDungeon.Enabled == false) then\n    Settings.minionlib.ShowNavPath = true\n    NavigationManager.ShowNavPath = Settings.minionlib.ShowNavPath\nend\n\nif MoogleTelegraphs and MoogleTelegraphs.Settings and\n    MoogleTelegraphs.DebugTypesEnabled then\n    MoogleTelegraphs.Settings.DebugTypesEnabled = {\n        [1] = false, -- Casting\n        [2] = false, -- Channeling\n        [3] = false -- Markers\n    }\nend\n\nif AnyoneCore then AnyoneCore.Settings.ControlDoTs = true end\n\nMU.game_settings = {\n    [\"SystemMouseOperationSoftOn\"] = 2, -- OS Cursor\n    [\"DisplayObjectLimitType\"] = 4, -- Minimum\n    [\"LodType_DX11\"] = 1, -- Low detail on\n    [\"RadialBlur_DX11\"] = 0, -- Off\n    [\"Vignetting_DX11\"] = 0, -- Off\n    [\"SSAO_DX11\"] = 0, -- Off\n    [\"Glare_DX11\"] = 0, -- Off\n    [\"GlareRepresentation_DX11\"] = 0, -- Off\n    [\"DistortionWater_DX11\"] = 0, -- Off\n    [\"GrassQuality_DX11\"] = 0, -- Off\n    [\"PhysicsTypeSelf_DX11\"] = 0, -- Off\n    [\"PhysicsTypeParty_DX11\"] = 0, -- Off\n    [\"PhysicsTypeOther_DX11\"] = 0, -- Off\n    [\"PhysicsTypeEnemy_DX11\"] = 0, -- Off\n    [\"TextureFilterQuality_DX11\"] = 1, -- Trilinear\n\n    -- Cutscene\n    [\"CutsceneSkipIsShip\"] = 1,\n    [\"CutsceneSkipIsContents\"] = 1,\n    [\"CutsceneSkipIsHousing\"] = 1,\n    [\"PadAvailable\"] = 0, -- Enable gamepad\n\n    -- Targeting\n    [\"AutoFaceTargetOnAction\"] = 1, -- On\n    [\"AutoLockOn\"] = 0 -- Off\n}\n",
+						name = "Unconditional settings",
+						uuid = "92846c0f-201e-0d18-b71f-7b31e403b916",
+						version = 2,
+					},
+					inheritedIndex = 3,
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "local MU = MistUtility\n\ngPulseTime = 150\n\ngAvoidHP = 100\ngRestHP = 70\ngRestMP = 0\ngPotionMP = 0\ngPotionHP = 50\ngFleeHP = 25\ngFleeMP = 0\n\ngEurekaAvoidHP = 100\ngEurekaRestHP = 70\ngEurekaRestMP = 0\ngEurekaPotionHP = 75\ngEurekaPotionMP = 0\ngEurekaFleeHP = 25\ngEurekaFleeMP = 0\ngEurekaAntidote = false\n\nlocal do_los = true\nlocal do_interrupt = true\nlocal do_jumps = true\nlocal do_safe_jumps = true\nlocal do_tank_ranged = true\nlocal do_hard_res = not Player.incombat\nlocal do_swift_res = true\nlocal do_auto_provoke = true\nlocal do_auto_stance = true\nlocal is_mt = MU.is_mt()\n\nlocal game_settings = {\n    [\"BattleEffectSelf\"] = 2,\n    [\"BattleEffectParty\"] = 2,\n    [\"BattleEffectOther\"] = 2,\n    [\"BattleEffectPvPEnemyPc\"] = 2,\n    -- Shadows\n    [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n    [\"ShadowVisibilityTypeSelf_DX11\"] = 0, -- Hide\n    [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n    [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n    [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n    [\"ShadowTextureSizeType_DX11\"] = 0, -- Low - 512p\n    [\"ShadowCascadeCountType_DX11\"] = 0 -- Off\n}\n\ntable.merge(MU.game_settings, game_settings)\n\nMU.gs_set(game_settings)\n\nlocal acr_settings_common = {\n    [\"HighPerformanceMode\"] = false,\n    [\"LoS\"] = do_los,\n    [\"ShowHotbar\"] = true,\n    [\"ShowTankbar\"] = true,\n    [\"ShowHealbar\"] = true,\n    [\"ShowHotbarQueue\"] = true,\n    [\"SmartAOE\"] = false,\n    [\"SmartDoT\"] = false,\n    [\"Jumps\"] = do_jumps,\n    -- [\"SafeJump\"] = do_safe_jumps,\n    [\"ZeroPingEnabled\"] = true,\n    [\"ZeroPingFakePing\"] = 0,\n    [\"Potion\"] = false\n}\n\nlocal acr_settings = {\n    [\"RikuPLD2\"] = {\n        [\"AutoInterrupt\"] = do_interrupt,\n        --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n        [\"AutoStance\"] = do_auto_stance,\n        [\"AutoProvoke\"] = do_auto_provoke,\n        [\"ShieldLob\"] = do_tank_ranged\n    },\n    [\"RikuWAR2\"] = {\n        [\"AutoInterrupt\"] = do_interrupt,\n        --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n        [\"AutoStance\"] = do_auto_stance,\n        [\"AutoProvoke\"] = do_auto_provoke,\n        [\"Tomahawk\"] = do_tank_ranged\n    },\n    [\"RikuDRK2\"] = {\n        [\"AutoInterrupt\"] = do_interrupt,\n        --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n        [\"AutoStance\"] = do_auto_stance,\n        [\"AutoProvoke\"] = do_auto_provoke,\n        [\"Unmend\"] = do_tank_ranged\n    },\n    [\"RikuGNB2\"] = {\n        [\"AutoInterrupt\"] = do_interrupt,\n        --      [\"TankStance\"] = is_mt and \"mt\" or \"ot\",\n        [\"AutoStance\"] = do_auto_stance,\n        [\"AutoProvoke\"] = do_auto_provoke,\n        [\"LightningShot\"] = do_tank_ranged\n    },\n    [\"RikuWHM2\"] = {\n        [\"ResWhenNoTarget\"] = true,\n        [\"ResOutOfCombat\"] = true,\n        [\"SwiftRes\"] = do_swift_res,\n        [\"HardRes\"] = do_hard_res\n    },\n    [\"RikuSCH2\"] = {\n        [\"ResWhenNoTarget\"] = true,\n        [\"ResOutOfCombat\"] = true,\n        [\"SwiftRes\"] = do_swift_res,\n        [\"HardRes\"] = do_hard_res\n    },\n    [\"RikuAST2\"] = {\n        [\"ResWhenNoTarget\"] = true,\n        [\"ResOutOfCombat\"] = true,\n        [\"SwiftRes\"] = do_swift_res,\n        [\"HardRes\"] = do_hard_res\n    },\n    [\"RikuMNK2\"] = {[\"PositionalMode\"] = \"None\"},\n    [\"RikuDRG2\"] = {[\"PositionalMode\"] = \"None\"},\n    [\"RikuNIN2\"] = {[\"PositionalMode\"] = \"None\"},\n    [\"TensorWeeb2\"] = {[\"PositionalMode\"] = \"None\"},\n    [\"TensorRequiem2\"] = {[\"AutoInterrupt\"] = do_interrupt},\n    [\"TensorMagnum2\"] = {[\"AutoInterrupt\"] = do_interrupt},\n    [\"RikuDNC2\"] = {\n        [\"ShowPositionalIndicator\"] = false,\n        [\"Interrupt\"] = true,\n        [\"AutoInterrupt\"] = do_interrupt\n    },\n    [\"TensorRuin2\"] = {\n        [\"JumpOffForceHold\"] = not do_jumps,\n        [\"ResWhenNoTarget\"] = true,\n        [\"SwiftRes\"] = do_swift_res,\n        [\"HardRes\"] = do_hard_res,\n        [\"ShowPositionalIndicator\"] = false\n    },\n    [\"RikuRDM2\"] = {\n        [\"Melee\"] = do_jumps,\n        [\"JumpIn\"] = do_jumps,\n        [\"JumpOut\"] = do_jumps,\n        [\"ShowPositionalIndicator\"] = false,\n        [\"SwiftRes\"] = do_swift_res,\n        [\"HardRes\"] = do_hard_res\n    },\n    [\"TensorReaper\"] = {[\"PositionalMode\"] = \"None\"}\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n    local acr_settings_merged = table.merge(acr_settings[acr_name],\n                                            acr_settings_common)\n    for k, v in pairs(acr_settings_merged) do\n        local s = \"ACR_\" .. acr_name .. \"_\" .. k\n        if (_G[s] ~= nil) then _G[s] = v end\n    end\nend\n\nif TensorCore_UseTTK then TensorCore_UseTTK = false end\n\nif AnyoneCore then\n    AnyoneCore.Settings.DutyHelper.enabled = true\n    AnyoneCore.Settings.DutyHelper.requirebotenabled = false\n    AnyoneCore.Settings.DutyHelper.ControlDoTs = true\n    AnyoneCore.Settings.DutyHelper.HealingUsage = true\n    AnyoneCore.Settings.DutyHelper.SmartTarget = true\n    AnyoneCore.Settings.DutyHelper.knockback = true\n    AnyoneCore.Settings.DutyHelper.mitigation = true\n    AnyoneCore.Settings.faceAwayEnabled = true\n    AnyoneCore.Settings.PrepullHelper.enabled = false\nend\n\nif TensorDrift_SlidecastEnabled then TensorDrift_SlidecastEnabled = false end\n\nif ACR_TensorRuin_SlidecastEnabled then ACR_TensorRuin_SlidecastEnabled = false end\n\nif TensorDrift_SlidecastEnabled then TensorDrift_SlidecastEnabled = false end\n\nif ACR_TensorRuin_SlidecastEnabled then ACR_TensorRuin_SlidecastEnabled = false end\n\nif MoogleTelegraphs then MoogleTelegraphs.Settings.enable = false end\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
+						conditions = 
+						{
+							
+							{
+								"c4c821cd-6e28-9557-aba5-9daa24b80b5e",
+								true,
+							},
+						},
+						endIfUsed = true,
+						gVar = "ACR_RikuDRK_CD",
+						name = "Unattended settings",
+						useItemID = 1027960,
+						useItemName = "Superior Spiritbond Potion (HQ)",
+						uuid = "06edffe1-29d8-88f9-afea-cc20256ed463",
+						version = 2,
+					},
+					inheritedIndex = 4,
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "local MU = MistUtility\nlocal do_los = true\n\nif FFXIV_Common_BotRunning then gPulseTime = 50 end\n\ngAvoidHP = 0\ngRestHP = 0\ngRestMP = 0\ngPotionMP = 0\ngPotionHP = 0\ngFleeHP = 0\ngFleeMP = 0\n\ngEurekaAvoidHP = 0\ngEurekaRestHP = 0\ngEurekaRestMP = 0\ngEurekaPotionHP = 0\ngEurekaPotionMP = 0\ngEurekaFleeHP = 0\ngEurekaFleeMP = 0\ngEurekaAntidote = false\n\nlocal game_settings = {\n    [\"BattleEffectSelf\"] = 0, -- Full\n    [\"BattleEffectParty\"] = 1, -- Limited\n    [\"BattleEffectOther\"] = 2, -- Off\n    [\"BattleEffectPvPEnemyPc\"] = 1, -- Some\n    -- Shadows\n    [\"ShadowLOD_DX11\"] = 1, -- Low detail on\n    [\"ShadowVisibilityTypeSelf_DX11\"] = 1, -- Show\n    [\"ShadowVisibilityTypeParty_DX11\"] = 0, -- Hide\n    [\"ShadowVisibilityTypeOther_DX11\"] = 0, -- Hide\n    [\"ShadowVisibilityTypeEnemy_DX11\"] = 0, -- Hide\n    [\"ShadowTextureSizeType_DX11\"] = 2, -- Normal - 1024p\n    [\"ShadowCascadeCountType_DX11\"] = 2 -- Best\n}\n\ntable.merge(MU.game_settings, game_settings)\n\nMU.gs_set(MU.game_settings)\n\nlocal acr_settings_common = {\n    [\"HighPerformanceMode\"] = true,\n    [\"LoS\"] = do_los,\n    [\"ShowHotbar\"] = true,\n    [\"ShowTankbar\"] = true,\n    [\"ShowHealbar\"] = true,\n    [\"ShowHotbarQueue\"] = true,\n    [\"ZeroPingEnabled\"] = true,\n    [\"ZeroPingFakePing\"] = 0\n}\n\nlocal acr_settings = {\n    [\"RikuPLD2\"] = {},\n    [\"RikuWAR2\"] = {},\n    [\"RikuDRK2\"] = {},\n    [\"RikuGNB2\"] = {},\n    [\"RikuWHM22\"] = {},\n    [\"RikuSCH2\"] = {},\n    [\"RikuAST2\"] = {},\n    [\"RikuMNK2\"] = {[\"PositionalMode\"] = \"Argus\"},\n    [\"RikuDRG2\"] = {[\"PositionalMode\"] = \"Argus\"},\n    [\"RikuNIN2\"] = {[\"PositionalMode\"] = \"Argus\"},\n    [\"TensorWeeb2\"] = {[\"PositionalMode\"] = \"Argus\"},\n    [\"RikuRDM2\"] = {[\"ShowPositionalIndicator\"] = false},\n    [\"TensorRequiem2\"] = {[\"ShowPositionalIndicator\"] = false},\n    [\"TensorMagnum2\"] = {},\n    [\"RikuDNC2\"] = {[\"ShowPositionalIndicator\"] = true},\n    [\"TensorRuin2\"] = {[\"ResWhenNoTarget\"] = true},\n    [\"RikuRDM2\"] = {[\"ShowPositionalIndicator\"] = true},\n    [\"TensorReaper\"] = {[\"PositionalMode\"] = \"Argus\"}\n}\n\nlocal acr_name = gACRSelectedProfiles[Player.job]\n\nif acr_settings[acr_name] then\n    local acr_settings_merged = table.merge(acr_settings[acr_name],\n                                            acr_settings_common)\n    for k, v in pairs(acr_settings_merged) do\n        local s = \"ACR_\" .. acr_name .. \"_\" .. k\n        if (_G[s] ~= nil) then _G[s] = v end\n    end\nend\n\nif TensorCore_UseTTK ~= nil then TensorCore_UseTTK = false end\n\nlocal drift = (MU.jobs_drift[Player.job] == true)\n\nif TensorDrift_SlidecastEnabled ~= nil then\n    if not table.valid(ml_navigation.path) then\n        TensorDrift_SlidecastEnabled = drift\n    end\nend\n\nif TensorBinds_Enabled ~= nil then TensorBinds_Enabled = true end\n\nif AnyoneCore ~= nil then\n    AnyoneCore.Settings.DutyHelper.SmartTarget = true\n    AnyoneCore.Settings.faceAwayEnabled = true\nend\n\nif MoogleTelegraphs and MoogleTelegraphs.Settings then\n    MoogleTelegraphs.Settings.enable = true\nend\n\nself.used = true\nreaction.eventConditionMismatch = true\n",
+						endIfUsed = true,
+						gVar = "ACR_RikuDRK_CD",
+						name = "Attended settings",
+						useItemID = 1027960,
+						useItemName = "Superior Spiritbond Potion (HQ)",
+						uuid = "4caa9473-e0f6-e36d-8977-6a9982a986fb",
+						version = 2,
+					},
+					inheritedIndex = 5,
+				},
+			},
+			conditions = 
+			{
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return MistUtility ~= nil\n\n",
+						name = "Functions defined",
+						uuid = "10df0079-f12f-67b8-b07d-f660d0f3af74",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return Between(Player.job,8,18,true) == false",
+						name = "DoM/DoW",
+						uuid = "67f6629f-a640-85c4-b11f-82d4ffde7bfa",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return false",
+						name = "false",
+						uuid = "81f46168-b3aa-0240-b892-cca558420452",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "local non_assist_running = (FFXIV_Common_BotRunning and gBotMode ~=\n                               GetString(\"assistMode\"))\nlocal kitanoi_running = (KitanoiFuncs ~= nil and\n                            KitanoiFuncs.AreKitanoiAddonsRunning())\nlocal husbando_running = (HusbandoMaxAddonStatus ~= nil and\n                             HusbandoMaxAddonStatus.DungeonMaster.Enabled)\nlocal navigating = (table.valid(ml_navigation.path) and\n                       table.size(ml_navigation.path) > 0)\nreturn (non_assist_running or kitanoi_running or husbando_running or navigating)\n",
+						name = "Unattended",
+						uuid = "c4c821cd-6e28-9557-aba5-9daa24b80b5e",
+						version = 2,
+					},
+				},
+			},
+			execute = "medicated_spiritbond = false\nfor _, buff in pairs(Player.Buffs) do \n\t\tif buff.id == 49 and buff.stacks == 10452 then \n\t\t\t\tmedicated_spiritbond=true \n\t\tend \nend\nreturn medicated_spiritbond",
+			name = "Mist - Utility",
+			throttleTime = 5000,
+			uuid = "56742687-bfd5-b765-9024-da179f47dde6",
+			version = 2,
+		},
+		inheritedIndex = 6,
+	},
+	
+	{
+		data = 
+		{
+			actions = 
+			{
+				
+				{
+					data = 
+					{
+						aType = "Lua",
 						actionLua = "if not (\n  IsControlOpen(\"InventoryCrystalGrid\") or \n  IsControlOpen(\"ArmouryBoard\") or \n  IsControlOpen(\"InventoryBuddy\") or\n  IsControlOpen(\"InventoryBuddy2\") or\n  IsControlOpen(\"RetainerCrystalGrid\") or\n  IsControlOpen(\"ContextMenu\") or\n  IsControlOpen(\"SalvageDialog\") or\n  IsControlOpen(\"SelectYesno\") or \n  BehaviorManager:Running()\n) then\n  Inventory:SortInventory()\nend\ndata.MistInventorySortLastRun = Now()\nself.used = true",
 						name = "sort",
 						uuid = "1575ef90-bfc5-3646-affd-ea5d0bc96180",
@@ -794,7 +797,7 @@ local tbl =
 					data = 
 					{
 						aType = "Lua",
-						actionLua = "local control = GetControl(\"RecommendEquip\")\nif (control ~= nil) then\n   control:Action(\"Equip\")\nend\ndata.PromptoLastInteract = Now()\nself.used = true",
+						actionLua = "local control = GetControl(\"RecommendEquip\")\nif (control ~= nil) then\n   control:Action(\"Equip\")\nend\ndata.PromptoRecommendEquip = true\ndata.PromptoLastInteract = Now()\nself.used = true",
 						conditions = 
 						{
 							
@@ -808,6 +811,83 @@ local tbl =
 						uuid = "2361dba7-9fc2-92bc-8eba-d705b1ec8b01",
 						version = 2,
 					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "local control = GetControl(\"Character\")\nif (control ~= nil) then\n   control:DoAction(15)\nend\ndata.PromptoRecommendEquip = false\ndata.PromptoLastInteract = Now()\nself.used = true",
+						conditions = 
+						{
+							
+							{
+								"4f02243e-6d3f-4f60-9b57-0b0ed8be28b0",
+								true,
+							},
+						},
+						endIfUsed = true,
+						name = "SaveGearSet",
+						uuid = "d96494bc-94ef-ec26-94da-4f756ad17014",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "-- local IILMessage = GetControl(\"ItemInspectionList\"):GetStrings()[6]\n-- d(IILMessage)\n-- if string.contains(IILMessage,\n--                    \"There is nothing to display.\") == false then\nd(\"ItemInspectionList\")\nUseControlAction(\"ItemInspectionList\", \"SelectIndex\", 0)\n-- end\ndata.PromptoLastInteract = Now()\nself.used = true\n",
+						conditions = 
+						{
+							
+							{
+								"dc766a13-c371-6965-ab4f-03c9afc04f20",
+								true,
+							},
+							
+							{
+								"f0c9446a-a805-399b-8edf-fe5a8656f10e",
+								false,
+							},
+							
+							{
+								"cc9b0d39-1832-0e80-90f1-dc6b5531f7ae",
+								true,
+							},
+						},
+						endIfUsed = true,
+						name = "ItemInspectionList",
+						uuid = "218e516f-40fe-9e5c-8ceb-a256e0b03293",
+						version = 2,
+					},
+					inheritedIndex = 9,
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "UseControlAction(\"ItemInspectionResult\", \"Next\", 0)\ndata.PromptoLastInteract = Now()\nself.used = true",
+						conditions = 
+						{
+							
+							{
+								"f0c9446a-a805-399b-8edf-fe5a8656f10e",
+								true,
+							},
+							
+							{
+								"cc9b0d39-1832-0e80-90f1-dc6b5531f7ae",
+								true,
+							},
+						},
+						endIfUsed = true,
+						name = "ItemInspectionResult",
+						uuid = "f05ef19b-112f-baf8-b3e2-e86d4b0d3ea4",
+						version = 2,
+					},
+					inheritedIndex = 9,
 				},
 			},
 			conditions = 
@@ -922,10 +1002,53 @@ local tbl =
 						version = 2,
 					},
 				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return data.PromptoRecommendEquip ~= nil and data.PromptoRecommendEquip",
+						name = "DidRecommendEquip",
+						uuid = "4f02243e-6d3f-4f60-9b57-0b0ed8be28b0",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return IsControlOpen(\"ItemInspectionResult\")",
+						name = "ItemInspectionResult",
+						uuid = "f0c9446a-a805-399b-8edf-fe5a8656f10e",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return IsControlOpen(\"ItemInspectionList\")",
+						name = "ItemInspectionList",
+						uuid = "dc766a13-c371-6965-ab4f-03c9afc04f20",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "local free = 0\nlocal min_free = 5\nfor i = 0, 3 do\n    local bag = Inventory:Get(i)\n    if (table.valid(bag)) then\n        free = free + bag.free\n    end\nend\nreturn free > min_free\n",
+						name = "has bag space",
+						uuid = "cc9b0d39-1832-0e80-90f1-dc6b5531f7ae",
+						version = 2,
+					},
+				},
 			},
-			enabled = false,
 			name = "Mist - Prompto",
-			throttleTime = 500,
+			throttleTime = 1500,
 			uuid = "f009255c-2530-1e04-90f3-f0ff5e23381f",
 			version = 2,
 		},
